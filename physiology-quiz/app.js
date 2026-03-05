@@ -188,10 +188,10 @@ function submitQuiz() {
 
   const result = document.getElementById('quiz-result');
   const pct = Math.round((score / questions.length) * 100);
-  let cls = 'result-great', msg = '🎉 Excellent!';
-  if (pct < 80) { cls = 'result-ok';    msg = '👍 Good effort!'; }
-  if (pct < 60) { cls = 'result-study'; msg = '📖 Keep studying!'; }
-  result.innerHTML = `<span class="${cls}">${msg} You scored ${score} / ${questions.length} (${pct}%)</span>`;
+  let cls = 'result-great', msg = 'THE FORCE IS STRONG WITH THIS ONE!';
+  if (pct < 80) { cls = 'result-ok';    msg = 'IMPRESSIVE... BUT YOU ARE NOT A JEDI YET.'; }
+  if (pct < 60) { cls = 'result-study'; msg = 'MUCH TO LEARN, YOU STILL HAVE, YOUNG PADAWAN.'; }
+  result.innerHTML = `<span class="${cls}">${msg}<br><small style="font-size:0.8rem;letter-spacing:0;font-family:sans-serif;">${score} / ${questions.length} correct (${pct}%)</small></span>`;
 
   document.getElementById('submit-btn').style.display = 'none';
   document.getElementById('reset-btn').style.display = 'inline-block';
