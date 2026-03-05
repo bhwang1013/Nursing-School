@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physiology Lab Quiz Prep</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Physiology Lab Quiz Prep</h1>
+    <p>Labs 10, 11 &amp; 12 — ECG, Cardiac Cycle &amp; Respiratory Volumes</p>
+    <nav>
+      <a href="#ecg">ECG &amp; Heart</a>
+      <a href="#respiratory">Respiratory</a>
+      <a href="#questions">Study Q&amp;A</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== ECG SECTION ===== -->
+    <section id="ecg">
+      <h2>Part 1: ECG &amp; the Cardiac Cycle (Lab 10)</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">P-R Interval</div>
+          <p>Time from start of P wave (atrial depolarization) to start of QRS complex.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">QRS Duration</div>
+          <p>Ventricular <strong>depolarization</strong> — ventricles contracting.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">T Wave</div>
+          <p>Ventricular <strong>repolarization</strong> — ventricles relaxing.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">R-R Interval</div>
+          <p>Time between two consecutive R peaks = <strong>one complete cardiac cycle</strong>.</p>
+          <div class="formula">HR = 1 ÷ R-R interval (in minutes)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Cardiac Output</div>
+          <div class="formula">CO = HR × Stroke Volume</div>
+          <p>Example: 40 BPM × 0.125 L = <strong>5.0 L/min</strong></p>
+        </div>
+        <div class="card">
+          <div class="card-label">Nervous System Control</div>
+          <p><strong>Sympathetic</strong> → increases HR<br>
+             <strong>Parasympathetic (vagus)</strong> → decreases HR<br>
+             At rest: vagal tone dominates</p>
+        </div>
+      </div>
+
+      <div class="ecg-diagram">
+        <h3>ECG Wave Diagram</h3>
+        <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+          <!-- baseline -->
+          <line x1="20" y1="120" x2="580" y2="120" stroke="#ccc" stroke-width="1" />
+          <!-- ECG path -->
+          <polyline points="
+            20,120  60,120  70,105  80,120
+            100,120 110,118 120,120
+            130,120 135,60  140,150 145,50 150,120
+            160,120 170,80  180,120
+            240,120 250,120 260,105 270,120
+            330,120
+          " fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Labels -->
+          <text x="65" y="95" font-size="11" fill="#3498db" font-weight="bold">P</text>
+          <text x="108" y="112" font-size="11" fill="#3498db" font-weight="bold">Q</text>
+          <text x="143" y="45" font-size="11" fill="#3498db" font-weight="bold">R</text>
+          <text x="148" y="155" font-size="11" fill="#3498db" font-weight="bold">S</text>
+          <text x="167" y="74" font-size="11" fill="#3498db" font-weight="bold">T</text>
+          <!-- interval arrows -->
+          <line x1="60" y1="140" x2="130" y2="140" stroke="#f39c12" stroke-width="1.5" marker-end="url(#arr)" marker-start="url(#arr)" />
+          <text x="78" y="158" font-size="10" fill="#f39c12">P-R Interval</text>
+          <line x1="130" y1="148" x2="175" y2="148" stroke="#9b59b6" stroke-width="1.5" />
+          <text x="132" y="165" font-size="10" fill="#9b59b6">QRS</text>
+          <line x1="145" y1="170" x2="250" y2="170" stroke="#2ecc71" stroke-width="1.5" marker-end="url(#arr2)" marker-start="url(#arr2)" />
+          <text x="170" y="180" font-size="10" fill="#2ecc71">R-R Interval</text>
+          <defs>
+            <marker id="arr" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+              <path d="M0,0 L4,2 L0,4 Z" fill="#f39c12"/>
+            </marker>
+            <marker id="arr2" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+              <path d="M0,0 L4,2 L0,4 Z" fill="#2ecc71"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== RESPIRATORY SECTION ===== -->
+    <section id="respiratory">
+      <h2>Part 2: Respiratory Volumes &amp; Capacities (Lab 12)</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label blue">VT — Tidal Volume</div>
+          <p>Volume of air in/out during one <strong>normal</strong> breath.</p>
+        </div>
+        <div class="card">
+          <div class="card-label blue">IRV — Inspiratory Reserve Volume</div>
+          <p>Extra air you can inhale <em>after</em> a normal breath in.</p>
+        </div>
+        <div class="card">
+          <div class="card-label blue">ERV — Expiratory Reserve Volume</div>
+          <p>Extra air you can exhale <em>after</em> a normal breath out.</p>
+        </div>
+        <div class="card">
+          <div class="card-label blue">RV — Residual Volume</div>
+          <p>Air remaining after a <strong>maximal</strong> exhalation. <em>Cannot be measured by spirometry.</em></p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:2rem;">Capacities (combinations of volumes)</h3>
+      <div class="capacity-table">
+        <div class="cap-row header">
+          <span>Capacity</span><span>Formula</span>
+        </div>
+        <div class="cap-row"><span>Inspiratory Capacity (IC)</span><span>VT + IRV</span></div>
+        <div class="cap-row"><span>Expiratory Capacity (EC)</span><span>VT + ERV</span></div>
+        <div class="cap-row"><span>Vital Capacity (VC)</span><span>IRV + ERV + VT</span></div>
+        <div class="cap-row"><span>Functional Residual Capacity (FRC)</span><span>ERV + RV</span></div>
+        <div class="cap-row highlight"><span>Total Lung Capacity (TLC)</span><span>VC + RV</span></div>
+      </div>
+
+      <!-- Lung diagram -->
+      <div class="lung-diagram">
+        <h3>Volume Diagram</h3>
+        <div class="lung-bar-wrap">
+          <div class="lung-segment irv">IRV</div>
+          <div class="lung-segment vt">VT</div>
+          <div class="lung-segment erv">ERV</div>
+          <div class="lung-segment rv">RV</div>
+        </div>
+        <div class="lung-legend">
+          <span class="dot irv"></span> IRV &nbsp;
+          <span class="dot vt"></span> VT &nbsp;
+          <span class="dot erv"></span> ERV &nbsp;
+          <span class="dot rv"></span> RV (not measurable by spirometry)
+        </div>
+        <div class="vc-label">← Vital Capacity (VC) = IRV + VT + ERV →</div>
+        <div class="tlc-label">← Total Lung Capacity (TLC) = VC + RV →</div>
+      </div>
+    </section>
+
+    <!-- ===== STUDY Q&A ===== -->
+    <section id="questions">
+      <h2>Part 3: Study Questions &amp; Answers</h2>
+
+      <div class="qa-list">
+
+        <details>
+          <summary>How does the nervous system control heart rate?</summary>
+          <p><strong>Sympathetic</strong> nerves increase HR. <strong>Parasympathetic (vagus nerve)</strong> decreases HR. At rest, vagal tone dominates. During exercise, sympathetic activity increases and vagal activity decreases, raising HR.</p>
+        </details>
+
+        <details>
+          <summary>What happens to the R-R interval and HR after exercise?</summary>
+          <p>HR <strong>increases</strong> after exercise. Since the cardiac cycle shortens, the <strong>R-R interval decreases</strong>.</p>
+        </details>
+
+        <details>
+          <summary>Is pulse amplitude smaller or larger immediately after whole-body exercise?</summary>
+          <p><strong>Smaller.</strong> The sympathetic nervous system causes vasoconstriction in the skin and extremities to redirect blood flow to exercising skeletal muscles.</p>
+        </details>
+
+        <details>
+          <summary>What happens to blood volume pulse amplitude during recovery from hand exercise?</summary>
+          <p><strong>Increases.</strong> Local vasodilation opens sphincters to bring more arterial blood in — clearing CO₂, replenishing O₂, and restoring pH in fatigued muscles.</p>
+        </details>
+
+        <details>
+          <summary>Calculate CO: HR = 40 BPM, SV = 0.125 L</summary>
+          <p><strong>CO = HR × SV = 40 × 0.125 = 5.0 L/min</strong></p>
+        </details>
+
+        <details>
+          <summary>When can breath be held the longest?</summary>
+          <p>After a <strong>full inhalation</strong> — maximizes O₂ supply and stretches lung receptors, temporarily suppressing the urge to breathe.</p>
+        </details>
+
+        <details>
+          <summary>What happens to breathing with hyperventilation?</summary>
+          <p>Hyperventilation blows off CO₂, lowering blood PCO₂. Since the medulla triggers breathing in response to rising PCO₂, you can hold your breath <strong>much longer</strong> after hyperventilating.</p>
+        </details>
+
+        <details>
+          <summary>How does HR change during the respiratory cycle?</summary>
+          <p><strong>Respiratory sinus arrhythmia:</strong> HR <strong>increases during inspiration</strong> and <strong>decreases during expiration</strong>. Inspiratory neurons inhibit vagal activity, briefly speeding the heart.</p>
+        </details>
+
+        <details>
+          <summary>What is the effect of the vagus nerve on the heart?</summary>
+          <p>The vagus nerve (parasympathetic) <strong>decreases heart rate</strong>. When inhibited during inspiration, HR briefly increases.</p>
+        </details>
+
+        <details>
+          <summary>Why can't RV be measured by spirometry?</summary>
+          <p>Spirometers measure air moving in and out. RV stays in the lungs after maximal exhalation — it <strong>never passes through the spirometer</strong>.</p>
+        </details>
+
+        <details>
+          <summary>In quiet breathing, why is expiration mainly passive?</summary>
+          <p>Inspiration is active (diaphragm contracts). Expiration relies on <strong>elastic recoil</strong> of the lungs — no muscles needed. Expiratory flow is therefore slower and more gradual.</p>
+        </details>
+
+        <details>
+          <summary>What happens physiologically during an asthma attack?</summary>
+          <p>Airways become <strong>inflamed and constricted</strong>, filled with mucus. Airway resistance increases → dyspnea, wheezing, and significantly <strong>reduced FEV1</strong> (Forced Expired Volume in 1 second).</p>
+        </details>
+
+        <details>
+          <summary>What factors cause differences in pulmonary parameters between people?</summary>
+          <p><strong>Sex, height, age, fitness level,</strong> and <strong>smoking history</strong> all affect lung volumes and capacities.</p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ===== QUIZ ===== -->
+    <section id="quiz">
+      <h2>Quiz Yourself</h2>
+      <p>Test your knowledge! Select your answer and click <strong>Submit</strong>.</p>
+
+      <div id="quiz-container"></div>
+
+      <div id="quiz-controls" style="margin-top:1.5rem;">
+        <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+        <button id="reset-btn" onclick="resetQuiz()" style="display:none;">Try Again</button>
+      </div>
+
+      <div id="quiz-result"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Good luck on your lab quiz! &#10084; Study hard, breathe easy.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
