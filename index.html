@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nursing School Coding Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Nursing School Coding Guide</h1>
+      <p class="subtitle">Medical Coding & Clinical Documentation Reference</p>
+    </div>
+    <nav>
+      <a href="#icd10">ICD-10</a>
+      <a href="#cpt">CPT Codes</a>
+      <a href="#nanda">NANDA Diagnoses</a>
+      <a href="#documentation">Documentation</a>
+      <a href="#emergency">Emergency Codes</a>
+      <a href="#quiz">Practice Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Search Bar -->
+    <section class="search-section">
+      <input type="text" id="searchInput" placeholder="Search codes, diagnoses, or terms..." />
+      <div id="searchResults" class="search-results hidden"></div>
+    </section>
+
+    <!-- ICD-10 Section -->
+    <section id="icd10" class="card-section">
+      <h2>ICD-10 Codes – Common Categories</h2>
+      <p class="section-desc">The International Classification of Diseases, 10th Revision (ICD-10), is used for diagnosing and billing. Each code maps to a specific condition.</p>
+      <div class="card-grid" id="icd10Grid">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- CPT Section -->
+    <section id="cpt" class="card-section">
+      <h2>CPT Codes – Common Nursing Procedures</h2>
+      <p class="section-desc">Current Procedural Terminology (CPT) codes describe medical, surgical, and diagnostic services provided to patients.</p>
+      <div class="card-grid" id="cptGrid"></div>
+    </section>
+
+    <!-- NANDA Section -->
+    <section id="nanda" class="card-section">
+      <h2>NANDA Nursing Diagnoses</h2>
+      <p class="section-desc">NANDA International nursing diagnoses are clinical judgments about individual, family, or community responses to actual or potential health problems.</p>
+      <div class="card-grid" id="nandaGrid"></div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="card-section">
+      <h2>Clinical Documentation Standards</h2>
+      <p class="section-desc">Accurate documentation is critical to patient safety, care continuity, and legal compliance.</p>
+      <div class="accordion" id="docAccordion"></div>
+    </section>
+
+    <!-- Emergency Codes Section -->
+    <section id="emergency" class="card-section">
+      <h2>Hospital Emergency Codes</h2>
+      <p class="section-desc">Standard color codes used in hospitals to communicate emergencies quickly and discretely.</p>
+      <div class="emergency-grid" id="emergencyGrid"></div>
+    </section>
+
+    <!-- Practice Quiz Section -->
+    <section id="quiz" class="card-section">
+      <h2>Practice Quiz</h2>
+      <p class="section-desc">Test your knowledge of nursing coding concepts.</p>
+      <div id="quizContainer">
+        <div id="quizQuestion"></div>
+        <div id="quizOptions" class="quiz-options"></div>
+        <div id="quizFeedback" class="quiz-feedback hidden"></div>
+        <div class="quiz-controls">
+          <button id="nextQuestion" class="btn primary hidden">Next Question</button>
+          <button id="startQuiz" class="btn primary">Start Quiz</button>
+        </div>
+        <div id="quizScore" class="quiz-score hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Nursing School Coding Guide &mdash; Educational Reference Only</p>
+    <p>Always verify codes with current official sources (CMS, AHA, NANDA-I) before clinical use.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
