@@ -475,7 +475,121 @@ const QUESTIONS = [
     explanation: '<strong>Type II pneumocytes</strong> produce <strong>surfactant</strong> (dipalmitoylphosphatidylcholine + proteins). Surfactant reduces alveolar surface tension — without it, small alveoli would collapse (law of Laplace: P = 2T/r — smaller radius = higher pressure wanting to collapse). Premature infants lack surfactant → infant respiratory distress syndrome (RDS). Type II cells also regenerate the epithelium (stem cell-like function).'
   },
 
-  // --- IMMUNE ---
+  // --- RESPIRATORY (NEW) ---
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: 'Air enters the pleural space after a stab wound to the chest. Which complication is MOST likely?',
+    options: [
+      'Pulmonary embolism',
+      'Pneumothorax (lung collapse)',
+      'Hemothorax only',
+      'Diaphragm paralysis'
+    ],
+    answer: 1,
+    explanation: '<strong>Pneumothorax</strong>: The pleural cavity normally has negative pressure that keeps the lung expanded against the chest wall. When air enters (trauma, spontaneous rupture), this negative pressure is lost → the lung recoils and collapses. Pleural fluid normally just reduces friction between visceral and parietal pleura. Tension pneumothorax (mediastinal shift) is a life-threatening emergency.'
+  },
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: 'Why does the left lung have only 2 lobes while the right lung has 3?',
+    options: [
+      'The right bronchus is longer, allowing more branching',
+      'The left lung is smaller to accommodate the cardiac notch (space for the heart)',
+      'The left diaphragm is higher, compressing the left lung',
+      'Left lung receives less blood flow from the pulmonary artery'
+    ],
+    answer: 1,
+    explanation: 'The heart sits slightly left of center, and the <strong>cardiac notch</strong> on the left lung creates an indentation to accommodate it. This makes the left lung smaller (and therefore bilobed), while the right lung has more room for 3 lobes. The left lung also lacks the middle lobe found on the right.'
+  },
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: 'Bronchioles, unlike bronchi, have no cartilage. What clinical consequence does this have?',
+    options: [
+      'Bronchioles cannot conduct air — they only exchange gases',
+      'Bronchioles rely on smooth muscle and are susceptible to constriction, as seen in asthma',
+      'Bronchioles collapse during normal exhalation in healthy individuals',
+      'Lack of cartilage makes bronchioles more resistant to infections'
+    ],
+    answer: 1,
+    explanation: 'Cartilage keeps large airways (trachea, bronchi) rigid and patent. <strong>Bronchioles</strong> depend on surrounding lung tissue and <strong>smooth muscle</strong> tone instead. When smooth muscle contracts (bronchoconstriction) — due to allergens, inflammation, cold air — bronchioles narrow dramatically. This is the pathophysiology of <strong>asthma</strong>. Bronchodilators (like albuterol) relax this smooth muscle to open the airways.'
+  },
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: 'A swimmer hyperventilates before a breath-hold dive. During the dive, he loses consciousness underwater without feeling the urge to breathe. What is the physiological explanation?',
+    options: [
+      'Hyperventilation raised blood O₂ to dangerously high levels',
+      'Hyperventilation lowered CO₂ so much that the urge to breathe was suppressed — O₂ silently fell to dangerous levels',
+      'Cold water caused the mammalian dive reflex to halt breathing signals',
+      'Lactic acid from swimming raised blood pH beyond the respiratory threshold'
+    ],
+    answer: 1,
+    explanation: '<strong>Shallow water blackout:</strong> Breathing drive is primarily regulated by CO₂ (not O₂). Hyperventilation before diving drastically lowers PCO₂. The brain senses "no CO₂ = fine to hold breath." Meanwhile, O₂ is being consumed and falls to critically low levels — but since CO₂ never rises high enough to trigger the urge to breathe, the swimmer loses consciousness suddenly. This is a leading cause of drowning in competitive breath-holders.'
+  },
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: 'By Boyle\'s Law, when the diaphragm contracts and flattens during inspiration, what happens?',
+    options: [
+      'Thoracic volume decreases → intrapulmonary pressure rises → air flows in',
+      'Thoracic volume increases → intrapulmonary pressure falls → air flows in',
+      'Thoracic volume increases → intrapulmonary pressure rises → air flows out',
+      'Diaphragm contraction directly pumps air through the trachea'
+    ],
+    answer: 1,
+    explanation: '<strong>Boyle\'s Law</strong>: P × V = constant (at fixed temperature). Diaphragm contracts → dome flattens → thoracic cavity volume <strong>increases</strong> → intrapulmonary pressure <strong>decreases</strong> below atmospheric → pressure gradient drives air INTO the lungs. Expiration is mostly passive: diaphragm relaxes → elastic recoil → volume decreases → pressure rises → air flows OUT.'
+  },
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: 'Surfactant is critically important for lung function because:',
+    options: [
+      'It transports oxygen across the alveolar membrane',
+      'It reduces alveolar surface tension, preventing small alveoli from collapsing',
+      'It increases compliance by stiffening the alveolar walls',
+      'It neutralizes pathogens that reach the alveoli'
+    ],
+    answer: 1,
+    explanation: 'By the <strong>Law of Laplace</strong> (P = 2T/r), small alveoli have higher collapsing pressure. Without surfactant, surface tension from the fluid lining would collapse small alveoli, causing them to empty into larger ones (atelectasis). <strong>Surfactant</strong> (made by Type II pneumocytes, mainly dipalmitoylphosphatidylcholine) reduces surface tension, especially in small alveoli. Premature infants lack surfactant → neonatal Respiratory Distress Syndrome (RDS).'
+  },
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: 'At sea level (760 mmHg total pressure), what is the approximate partial pressure of oxygen (PO₂)?',
+    options: ['760 mmHg', '159 mmHg', '78 mmHg', '40 mmHg'],
+    answer: 1,
+    explanation: 'By <strong>Dalton\'s Law</strong>: PO₂ = fraction × total pressure. O₂ is ~21% of air: 0.21 × 760 = <strong>~159 mmHg</strong>. At high altitude, total pressure falls so PO₂ also falls — even though the percentage of O₂ in air stays the same at ~21%. This reduction in PO₂ (not percentage) is why altitude causes hypoxia. Alveolar PO₂ is lower (~100 mmHg) due to water vapor and CO₂.'
+  },
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: 'A deep-sea diver ascends too rapidly. She develops joint pain and neurological symptoms. What is the mechanism?',
+    options: [
+      'O₂ toxicity causing damage to neurons',
+      'Nitrogen dissolves into blood at depth; rapid ascent → nitrogen forms bubbles in blood ("the bends")',
+      'CO₂ buildup from being in a closed tank',
+      'Pulmonary barotrauma from over-expanding lungs'
+    ],
+    answer: 1,
+    explanation: '<strong>Decompression sickness ("the bends")</strong>: Henry\'s Law states gas dissolves into liquid proportional to pressure. At depth, high pressure forces N₂ to dissolve into blood and tissues. Rapid ascent → pressure drops suddenly → dissolved N₂ comes out of solution as bubbles → bubbles in joints (pain), spinal cord (paralysis), lungs (chokes). Treatment: hyperbaric chamber; prevention: slow ascent with decompression stops.'
+  },
+  {
+    topic: 'respiratory',
+    topicLabel: '🫁 Respiratory',
+    q: '2,3-DPG levels in red blood cells increase during anemia and at high altitude. What is the effect?',
+    options: [
+      'Left shift of the O₂-Hb dissociation curve → Hb holds O₂ more tightly',
+      'Right shift of the O₂-Hb dissociation curve → Hb releases O₂ more easily to tissues',
+      'Increased red blood cell production via EPO stimulation',
+      'Increased CO₂ binding to hemoglobin'
+    ],
+    answer: 1,
+    explanation: '2,3-DPG (2,3-diphosphoglycerate) binds to hemoglobin and <strong>reduces its affinity for O₂</strong>, causing a <strong>right shift</strong> of the dissociation curve. This means Hb unloads O₂ more readily to tissues — an adaptive response when O₂ delivery is compromised (anemia, high altitude, exercise). Note: fetal hemoglobin (HbF) does NOT bind 2,3-DPG well → HbF stays left-shifted → higher O₂ affinity to pull O₂ from maternal blood.'
+  },
+
+  // --- IMMUNE (NEW) ---
   {
     topic: 'immune',
     topicLabel: '🛡 Immune',
@@ -540,6 +654,100 @@ const QUESTIONS = [
     ],
     answer: 1,
     explanation: '<strong>Prostaglandins</strong> (from arachidonic acid via COX enzymes — blocked by NSAIDs/ibuprofen) and <strong>bradykinin</strong> sensitize nociceptors (lower their firing threshold) → pain. Histamine and PGE₂ also cause vasodilation (redness, heat) and increased permeability (swelling/edema). Cytokines (IL-1, TNF-α) cause systemic effects: fever (act on hypothalamus), fatigue, acute phase protein production.'
+  },
+  {
+    topic: 'immune',
+    topicLabel: '🛡 Immune',
+    q: 'Pattern Recognition Receptors (PRRs) like Toll-like receptors detect which type of molecular signature?',
+    options: [
+      'MHC molecules on self-cells',
+      'PAMPs — conserved molecular patterns found on microbes (e.g., LPS, flagellin)',
+      'IgE antibodies on mast cell surfaces',
+      'Self-antigens presented by dendritic cells'
+    ],
+    answer: 1,
+    explanation: '<strong>PAMPs</strong> (Pathogen-Associated Molecular Patterns) are conserved structures on microbes not found on host cells — e.g., LPS (gram-negative bacteria cell wall), peptidoglycan, bacterial flagellin, viral double-stranded RNA. <strong>PRRs</strong> (TLRs, NLRs) on innate immune cells recognize PAMPs → trigger immediate inflammatory response without needing prior exposure. This is the "danger signal" basis of innate immunity.'
+  },
+  {
+    topic: 'immune',
+    topicLabel: '🛡 Immune',
+    q: 'A patient has a strep throat infection. Two weeks later they develop heart valve damage from their immune system attacking self-tissue. This is an example of:',
+    options: [
+      'Immediate hypersensitivity (Type I)',
+      'Molecular mimicry leading to autoimmunity (rheumatic fever)',
+      'Immune complex disease from IgE deposition',
+      'Clonal deletion failure in the bone marrow'
+    ],
+    answer: 1,
+    explanation: '<strong>Rheumatic fever</strong> is a classic example of <strong>molecular mimicry</strong>: Streptococcal proteins structurally resemble proteins in heart valves. Antibodies made against strep cross-react with cardiac tissue → immune attack on heart valves. This is why untreated strep throat can lead to permanent valvular heart disease. It\'s a form of autoimmunity triggered by cross-reactivity between foreign and self-antigens.'
+  },
+  {
+    topic: 'immune',
+    topicLabel: '🛡 Immune',
+    q: 'In immediate hypersensitivity (allergy), what happens during the SECOND exposure to an allergen?',
+    options: [
+      'B cells undergo primary activation and produce IgE for the first time',
+      'IgE already bound to mast cells is crosslinked by allergen → mast cell degranulation → histamine release',
+      'Cytotoxic T cells destroy cells coated with allergen',
+      'Dendritic cells activate regulatory T cells to suppress the response'
+    ],
+    answer: 1,
+    explanation: '<strong>Sensitization (1st exposure):</strong> Allergen → IgE produced → IgE binds Fc receptors on mast cells (no symptoms). <strong>Elicitation (2nd exposure):</strong> Allergen crosslinks IgE on mast cells → mast cell degranulation → <strong>histamine</strong> release (within minutes) → vasodilation, itching, mucus secretion, bronchoconstriction. This is why the first exposure to an allergen usually causes no reaction but subsequent exposures can be severe.'
+  },
+  {
+    topic: 'immune',
+    topicLabel: '🛡 Immune',
+    q: 'Natural Killer (NK) cells kill cancer cells using what strategy that differs from cytotoxic T cells?',
+    options: [
+      'NK cells require MHC I + specific antigen presentation before killing',
+      'NK cells kill cells that have LOST or DOWNREGULATED MHC I expression ("missing self")',
+      'NK cells only function in the adaptive immune response',
+      'NK cells use antibody-dependent signaling exclusively'
+    ],
+    answer: 1,
+    explanation: '<strong>NK cells</strong> use the "missing self" strategy: normal healthy cells express MHC I, which inhibits NK killing. Cancer cells and virus-infected cells often downregulate MHC I to hide from cytotoxic T cells — but this <strong>loss of MHC I</strong> removes the inhibitory signal, activating NK cells to kill. NK cells also use perforins and granzymes (same as CTLs) but don\'t need prior sensitization or antigen-specific receptors.'
+  },
+  {
+    topic: 'immune',
+    topicLabel: '🛡 Immune',
+    q: 'Which antibody class is the FIRST produced during a primary immune response?',
+    options: ['IgG', 'IgA', 'IgM', 'IgE'],
+    answer: 2,
+    explanation: '<strong>IgM</strong> is the first antibody class secreted during a primary immune response (appears within days). It is a large pentameric molecule effective at complement activation and agglutination. <strong>IgG</strong> is produced later but becomes the dominant antibody in the secondary response (class switching occurs). IgG has a longer half-life, crosses the placenta, and is more potent — which is why immunity from the secondary response is more powerful than the primary.'
+  },
+  {
+    topic: 'immune',
+    topicLabel: '🛡 Immune',
+    q: 'Regulatory T cells (Tregs) prevent autoimmunity. How?',
+    options: [
+      'They destroy all T cells that enter the lymph nodes',
+      'They secrete suppressive cytokines (IL-10, TGF-β) that dampen autoreactive immune cells',
+      'They convert self-antigens into non-immunogenic forms',
+      'They compete with B cells for antigen binding sites'
+    ],
+    answer: 1,
+    explanation: '<strong>Regulatory T cells (Tregs, CD4+FOXP3+)</strong> are the immune system\'s brakes. They suppress excessive or self-directed immune responses by: (1) secreting <strong>IL-10</strong> and <strong>TGF-β</strong> (anti-inflammatory cytokines), (2) direct cell contact inhibition of effector cells. Loss of Treg function is associated with severe autoimmunity (IPEX syndrome when FOXP3 is mutated). Tregs are also why cancer can sometimes suppress immune attacks against tumors.'
+  },
+  {
+    topic: 'immune',
+    topicLabel: '🛡 Immune',
+    q: 'Neutrophils arrive first at an infection site. How do they get through blood vessel walls into tissues?',
+    options: [
+      'They break through tight junctions using enzymatic digestion of the vessel wall',
+      'Diapedesis — they squeeze between endothelial cells guided by chemokine gradients',
+      'They are released directly into tissues from bone marrow',
+      'Phagocytosis of endothelial cells creates a channel'
+    ],
+    answer: 1,
+    explanation: '<strong>Diapedesis (extravasation):</strong> During inflammation, endothelial cells upregulate adhesion molecules (selectins, integrins). Neutrophils: (1) roll along vessel wall (selectin-mediated), (2) slow and adhere firmly (integrin-ICAM), (3) <strong>squeeze through endothelial junctions</strong> into tissues (diapedesis), (4) follow chemokine gradients (IL-8/CXCL8) to the infection site. Chemokines act as chemical breadcrumbs guiding neutrophils toward pathogens.'
+  },
+  {
+    topic: 'immune',
+    topicLabel: '🛡 Immune',
+    q: 'Which primary lymphoid organ is responsible for T cell maturation and self-tolerance (negative selection)?',
+    options: ['Spleen', 'Lymph node', 'Thymus', 'Bone marrow'],
+    answer: 2,
+    explanation: 'T cells mature in the <strong>thymus</strong>. Two key selection events: (1) <strong>Positive selection</strong>: T cells that can recognize self-MHC survive; others die (ensuring T cells can function). (2) <strong>Negative selection</strong>: T cells with too-high affinity for self-antigens are eliminated (preventing autoimmunity — this is clonal deletion). Only ~2% of thymocytes survive both checkpoints. Bone marrow is where B cells mature; the thymus is purely for T cells.'
   }
 ];
 
