@@ -3,332 +3,351 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brazilian Free-Tailed Bat — Field Guide</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Brazilian Free-Tailed Bat | Carlsbad Caverns National Park</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ===== HERO ===== -->
-  <header>
-    <div class="stars"></div>
-    <div class="hero-content">
-      <div class="bat-icon">🦇</div>
-      <h1>Brazilian Free-Tailed Bat</h1>
-      <p class="latin-name"><em>Tadarida brasiliensis</em></p>
-      <p class="hero-sub">A Field Guide to One of Nature's Most Spectacular Fliers</p>
-      <nav>
-        <a href="#intro">Introduction</a>
-        <a href="#facts">Fast Facts</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#appearance">Appearance</a>
-        <a href="#habitat">Habitat</a>
-        <a href="#history">Natural History</a>
-        <a href="#safety">Safety</a>
-        <a href="#links">Links</a>
-      </nav>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Carlsbad Caverns National Park</p>
+        <h1>Brazilian Free-Tailed Bat</h1>
+        <p class="hero-sci"><em>Tadarida brasiliensis</em></p>
+      </div>
     </div>
+    <figure class="hero-img-wrap">
+      <img
+        src="https://npgallery.nps.gov/GetAsset/c9c095a2-87aa-4bda-b711-09a0f9db48b5/thumbxlarge"
+        alt="A Mexican free-tailed bat flying at night."
+        class="hero-img"
+      />
+      <figcaption>Mexican free-tailed bat (<em>Tadarida brasiliensis</em>) &mdash; NPS photo / BT Hamilton</figcaption>
+    </figure>
   </header>
 
-  <main>
+  <!-- GUIDE CHARACTERS INTRO -->
+  <section class="guides-section">
+    <div class="container">
+      <h2 class="section-title">🦇 Meet Your Bat Guides</h2>
+      <p class="section-sub">Three bats who call Carlsbad home are here to walk you through everything you need to know.</p>
+      <div class="guides-row">
 
-    <!-- ===== GUIDES ===== -->
-    <section id="guides" class="guides-section">
-      <h2>Meet Your Guides</h2>
-      <p class="guides-intro">Three students, one cave, and a million bats. Brendan, Jacob, and Nyssa are here to walk you through everything you need to know.</p>
-      <div class="guides-grid">
-
-        <div class="guide-card">
-          <div class="avatar avatar-brendan">
-            <span class="avatar-initials">B</span>
-            <div class="avatar-hair hair-brendan"></div>
-          </div>
-          <div class="guide-info">
-            <h3>Brendan</h3>
-            <p class="guide-tag">Fast Facts &amp; Biology</p>
-            <p class="guide-quote">"I memorized every stat about these bats. Ask me anything — seriously, <em>anything</em>."</p>
-          </div>
+        <div class="guide-card guide-brendan">
+          <div class="guide-avatar" aria-label="Brendan the bat">🦇</div>
+          <h3>Brendan</h3>
+          <p class="guide-tag">Taiwanese Free-Tail</p>
+          <p class="guide-bio">Fast-talking and fact-obsessed, Brendan can recite every record this species has ever broken. If it's a stat, he knows it.</p>
         </div>
 
-        <div class="guide-card">
-          <div class="avatar avatar-jacob">
-            <span class="avatar-initials">J</span>
-            <div class="avatar-hair hair-jacob"></div>
-          </div>
-          <div class="guide-info">
-            <h3>Jacob</h3>
-            <p class="guide-tag">Range &amp; Habitat</p>
-            <p class="guide-quote">"I tracked their migration routes. Carlsbad to Mexico is basically a bat's version of a road trip."</p>
-          </div>
+        <div class="guide-card guide-jacob">
+          <div class="guide-avatar" aria-label="Jacob the bat">🦇</div>
+          <h3>Jacob</h3>
+          <p class="guide-tag">Filipino Free-Tail</p>
+          <p class="guide-bio">A geography enthusiast who has traced every migration route his colony has ever flown. Ask him where the bats go in winter &mdash; he'll pull out a map.</p>
         </div>
 
-        <div class="guide-card">
-          <div class="avatar avatar-nyssa">
-            <span class="avatar-initials">N</span>
-            <div class="avatar-hair hair-nyssa"></div>
-          </div>
-          <div class="guide-info">
-            <h3>Nyssa</h3>
-            <p class="guide-tag">Safety &amp; Conservation</p>
-            <p class="guide-quote">"Don't touch the bats. I don't care how cute they look — don't touch them. I'll explain why."</p>
-          </div>
+        <div class="guide-card guide-nyssa">
+          <div class="guide-avatar" aria-label="Nyssa the bat">🦇</div>
+          <h3>Nyssa</h3>
+          <p class="guide-tag">Carlsbad Colony Native</p>
+          <p class="guide-bio">Born and raised right here in Bat Cave, Nyssa knows the do's and don'ts of living alongside humans &mdash; and she's not shy about reminding visitors.</p>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== INTRODUCTION ===== -->
-    <section id="intro">
-      <h2>Introduction</h2>
-      <div class="intro-text">
-        <p class="drop-cap">At Carlsbad Caverns, every night around sunset it looks like the sky "turns into smoke." Don't worry though — that swirling cloud is not the weather. It is actually thousands of Brazilian free-tailed bats launching from a cave to hunt insects all night long, putting on one of the most breathtaking wildlife spectacles in North America.</p>
-        <p>Have you ever wondered what it would take to watch nearly half a million animals pour out of a single cave opening in a spiraling column that stretches hundreds of feet into the evening air? The Brazilian free-tailed bat makes that happen every summer night at Carlsbad Caverns National Park — and this guide will tell you everything you need to know before you witness it yourself.</p>
+  <!-- INTRO -->
+  <section class="content-section" id="intro">
+    <div class="container">
+      <div class="quote-callout">
+        <span class="quote-bat" aria-hidden="true">🦇</span>
+        <blockquote>
+          "Every evening at Carlsbad Caverns, the sky seems to turn into smoke &mdash; and I'm the one creating it!"
+          <cite>&mdash; Brendan</cite>
+        </blockquote>
       </div>
-    </section>
+      <p>
+        At the Carlsbad Caverns, every night around sunset it looks like the sky "turns into smoke." Don't worry, though &mdash; that swirling cloud is not the weather. It is actually thousands of Brazilian free-tailed bats launching from a cave to hunt insects all night long.
+      </p>
+      <p>
+        What you are watching is one of the most spectacular wildlife events in North America, performed by one of its most underappreciated mammals. From Carlsbad's ancient limestone caverns to the skies above Mexico, the story of <em>Tadarida brasiliensis</em> is one of speed, survival, and stunning scale.
+      </p>
+    </div>
+  </section>
 
-    <!-- ===== FAST FACTS ===== -->
-    <section id="facts">
-      <div class="section-guide-bar">
-        <div class="mini-avatar avatar-brendan"><span>B</span></div>
-        <span>Brendan's Fast Facts</span>
+  <!-- SAFE VIEWING — moved to beginning per request -->
+  <section class="content-section safety-section" id="safety">
+    <div class="container">
+      <h2 class="section-title">⚠️ Safe Viewing &amp; Safety Information</h2>
+      <div class="guide-says">
+        <span class="guide-chip nyssa-chip">Nyssa says:</span>
+        <p>"I'm going to need you all to follow the rules. This is my home."</p>
       </div>
-      <h2>Fast Facts</h2>
+      <p>
+        Carlsbad Caverns National Park offers exceptional bat-viewing opportunities through the evening <strong>Bat Flight Program</strong>, but protecting both visitors and bats requires following specific guidelines. The park prohibits all electronic devices, cameras, flashlights, and light sources during bat emergence because artificial light disrupts the bats' echolocation system and can cause disorientation when hundreds of thousands of bats navigate through a single cave opening in darkness. Flash photography has historically caused collision events and colony stress.
+      </p>
+      <p>
+        Visitors must remain seated and quiet in the designated outdoor amphitheater throughout the emergence. Noise and movement can delay or interrupt the flight, and bats have abandoned roosts subjected to repeated human disturbance. To prevent <strong>white-nose syndrome</strong> &mdash; a fungal disease that has killed over seven million bats across North America &mdash; visitors who have recently been in other caves or mines may be required to use decontamination stations or restricted from cave entry.
+      </p>
+
+      <div class="safety-grid">
+        <div class="safety-card">
+          <span class="safety-icon" aria-hidden="true">📏</span>
+          <p>Maintain distance from the cave entrance and roosting areas. Never attempt to enter bat roosting chambers.</p>
+        </div>
+        <div class="safety-card">
+          <span class="safety-icon" aria-hidden="true">🚫</span>
+          <p>Never touch, handle, or attempt to "rescue" bats. They will not attack humans, but may bite in self-defense if handled.</p>
+        </div>
+        <div class="safety-card">
+          <span class="safety-icon" aria-hidden="true">📞</span>
+          <p>If you find a grounded bat, contact park rangers immediately. Do not approach or touch the animal.</p>
+        </div>
+        <div class="safety-card">
+          <span class="safety-icon" aria-hidden="true">💉</span>
+          <p>Rabies prevalence is under 1%, but any bat bite or scratch requires immediate medical evaluation (National Park Service, n.d.).</p>
+        </div>
+        <div class="safety-card">
+          <span class="safety-icon" aria-hidden="true">🔭</span>
+          <p>Use binoculars to observe bat behavior without causing disturbance. No flash photography.</p>
+        </div>
+        <div class="safety-card">
+          <span class="safety-icon" aria-hidden="true">🧫</span>
+          <p>If you have been in caves or bat habitats elsewhere, inform park rangers before entering Carlsbad Cavern to help prevent disease transmission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAST FACTS -->
+  <section class="content-section alt-bg" id="facts">
+    <div class="container">
+      <div class="guide-says">
+        <span class="guide-chip brendan-chip">Brendan says:</span>
+        <p>"Numbers don't lie &mdash; and these numbers are wild."</p>
+      </div>
+      <h2 class="section-title">⚡ Fast Facts</h2>
       <ul class="fact-list">
         <li>
           <span class="fact-icon">🔬</span>
-          <div><strong>Scientific Name:</strong> <em>Tadarida brasiliensis</em> — also known as the Mexican free-tailed bat</div>
+          <div>
+            <strong>Scientific Name:</strong> <em>Tadarida brasiliensis</em><br>
+            <span class="fact-sub">Also known as the Mexican free-tailed bat</span>
+          </div>
         </li>
         <li>
           <span class="fact-icon">⏳</span>
-          <div><strong>Lifespan:</strong> Up to <strong>18 years</strong> in the wild</div>
+          <div>
+            <strong>Lifespan:</strong> Up to 18 years in the wild
+          </div>
         </li>
         <li>
-          <span class="fact-icon">🏙️</span>
-          <div><strong>Colony at Carlsbad Caverns:</strong> Seasonal — approximately <strong>400,000 bats</strong> at peak in summer; minimal presence in winter (Hristov, 2010)</div>
+          <span class="fact-icon">🏘️</span>
+          <div>
+            <strong>Colony at Carlsbad Caverns:</strong> ~400,000 bats during peak summer months; minimal presence in winter
+          </div>
         </li>
         <li>
           <span class="fact-icon">💨</span>
-          <div><strong>Flight Speed:</strong> Among the fastest flying mammals — horizontal speeds exceeding <strong>60 mph</strong></div>
+          <div>
+            <strong>Flight Speed:</strong> Among the fastest flying mammals &mdash; exceeding <strong>60 mph</strong> in horizontal flight
+          </div>
         </li>
         <li>
           <span class="fact-icon">🦟</span>
-          <div><strong>Nightly Insect Consumption:</strong> Each bat eats up to <strong>2/3 of its own body weight</strong> in insects every single night</div>
+          <div>
+            <strong>Nightly Insect Consumption:</strong> Each bat eats up to <strong>2/3 of its body weight</strong> in insects every single night
+          </div>
         </li>
         <li>
           <span class="fact-icon">🌅</span>
-          <div><strong>Emergence Timing:</strong> Summer colonies emerge approximately <strong>30–45 minutes after sunset</strong></div>
+          <div>
+            <strong>Emergence Timing:</strong> Summer colonies emerge approximately 30–45 minutes after sunset
+          </div>
         </li>
         <li>
-          <span class="fact-icon">🗺️</span>
-          <div><strong>Migration:</strong> Flies to central Mexico in winter; returns to southwestern U.S. caves each spring</div>
+          <span class="fact-icon">✈️</span>
+          <div>
+            <strong>Migration Pattern:</strong> Migrate to central Mexico in winter; return to the southwestern U.S. each spring
+          </div>
         </li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== GALLERY ===== -->
-    <section id="gallery">
-      <h2>Photo Gallery</h2>
-      <div class="gallery-grid">
-
-        <figure class="gallery-landscape">
-          <img
-            src="https://npgallery.nps.gov/GetAsset/c9c095a2-87aa-4bda-b711-09a0f9db48b5/thumbxlarge"
-            alt="A Mexican free-tailed bat flying at night."
-            loading="lazy"
-          />
-          <figcaption>
-            <span class="photo-caption">Mexican free-tailed bat (<em>Tadarida brasiliensis</em>) in flight at night.</span>
-            <span class="photo-credit">NPS Photo / BT Hamilton</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-portrait">
-          <img
-            src="https://npgallery.nps.gov/GetAsset/7855b860-4437-4084-9c7d-f9df87c535fa/thumbxlarge"
-            alt="Four people sit on boulders in front of a cave entrance. A loose group of bats fly out from the cave entrance."
-            loading="lazy"
-          />
-          <figcaption>
-            <span class="photo-caption">Nightly Bat Outflight — visitors watch as bats emerge from Carlsbad Caverns.</span>
-            <span class="photo-credit">NPS Photo / Maci Macpherson</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-portrait">
-          <img
-            src="https://npgallery.nps.gov/GetAsset/e0b00a2d-155d-451f-670d-9aaa762e35d0/thumbxlarge"
-            alt="Mexican free-tailed bat"
-            loading="lazy"
-          />
-          <figcaption>
-            <span class="photo-caption">Close-up view of a Mexican free-tailed bat, showing its distinctive free tail.</span>
-            <span class="photo-credit">NPS Photo / U.S. National Park Service</span>
-          </figcaption>
-        </figure>
-
+  <!-- APPEARANCE -->
+  <section class="content-section" id="appearance">
+    <div class="container two-col">
+      <div class="text-col">
+        <h2 class="section-title">🔍 Appearance</h2>
+        <div class="guide-says">
+          <span class="guide-chip jacob-chip">Jacob says:</span>
+          <p>"The tail is the giveaway &mdash; once you see it, you can't unsee it."</p>
+        </div>
+        <p>
+          The Brazilian free-tailed bat is a medium-sized bat species that can be easily recognized by its distinctive tail, which extends noticeably beyond the edge of the tail membrane (National Park Service, n.d.). This "free tail" characteristic gives the species its common name and serves as the most reliable way to identify them.
+        </p>
+        <p>
+          Adult bats measure about <strong>3.5 to 4 inches</strong> in body length, with wingspans reaching <strong>11 to 13 inches</strong> when fully extended. Their wings are long and narrow &mdash; an adaptation that makes them exceptionally fast and agile in flight. Males and females of this species look very similar. Juveniles appear darker than adults but develop adult coloration during their first year of life.
+        </p>
       </div>
-    </section>
+      <figure class="img-col">
+        <img
+          src="https://npgallery.nps.gov/GetAsset/e0b00a2d-155d-451f-670d-9aaa762e35d0/original"
+          alt="Mexican free-tailed Bat"
+          class="content-img"
+        />
+        <figcaption>Mexican free-tailed Bat &mdash; NPS photo / U.S. National Park Service</figcaption>
+      </figure>
+    </div>
+  </section>
 
-    <!-- ===== APPEARANCE ===== -->
-    <section id="appearance">
-      <h2>Appearance</h2>
-      <div class="two-col">
-        <div>
-          <p>The Brazilian free-tailed bat is a medium-sized bat species that can be easily recognized by its distinctive tail, which extends noticeably beyond the edge of the tail membrane (National Park Service, n.d.). This "free tail" characteristic gives the species its common name and serves as the most reliable way to identify them in the field.</p>
-          <p style="margin-top:1rem;">Adult bats measure about <strong>3.5 to 4 inches</strong> in body length, with wingspans reaching <strong>11 to 13 inches</strong> when fully extended. Their wings are long and narrow — an adaptation for speed and agility in open air. Their fur is typically dark brown to grayish-brown on the back, with slightly paler coloring on the underside.</p>
-        </div>
-        <div>
-          <div class="callout-box">
-            <div class="callout-label">Key ID Feature</div>
-            <p>Look for the <strong>tail that extends past the membrane</strong> — no other common bat in the Southwest has this distinctive free tail sticking out behind them in flight.</p>
-          </div>
-          <p style="margin-top:1rem;">Males and females of this species look nearly identical. Juveniles appear noticeably darker than adults but develop adult coloration as they mature through their first year.</p>
-        </div>
+  <!-- RANGE & HABITAT -->
+  <section class="content-section alt-bg" id="range">
+    <div class="container">
+      <h2 class="section-title">🗺️ Range &amp; Habitat</h2>
+      <div class="guide-says">
+        <span class="guide-chip jacob-chip">Jacob says:</span>
+        <p>"I have personally flown every inch of the migration route. Well, almost."</p>
       </div>
-    </section>
-
-    <!-- ===== RANGE & HABITAT ===== -->
-    <section id="habitat">
-      <div class="section-guide-bar">
-        <div class="mini-avatar avatar-jacob"><span>J</span></div>
-        <span>Jacob's Range &amp; Habitat Notes</span>
-      </div>
-      <h2>Range &amp; Habitat</h2>
-      <p>Brazilian free-tailed bats occupy one of the broadest geographic ranges of any bat species in the Western Hemisphere. They exist across central and southern Mexico and extend into Central and South America as far south as Chile and Argentina (National Park Service, n.d.). The famous Carlsbad Caverns colony spends winter in Mexico and returns to the southwestern United States each spring as temperatures rise and insect availability increases. Within the U.S., other colonies concentrate in Texas, New Mexico, Arizona, Oklahoma, and southern California.</p>
-      <p style="margin-top:1rem;">Carlsbad Caverns National Park in New Mexico hosts one of the largest known colonies, with seasonal population estimates that fluctuate significantly based on breeding activity and pup production (Hristov, 2010). The bats typically arrive in late March or early April and remain through October before migrating south for winter.</p>
-      <p style="margin-top:1rem;">These bats roost primarily in caves, but they adapt readily to human structures — including bridges, buildings, and abandoned mines — when natural cave habitat is unavailable. The Carlsbad Cavern's Bat Cave section provides ideal roosting conditions: stable temperatures, high humidity, and protection from weather and predators. The cave's single entrance and exit point creates the dramatic evening emergence spectacle as hundreds of thousands of bats spiral outward in coordinated flight patterns.</p>
-
-      <div class="migration-bar">
-        <div class="mig-step"><span class="mig-icon">🌸</span><strong>Spring</strong><br>Return to SW United States</div>
-        <div class="mig-arrow">→</div>
-        <div class="mig-step"><span class="mig-icon">☀️</span><strong>Summer</strong><br>Peak colony at Carlsbad (~400K)</div>
-        <div class="mig-arrow">→</div>
-        <div class="mig-step"><span class="mig-icon">🍂</span><strong>Fall</strong><br>Begin migration south</div>
-        <div class="mig-arrow">→</div>
-        <div class="mig-step"><span class="mig-icon">❄️</span><strong>Winter</strong><br>Central Mexico</div>
-      </div>
-    </section>
-
-    <!-- ===== NATURAL HISTORY ===== -->
-    <section id="history">
-      <h2>Natural History</h2>
-      <p>The Brazilian free-tailed bat is a highly specialized aerial insectivore, meaning it hunts flying insects almost exclusively while in flight. Their diet consists primarily of moths, beetles, flying ants, and other soft-bodied insects (Christiano &amp; Ryan, 2022). Each bat can consume up to two-thirds of its own body weight in insects in a single night — an extraordinary feat that makes large colonies critically important for local agriculture. A colony of 400,000 bats at Carlsbad can collectively consume tens of thousands of pounds of insects per night, providing an enormous natural pest control service for surrounding farmland.</p>
-      <p style="margin-top:1rem;">To locate prey in complete darkness, Brazilian free-tailed bats rely on echolocation — emitting high-frequency pulses of sound that bounce off objects and insects, allowing them to detect, track, and intercept moving prey with remarkable precision. Their narrow wings and powerful chest muscles allow them to fly faster and at higher altitudes than most other bat species, sometimes reaching elevations of over 10,000 feet during nighttime foraging flights. Predators of the Brazilian free-tailed bat include great horned owls, red-tailed hawks, and American kestrels that station themselves near cave entrances at dusk to intercept emerging bats. Raccoons and rat snakes also prey on bats that roost within reach near cave walls.</p>
-      <p style="margin-top:1rem;">The Carlsbad Caverns colony functions as a maternity colony during summer. Females give birth to a single pup in June, and the colony's cave provides the warm, stable microclimate necessary for pup development. Mothers leave their pups clustered in dense groups — sometimes over 500 pups per square foot — while they forage at night. Remarkably, returning mothers can locate their own pup among thousands of others using a combination of unique vocalizations and scent. Pups grow quickly and begin flying within 4 to 7 weeks of birth. The colony's tight social structure and seasonal mass gatherings are key to the survival of both individual bats and the overall population.</p>
-    </section>
-
-    <!-- ===== SAFETY ===== -->
-    <section id="safety">
-      <div class="section-guide-bar">
-        <div class="mini-avatar avatar-nyssa"><span>N</span></div>
-        <span>Nyssa's Safety Briefing — Read This Before You Go</span>
-      </div>
-      <h2>Safe Viewing &amp; Safety Information</h2>
-      <p>Carlsbad Caverns National Park offers exceptional bat-viewing opportunities through the evening Bat Flight Program, but protecting both visitors and bats requires following specific guidelines. The park prohibits all electronic devices, cameras, flashlights, and light sources during bat emergence because artificial light disrupts the bats' echolocation system and can cause disorientation. Flash photography has historically caused collision events and colony stress. Visitors must remain seated and quiet in the designated outdoor amphitheater. Noise and movement can delay or interrupt the flight — and bats have abandoned roosts subjected to repeated human disturbance.</p>
-
-      <div class="safety-grid">
-        <div class="safety-item safe">
-          <span class="safety-icon">✅</span>
-          <div>
-            <strong>Maintain distance</strong> from the cave entrance and all roosting areas. Stay in the designated amphitheater.
-          </div>
+      <p>
+        Brazilian free-tailed bats occupy one of the broadest geographic ranges of any bat species in the Western Hemisphere. They exist across central and southern Mexico and extend into Central and South America as far south as Chile and Argentina (National Park Service, n.d.). The famous Carlsbad Caverns colony spends their winter in Mexico and returns to the southwestern United States each spring as temperatures warm and insect availability increases.
+      </p>
+      <p>
+        Within the United States, colonies also concentrate in Texas, New Mexico, Arizona, Oklahoma, and southern California. Carlsbad Caverns National Park in New Mexico hosts one of the largest known colonies, with seasonal population estimates fluctuating significantly based on breeding activity and pup production (Hristov, 2010). The bats typically arrive in late March or early April and remain through October before migrating south for winter.
+      </p>
+      <p>
+        These bats roost primarily in caves, but they adapt readily to human structures including bridges, buildings, and abandoned mines. Carlsbad Cavern's Bat Cave section provides ideal roosting conditions with stable temperatures, high humidity, and protection from weather and predators. The single entrance and exit point creates the dramatic evening emergence spectacle as hundreds of thousands of bats spiral outward in coordinated flight patterns.
+      </p>
+      <div class="range-highlights">
+        <div class="range-item">
+          <span class="range-icon">🌎</span>
+          <span><strong>U.S. Range:</strong> TX, NM, AZ, OK, CA</span>
         </div>
-        <div class="safety-item safe">
-          <span class="safety-icon">✅</span>
-          <div>
-            <strong>Use binoculars</strong> to observe bat behavior without getting close enough to cause disturbance.
-          </div>
+        <div class="range-item">
+          <span class="range-icon">❄️</span>
+          <span><strong>Winter:</strong> Central Mexico</span>
         </div>
-        <div class="safety-item safe">
-          <span class="safety-icon">✅</span>
-          <div>
-            <strong>Inform park rangers</strong> if you have been in other caves or bat habitats, to help prevent disease transmission.
-          </div>
+        <div class="range-item">
+          <span class="range-icon">☀️</span>
+          <span><strong>Summer:</strong> Southwestern U.S. caves</span>
         </div>
-        <div class="safety-item danger">
-          <span class="safety-icon">🚫</span>
-          <div>
-            <strong>Never touch, handle, or "rescue" bats.</strong> Brazilian free-tailed bats will not attack humans or tangle in hair, but they may bite in self-defense if handled.
-          </div>
-        </div>
-        <div class="safety-item danger">
-          <span class="safety-icon">🚫</span>
-          <div>
-            <strong>Never attempt to enter</strong> bat roosting chambers. If you find a grounded bat, contact park rangers immediately — do not approach it.
-          </div>
-        </div>
-        <div class="safety-item danger">
-          <span class="safety-icon">🚫</span>
-          <div>
-            <strong>No flash photography or lights</strong> of any kind during emergence. Even a single flash can disrupt thousands of bats at once.
-          </div>
+        <div class="range-item">
+          <span class="range-icon">📅</span>
+          <span><strong>At Carlsbad:</strong> Late March – October</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="rabies-notice">
-        <strong>⚠️ Rabies Notice:</strong> Rabies prevalence in these bats is under one percent, but any bat bite or scratch requires <strong>immediate medical evaluation</strong> — rabies is fatal once symptoms appear (National Park Service, n.d.).
+  <!-- NATURAL HISTORY -->
+  <section class="content-section" id="natural-history">
+    <div class="container two-col reverse">
+      <div class="text-col">
+        <h2 class="section-title">🌙 Natural History</h2>
+        <div class="guide-says">
+          <span class="guide-chip nyssa-chip">Nyssa says:</span>
+          <p>"People think we're scary. We're just very, very hungry."</p>
+        </div>
+        <p>
+          Brazilian free-tailed bats are insectivores, relying almost entirely on flying insects for nutrition. Each bat consumes up to two-thirds of its own body weight in insects every night, making them critically important natural pest-control agents across the agricultural regions they inhabit. Their diet consists primarily of moths, beetles, and other soft-bodied flying insects (Christiano &amp; Ryan, 2022).
+        </p>
+        <p>
+          Navigation and hunting are powered by echolocation &mdash; the bats emit ultrasonic pulses and interpret the returning echoes to detect prey and avoid obstacles in complete darkness. Their long, narrow wings are aerodynamically optimized for speed and sustained flight over long distances, allowing them to range far from their roost each night.
+        </p>
+        <p>
+          Colony life is densely social. Females form maternity colonies in warm roosting sites and give birth to a single pup each year, typically in late June. Mother bats can locate their individual pup among hundreds of thousands of others through unique vocal signatures and scent recognition. Natural predators include raptors &mdash; particularly red-tailed hawks and great horned owls &mdash; that gather at cave entrances during the nightly emergence to hunt bats at the cave mouth.
+        </p>
       </div>
+      <figure class="img-col">
+        <img
+          src="https://npgallery.nps.gov/GetAsset/7855b860-4437-4084-9c7d-f9df87c535fa/original"
+          alt="Four people sit on boulders in front of a cave entrance. Three of them hold up a camera or smart phone. A green field covers the ground above and beyond the cave. A loose group of bats fly out from the cave entrance."
+          class="content-img"
+        />
+        <figcaption>Nightly Bat Outflight &mdash; NPS photo / Maci Macpherson</figcaption>
+      </figure>
+    </div>
+  </section>
 
-      <div class="wns-notice">
-        <strong>🍄 White-Nose Syndrome:</strong> To prevent this fungal disease — which has killed over 7 million bats across North America — visitors who have recently been in other caves or mines may be required to use decontamination stations or be restricted from cave entry (Cheng et al., 2021).
+  <!-- GUIDE CLOSING -->
+  <section class="content-section alt-bg guides-closing">
+    <div class="container">
+      <h2 class="section-title">🦇 Closing Thoughts from Your Guides</h2>
+      <div class="closing-row">
+        <div class="closing-quote brendan-close">
+          <span class="guide-avatar-sm" aria-hidden="true">🦇</span>
+          <p><strong>Brendan:</strong> "Remember &mdash; 400,000 of us, one entrance, 30 minutes. Do the math. That's roughly 222 bats per second. You're welcome."</p>
+        </div>
+        <div class="closing-quote jacob-close">
+          <span class="guide-avatar-sm" aria-hidden="true">🦇</span>
+          <p><strong>Jacob:</strong> "We fly from New Mexico to Mexico and back every year. We basically have two homes. Respect both of them."</p>
+        </div>
+        <div class="closing-quote nyssa-close">
+          <span class="guide-avatar-sm" aria-hidden="true">🦇</span>
+          <p><strong>Nyssa:</strong> "We eat the bugs that bother you, we've been here millions of years, and we don't want anything from you except for you to turn off your flashlight."</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== RELATED LINKS ===== -->
-    <section id="links">
-      <h2>Related Links</h2>
-      <ul class="links-list">
+  <!-- RELATED LINKS -->
+  <section class="content-section" id="links">
+    <div class="container">
+      <h2 class="section-title">🔗 Related Links</h2>
+      <ul class="link-list">
         <li>
           <a href="https://www.nps.gov/subjects/bats/protecting-bats-in-parks.htm" target="_blank" rel="noopener">
-            🔗 Protecting Bats in Parks — U.S. National Park Service
+            Protecting Bats in Parks &mdash; U.S. National Park Service
           </a>
-          <p>The NPS subject site on bat conservation efforts across the national park system.</p>
-        </li>
-        <li>
-          <a href="https://www.nps.gov/cave/learn/nature/bats.htm" target="_blank" rel="noopener">
-            🔗 Bats at Carlsbad Caverns — NPS Carlsbad Caverns
-          </a>
-          <p>Official park page about the Brazilian free-tailed bat colony at Carlsbad Caverns National Park.</p>
         </li>
         <li>
           <a href="https://www.nps.gov/subjects/caves/index.htm" target="_blank" rel="noopener">
-            🔗 Caves and Karst — U.S. National Park Service
+            Caves and Karst &mdash; U.S. National Park Service
           </a>
-          <p>NPS subject site on cave ecosystems and karst geology found throughout the national park system.</p>
         </li>
         <li>
           <a href="https://www.nps.gov/ever/learn/nature/brazilianfreetailedbat.htm" target="_blank" rel="noopener">
-            🔗 Brazilian Free-Tailed Bat — Everglades National Park, NPS
+            Brazilian Free-Tailed Bat &mdash; Everglades National Park
           </a>
-          <p>Species profile for <em>Tadarida brasiliensis</em> from Everglades National Park.</p>
+        </li>
+        <li>
+          <a href="https://www.nps.gov/cave/learn/nature/bats.htm" target="_blank" rel="noopener">
+            Bats at Carlsbad Caverns &mdash; Carlsbad Caverns National Park
+          </a>
         </li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== CITATIONS ===== -->
-    <section id="citations">
-      <h2>Citations</h2>
-      <ol class="citation-list">
-        <li>Bossard, R. L. (2017). Population model for the bat flea <em>Sternopsylla distincta</em> (Siphonaptera: Ischnopsyllidae) in temperate caves of the Brazilian free-tailed bat <em>Tadarida brasiliensis</em> (Mammalia: Chiroptera). <em>Journal of the Utah Academy of Sciences, Arts &amp; Letters, 94</em>, 71–78.</li>
-        <li>Cheng, T. L., Reichard, J. D., Coleman, J. T. H., Weller, T. J., Thogmartin, W. E., Reichert, B. E., Bennett, A. B., Broders, H. G., Campbell, J. R., Etchison, K., Feller, D. J., Geboy, R., Hemberger, T., Herzog, C. J., Hicks, A. C., Houghton, S., Humber, J., Kath, J. A., King, R. A., … Frick, W. F. (2021). The scope and severity of white-nose syndrome on hibernating bats in North America. <em>Conservation Biology, 35</em>, 1586–1597. <a href="https://doi.org/10.1111/cobi.13739" target="_blank">https://doi.org/10.1111/cobi.13739</a></li>
-        <li>Christiano, B. M., &amp; Ryan, M. J. (2022). Diet of Brazilian free-tailed bats (Chiroptera: Molossidae: <em>Tadarida brasiliensis</em>): A review. <em>The Southwestern Naturalist, 67</em>(2), 158–162. <a href="https://doi.org/10.1894/0038-4909-67.2.158" target="_blank">https://doi.org/10.1894/0038-4909-67.2.158</a></li>
-        <li>Dahlman, J. (2026). <em>ENGL 120: Composition II—Composition and research (Spring 2026) course syllabus</em> [Course syllabus]. California Northstate University, College of Health Sciences.</li>
-        <li>Hristov, N. I. (2010). Seasonal variation in colony size of Brazilian free-tailed bats at Carlsbad Cavern based on thermal imaging. <em>Journal of Mammalogy, 91</em>(1). <a href="https://doi.org/10.1644/08-MAMM-A-391R.1" target="_blank">https://doi.org/10.1644/08-MAMM-A-391R.1</a></li>
-        <li>National Park Service. (2024, October 24). <em>Protecting bats in parks.</em> <a href="https://www.nps.gov/subjects/bats/protecting-bats-in-parks.htm" target="_blank">https://www.nps.gov/subjects/bats/protecting-bats-in-parks.htm</a></li>
-        <li>National Park Service. (n.d.). <em>Brazilian free-tailed bat.</em> Everglades National Park. Retrieved January 19, 2026, from <a href="https://www.nps.gov/ever/learn/nature/brazilianfreetailedbat.htm" target="_blank">https://www.nps.gov/ever/learn/nature/brazilianfreetailedbat.htm</a></li>
-        <li>National Park Service. (n.d.). <em>NPGallery search results: "Tadarida brasiliensis."</em> Retrieved January 26, 2026, from <a href="https://npgallery.nps.gov/SearchResults?search_param=all&allFields=Tadarida+brasiliensis" target="_blank">https://npgallery.nps.gov/SearchResults</a></li>
-        <li>Oklahoma Department of Wildlife Conservation. (n.d.). <em>T-55-R-1</em> [PDF]. <a href="https://www.wildlifedepartment.com/sites/default/files/fedaid/T-55-R-1.PDF" target="_blank">https://www.wildlifedepartment.com/sites/default/files/fedaid/T-55-R-1.PDF</a></li>
-      </ol>
-    </section>
-
-  </main>
+  <!-- REFERENCES -->
+  <section class="content-section alt-bg" id="references">
+    <div class="container">
+      <h2 class="section-title">📚 References</h2>
+      <ul class="reference-list">
+        <li>Bossard, R. L. (2017). Population model for the bat flea <em>Sternopsylla distincta</em> (Siphonaptera: Ischnopsyllidae) in temperate caves of the Brazilian free-tailed bat <em>Tadarida brasiliensis</em> (Mammalia: Chiroptera). <em>Journal of the Utah Academy of Sciences, Arts &amp; Letters, 94,</em> 71–78.</li>
+        <li>Cheng, T. L., et al. (2021). The scope and severity of white-nose syndrome on hibernating bats in North America. <em>Conservation Biology, 35,</em> 1586–1597. <a href="https://doi.org/10.1111/cobi.13739" target="_blank" rel="noopener">https://doi.org/10.1111/cobi.13739</a></li>
+        <li>Christiano, B. M., &amp; Ryan, M. J. (2022). Diet of Brazilian free-tailed bats (Chiroptera: Molossidae: <em>Tadarida brasiliensis</em>): A review. <em>The Southwestern Naturalist, 67</em>(2), 158–162. <a href="https://doi.org/10.1894/0038-4909-67.2.158" target="_blank" rel="noopener">https://doi.org/10.1894/0038-4909-67.2.158</a></li>
+        <li>Dahlman, J. (2026). ENGL 120: Composition II&mdash;Composition and research (Spring 2026) course syllabus [Course syllabus]. California Northstate University, College of Health Sciences.</li>
+        <li>Hristov, N. I. (2010). Seasonal variation in colony size of Brazilian free-tailed bats at Carlsbad Cavern based on thermal imaging. <em>Journal of Mammalogy, 91</em>(1). <a href="https://doi.org/10.1644/08-MAMM-A-391R.1" target="_blank" rel="noopener">https://doi.org/10.1644/08-MAMM-A-391R.1</a></li>
+        <li>National Park Service. (2024, October 24). Protecting bats in parks. <a href="https://www.nps.gov/subjects/bats/protecting-bats-in-parks.htm" target="_blank" rel="noopener">https://www.nps.gov/subjects/bats/protecting-bats-in-parks.htm</a></li>
+        <li>National Park Service. (n.d.). Brazilian free-tailed bat. Everglades National Park. Retrieved January 19, 2026, from <a href="https://www.nps.gov/ever/learn/nature/brazilianfreetailedbat.htm" target="_blank" rel="noopener">https://www.nps.gov/ever/learn/nature/brazilianfreetailedbat.htm</a></li>
+        <li>National Park Service. (n.d.). NPGallery search results: "Tadarida brasiliensis". Retrieved January 26, 2026.</li>
+        <li>Oklahoma Department of Wildlife Conservation. (n.d.). T-55-R-1 [PDF]. <a href="https://www.wildlifedepartment.com/sites/default/files/fedaid/T-55-R-1.PDF" target="_blank" rel="noopener">https://www.wildlifedepartment.com/sites/default/files/fedaid/T-55-R-1.PDF</a></li>
+      </ul>
+    </div>
+  </section>
 
   <footer>
-    <p>🦇 Field guide created by <strong>Brendan</strong>, <strong>Jacob</strong>, and <strong>Nyssa</strong> &nbsp;|&nbsp; ENGL 120 — Composition II, Spring 2026</p>
-    <p style="margin-top:0.4rem; font-size:0.8rem;">Images courtesy of the National Park Service. Content based on NPS publications and peer-reviewed literature.</p>
+    <div class="container footer-inner">
+      <p><strong>Brazilian Free-Tailed Bat</strong> &mdash; Carlsbad Caverns National Park</p>
+      <p>Content is for educational purposes. Always consult official NPS sources for the most current information.</p>
+    </div>
   </footer>
 
+  <script src="app.js"></script>
 </body>
 </html>
