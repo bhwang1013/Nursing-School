@@ -308,6 +308,14 @@ blockquote cite {
 
 .text-col p { margin-bottom: 1rem; color: var(--text); }
 
+/* Intro paragraph spacing */
+#intro .container > p {
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+#intro .container > p:last-child { margin-bottom: 0; }
+
 .content-img {
   width: 100%;
   border-radius: var(--radius);
@@ -427,22 +435,26 @@ blockquote cite {
 
 .link-list a:hover { text-decoration: underline; color: var(--cave-amber-light); }
 
-/* ========== CITATIONS ========== */
-.citation-list {
-  padding-left: 1.4rem;
+/* ========== REFERENCES (APA hanging indent) ========== */
+.reference-list {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1rem;
+  padding-left: 0;
 }
 
-.citation-list li {
+.reference-list li {
   font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
+  /* APA hanging indent: subsequent lines indent, first line flush */
+  padding-left: 2.5rem;
+  text-indent: -2.5rem;
 }
 
-.citation-list a { color: var(--sky-blue); }
-.citation-list a:hover { text-decoration: underline; }
+.reference-list a { color: var(--sky-blue); }
+.reference-list a:hover { text-decoration: underline; }
 
 /* ========== FOOTER ========== */
 footer {
