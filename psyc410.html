@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSYC 410 - Exam Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #8b5cf6;
+  --accent: #a78bfa;
+  --bg: #f8f7ff;
+  --card: #ffffff;
+  --text: #1e1b4b;
+  --text-muted: #6b7280;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --border: #e5e7eb;
+  --shadow: 0 4px 6px -1px rgba(99,102,241,0.1), 0 2px 4px -2px rgba(99,102,241,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(99,102,241,0.15), 0 4px 6px -4px rgba(99,102,241,0.1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+/* NAV */
+nav{background:linear-gradient(135deg,#4f46e5,#7c3aed);padding:0;box-shadow:0 2px 20px rgba(79,70,229,0.4);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:4px;padding:0 16px;overflow-x:auto}
+.nav-logo{color:#fff;font-weight:700;font-size:1.1rem;padding:12px 16px 12px 0;white-space:nowrap;border-right:1px solid rgba(255,255,255,0.2);margin-right:8px}
+.nav-btn{background:none;border:none;color:rgba(255,255,255,0.8);padding:14px 14px;cursor:pointer;font-size:0.85rem;font-weight:500;white-space:nowrap;border-bottom:3px solid transparent;transition:all 0.2s;font-family:inherit}
+.nav-btn:hover{color:#fff;background:rgba(255,255,255,0.1)}
+.nav-btn.active{color:#fff;border-bottom-color:#a78bfa;background:rgba(255,255,255,0.15)}
+/* SECTIONS */
+.section{display:none;max-width:1200px;margin:0 auto;padding:24px 16px}
+.section.active{display:block}
+/* CARDS */
+.card{background:var(--card);border-radius:16px;padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:16px}
+.card-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.card-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+h1{font-size:1.8rem;font-weight:700;color:var(--text)}
+h2{font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:12px}
+h3{font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:8px}
+p{color:var(--text-muted);line-height:1.6;margin-bottom:8px}
+/* GRID */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.nav-logo{display:none}}
+/* STAT CARDS */
+.stat-card{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border-radius:16px;padding:20px;text-align:center}
+.stat-card .num{font-size:2rem;font-weight:700}
+.stat-card .label{font-size:0.85rem;opacity:0.9;margin-top:4px}
+/* BADGES */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:0.75rem;font-weight:600}
+.badge-purple{background:#ede9fe;color:#7c3aed}
+.badge-green{background:#d1fae5;color:#059669}
+.badge-red{background:#fee2e2;color:#dc2626}
+.badge-blue{background:#dbeafe;color:#2563eb}
+.badge-yellow{background:#fef3c7;color:#d97706}
+/* CHAPTER ACCORDION */
+.chapter-btn{width:100%;text-align:left;background:none;border:none;padding:16px 20px;cursor:pointer;font-family:inherit;font-size:1rem;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;border-radius:12px;transition:background 0.2s}
+.chapter-btn:hover{background:#f3f4f6}
+.chapter-btn.open{background:linear-gradient(135deg,#eef2ff,#f3e8ff);color:var(--primary)}
+.chapter-btn .arrow{transition:transform 0.3s;font-size:1.2rem}
+.chapter-btn.open .arrow{transform:rotate(180deg)}
+.chapter-content{display:none;padding:0 20px 20px}
+.chapter-content.show{display:block}
+.key-term{background:#f5f3ff;border-left:3px solid var(--primary);padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.key-term strong{color:var(--primary)}
+/* PRACTICE */
+.practice-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.progress-bar-outer{background:#e5e7eb;border-radius:20px;height:10px;flex:1;min-width:200px}
+.progress-bar-inner{background:linear-gradient(90deg,var(--primary),var(--secondary));height:10px;border-radius:20px;transition:width 0.5s ease}
+.score-display{display:flex;gap:16px;font-size:0.9rem;font-weight:600}
+.score-correct{color:var(--success)}
+.score-wrong{color:var(--error)}
+.question-card{background:var(--card);border-radius:20px;padding:28px;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
+.question-text{font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:20px;line-height:1.6}
+.q-meta{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.choice-btn{width:100%;text-align:left;padding:14px 18px;margin-bottom:10px;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-family:inherit;font-size:0.95rem;background:var(--card);color:var(--text);transition:all 0.2s;display:flex;gap:12px;align-items:flex-start}
+.choice-btn:hover:not(:disabled){border-color:var(--primary);background:#eef2ff;transform:translateX(4px)}
+.choice-btn:disabled{cursor:default}
+.choice-btn.correct{border-color:var(--success);background:#d1fae5;color:#065f46}
+.choice-btn.wrong{border-color:var(--error);background:#fee2e2;color:#991b1b}
+.choice-letter{font-weight:700;color:var(--primary);min-width:20px}
+.feedback-box{margin-top:16px;padding:16px;border-radius:12px;display:none}
+.feedback-box.show{display:block}
+.feedback-correct{background:#d1fae5;border:1px solid #6ee7b7;color:#065f46}
+.feedback-wrong{background:#fee2e2;border:1px solid #fca5a5;color:#991b1b}
+.feedback-title{font-weight:700;font-size:1rem;margin-bottom:6px}
+.btn{padding:12px 24px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;font-size:0.95rem;font-weight:600;transition:all 0.2s}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 4px 12px rgba(99,102,241,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(99,102,241,0.4)}
+.btn-secondary{background:#f3f4f6;color:var(--text);border:2px solid var(--border)}
+.btn-secondary:hover{background:#e5e7eb}
+.btn-success{background:linear-gradient(135deg,#10b981,#059669);color:#fff}
+.btn-danger{background:linear-gradient(135deg,#ef4444,#dc2626);color:#fff}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+/* T/F */
+.tf-btn{padding:14px 32px;border-radius:12px;border:2px solid var(--border);cursor:pointer;font-family:inherit;font-size:1rem;font-weight:700;background:var(--card);color:var(--text);transition:all 0.2s;min-width:120px}
+.tf-btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:var(--shadow)}
+.tf-btn.tf-true:hover:not(:disabled){border-color:var(--success);background:#d1fae5}
+.tf-btn.tf-false:hover:not(:disabled){border-color:var(--error);background:#fee2e2}
+.tf-btn.correct{border-color:var(--success);background:#d1fae5;color:#065f46}
+.tf-btn.wrong{border-color:var(--error);background:#fee2e2;color:#991b1b}
+/* FLASHCARDS */
+.flashcard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.flashcard{height:200px;perspective:1000px;cursor:pointer}
+.flashcard-inner{width:100%;height:100%;position:relative;transition:transform 0.6s;transform-style:preserve-3d}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+.flashcard-front,.flashcard-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center;box-shadow:var(--shadow)}
+.flashcard-front{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}
+.flashcard-back{background:var(--card);border:2px solid var(--primary);transform:rotateY(180deg);color:var(--text)}
+.flashcard-front .term{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.flashcard-front .hint{font-size:0.8rem;opacity:0.8}
+.flashcard-back .def{font-size:0.9rem;line-height:1.5}
+/* DIAGRAMS */
+.diagram-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.diagram-card{background:var(--card);border-radius:16px;padding:24px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.diagram-title{font-weight:700;font-size:1rem;color:var(--text);margin-bottom:16px;text-align:center}
+/* ESSAY */
+.essay-card{border-radius:16px;overflow:hidden;border:1px solid var(--border);margin-bottom:16px}
+.essay-header{background:linear-gradient(135deg,#eef2ff,#f3e8ff);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.essay-header h3{color:var(--primary);font-size:0.95rem}
+.essay-body{background:var(--card);padding:0 20px;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.2s}
+.essay-body.show{max-height:600px;padding:20px}
+.outline-item{padding:8px 0;border-bottom:1px solid var(--border);color:var(--text-muted);font-size:0.9rem}
+.outline-item:last-child{border-bottom:none}
+/* RESULTS */
+.results-card{text-align:center;padding:40px 24px}
+.results-score{font-size:4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.results-label{color:var(--text-muted);font-size:1rem;margin-bottom:24px}
+/* MARK REVIEW */
+.mark-btn{background:none;border:1px solid var(--warning);color:var(--warning);padding:6px 14px;border-radius:20px;cursor:pointer;font-size:0.8rem;font-weight:600;font-family:inherit;transition:all 0.2s}
+.mark-btn.marked{background:var(--warning);color:#fff}
+/* MODE SELECTOR */
+.mode-selector{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.mode-btn{padding:10px 20px;border-radius:10px;border:2px solid var(--border);cursor:pointer;font-family:inherit;font-size:0.9rem;font-weight:600;background:var(--card);color:var(--text-muted);transition:all 0.2s}
+.mode-btn.active-mode{border-color:var(--primary);background:#eef2ff;color:var(--primary)}
+/* TABLES */
+table{width:100%;border-collapse:collapse;font-size:0.9rem}
+th{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:10px 14px;text-align:left}
+td{padding:10px 14px;border-bottom:1px solid var(--border)}
+tr:hover td{background:#f5f3ff}
+/* TIPS */
+.tip-box{background:linear-gradient(135deg,#eef2ff,#fdf4ff);border:1px solid #c7d2fe;border-radius:12px;padding:16px;margin:8px 0}
+.tip-box .tip-title{font-weight:700;color:var(--primary);margin-bottom:8px;font-size:0.9rem}
+ul.check-list{list-style:none;padding:0}
+ul.check-list li{padding:4px 0;color:var(--text-muted);font-size:0.9rem}
+ul.check-list li::before{content:"✓ ";color:var(--success);font-weight:700}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">📚 PSYC 410</div>
+    <button class="nav-btn active" onclick="showSection('home')">🏠 Home</button>
+    <button class="nav-btn" onclick="showSection('studyguide')">📖 Study Guide</button>
+    <button class="nav-btn" onclick="showSection('practice')">✏️ Practice</button>
+    <button class="nav-btn" onclick="showSection('flashcards')">🃏 Flashcards</button>
+    <button class="nav-btn" onclick="showSection('diagrams')">🧠 Diagrams</button>
+    <button class="nav-btn" onclick="showSection('essays')">📝 Essays</button>
+  </div>
+</nav>
+<!-- HOME SECTION -->
+<div id="home" class="section active">
+  <div style="text-align:center;margin-bottom:32px">
+    <h1 style="font-size:2.2rem;background:linear-gradient(135deg,#4f46e5,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">PSYC 410 Exam Study Guide</h1>
+    <p style="color:var(--text-muted);font-size:1.1rem;margin-top:8px">Chapters 1, 2, 3, 4, 5, 7 &nbsp;|&nbsp; Comprehensive Review</p>
+  </div>
+  <div class="grid-4" style="margin-bottom:24px">
+    <div class="stat-card"><div class="num">200</div><div class="label">Total Points</div></div>
+    <div class="stat-card" style="background:linear-gradient(135deg,#7c3aed,#a21caf)"><div class="num">160</div><div class="label">MCQ + T/F Points</div></div>
+    <div class="stat-card" style="background:linear-gradient(135deg,#0891b2,#0e7490)"><div class="num">40</div><div class="label">Essay Points</div></div>
+    <div class="stat-card" style="background:linear-gradient(135deg,#059669,#047857)"><div class="num">38</div><div class="label">Practice Questions</div></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:24px">
+    <div class="card">
+      <div class="card-header"><div class="card-icon">📋</div><h2 style="margin:0">Exam Format</h2></div>
+      <table>
+        <tr><th>Section</th><th>Questions</th><th>Points</th></tr>
+        <tr><td>Multiple Choice (MCQ)</td><td>16 questions</td><td>8 pts each = 128 pts</td></tr>
+        <tr><td>True/False (T/F)</td><td>4 questions</td><td>8 pts each = 32 pts</td></tr>
+        <tr><td>Short Essays</td><td>2 essays</td><td>20 pts each = 40 pts</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>22 items</strong></td><td><strong>200 pts</strong></td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon">📚</div><h2 style="margin:0">Chapters Covered</h2></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="key-term"><strong>Ch 1:</strong> Abnormal Psychology – Definition, History, Models</div>
+        <div class="key-term"><strong>Ch 2:</strong> Research Methods – Correlational, Experimental, Ethics</div>
+        <div class="key-term"><strong>Ch 3:</strong> Assessment & Diagnosis – DSM-5, Testing Methods</div>
+        <div class="key-term"><strong>Ch 4:</strong> Anxiety & OCD-Related Disorders</div>
+        <div class="key-term"><strong>Ch 5:</strong> Trauma & Stressor-Related Disorders</div>
+        <div class="key-term"><strong>Ch 7:</strong> Mood Disorders – MDD, Bipolar, Suicide</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><div class="card-icon">💡</div><h2 style="margin:0">High-Priority Study Tips</h2></div>
+    <div class="grid-3">
+      <div class="tip-box">
+        <div class="tip-title">🎯 Know These Distinctions</div>
+        <ul class="check-list">
+          <li>ASD (3 days–1 month) vs PTSD (&gt;1 month)</li>
+          <li>Bipolar I (full mania) vs II (hypomania)</li>
+          <li>MDD vs Dysthymia (2-year duration)</li>
+          <li>Social causation vs Downward drift</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <div class="tip-title">📊 Key Statistics</div>
+        <ul class="check-list">
+          <li>46% of US adults: lifetime disorder</li>
+          <li>US has highest disorder rates (WHO)</li>
+          <li>20.6% lifetime MDD prevalence</li>
+          <li>5.1% lifetime panic disorder</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <div class="tip-title">⚠️ Common Traps</div>
+        <ul class="check-list">
+          <li>Correlation ≠ causation</li>
+          <li>Id = pleasure; Ego = reality principle</li>
+          <li>Men die by suicide more; women attempt more</li>
+          <li>DSM = descriptive (NOT explanatory)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="grid-3">
+    <div class="card" style="cursor:pointer;transition:transform 0.2s" onclick="showSection('practice')" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+      <div style="text-align:center;padding:8px">
+        <div style="font-size:2.5rem;margin-bottom:12px">✏️</div>
+        <h3>Practice Exam</h3>
+        <p>38 questions with instant feedback, shuffle mode, and exam simulation</p>
+        <div class="btn btn-primary" style="margin-top:12px;display:inline-block">Start Practicing</div>
+      </div>
+    </div>
+    <div class="card" style="cursor:pointer;transition:transform 0.2s" onclick="showSection('flashcards')" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+      <div style="text-align:center;padding:8px">
+        <div style="font-size:2.5rem;margin-bottom:12px">🃏</div>
+        <h3>Flashcards</h3>
+        <p>15 key distinction pairs with flip animations for active recall</p>
+        <div class="btn btn-primary" style="margin-top:12px;display:inline-block">Study Cards</div>
+      </div>
+    </div>
+    <div class="card" style="cursor:pointer;transition:transform 0.2s" onclick="showSection('diagrams')" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+      <div style="text-align:center;padding:8px">
+        <div style="font-size:2.5rem;margin-bottom:12px">🧠</div>
+        <h3>Visual Diagrams</h3>
+        <p>8 interactive SVG diagrams of key concepts and models</p>
+        <div class="btn btn-primary" style="margin-top:12px;display:inline-block">View Diagrams</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- STUDY GUIDE SECTION -->
+<div id="studyguide" class="section">
+  <h1 style="margin-bottom:24px">📖 Study Guide</h1>
+
+  <!-- Chapter 1 -->
+  <div class="card" style="padding:0;overflow:hidden">
+    <button class="chapter-btn" onclick="toggleChapter('ch1')">
+      <span>📘 Chapter 1: Abnormal Psychology – Definition, History & Models</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="chapter-content" id="ch1">
+      <h3>Criteria for Abnormality (4 D's)</h3>
+      <div class="grid-2">
+        <div class="key-term"><strong>Deviance</strong> – behavior that deviates from social/cultural norms (NOT "conformity")</div>
+        <div class="key-term"><strong>Distress</strong> – personal suffering or discomfort</div>
+        <div class="key-term"><strong>Dysfunction</strong> – impairs daily functioning</div>
+        <div class="key-term"><strong>Dangerousness</strong> – risk of harm to self or others</div>
+      </div>
+      <p style="margin-top:12px;font-size:0.9rem;color:var(--warning)">⚠️ "Social conformity" is NOT a criterion — social <em>deviance</em> is. Know this for the exam!</p>
+      
+      <h3 style="margin-top:16px">Why No Single Definition Is Sufficient</h3>
+      <p>No one criterion alone captures all cases of abnormality. Behaviors can be statistically rare but not disordered (e.g., genius IQ), or culturally deviant in one culture but not another. The criteria often overlap and must be considered together.</p>
+
+      <h3 style="margin-top:16px">Historical Models</h3>
+      <div class="grid-3">
+        <div class="key-term"><strong>Biological Model:</strong> Mental illness from physical causes — brain chemistry, genetics, neurology</div>
+        <div class="key-term"><strong>Psychodynamic Model:</strong> Unconscious conflicts (Freud); id, ego, superego; defense mechanisms</div>
+        <div class="key-term"><strong>Behavioral/Learning Model:</strong> Abnormality learned via conditioning and reinforcement</div>
+        <div class="key-term"><strong>Cognitive Model:</strong> Distorted thinking patterns cause psychological problems</div>
+        <div class="key-term"><strong>Humanistic Model:</strong> Failure to achieve self-actualization; person-centered therapy</div>
+        <div class="key-term"><strong>Sociocultural Model:</strong> Social and cultural factors shape behavior and diagnosis</div>
+      </div>
+
+      <h3 style="margin-top:16px">Biopsychosocial Model</h3>
+      <p>Integrates biological (genetics, brain), psychological (thoughts, emotions), and social (culture, relationships) factors. The <strong>diathesis-stress model</strong> is part of this: vulnerability (diathesis) + environmental stressors → disorder.</p>
+
+      <h3 style="margin-top:16px">Key Freudian Concepts</h3>
+      <table>
+        <tr><th>Structure</th><th>Principle</th><th>Description</th></tr>
+        <tr><td>Id</td><td>Pleasure principle</td><td>Primitive drives, immediate gratification, unconscious</td></tr>
+        <tr><td>Ego</td><td>Reality principle</td><td>Mediates between id and superego, rational</td></tr>
+        <tr><td>Superego</td><td>Morality principle</td><td>Internalized values, conscience, ideals</td></tr>
+      </table>
+
+      <h3 style="margin-top:16px">Defense Mechanisms</h3>
+      <div class="grid-2">
+        <div class="key-term"><strong>Repression:</strong> Blocking painful memories from consciousness</div>
+        <div class="key-term"><strong>Displacement:</strong> Redirecting emotions to a safer target (e.g., anger at boss → kick the dog)</div>
+        <div class="key-term"><strong>Projection:</strong> Attributing own unacceptable feelings to others</div>
+        <div class="key-term"><strong>Sublimation:</strong> Channeling unacceptable impulses into socially acceptable activities</div>
+        <div class="key-term"><strong>Rationalization:</strong> Creating logical explanations for unacceptable behavior</div>
+        <div class="key-term"><strong>Reaction Formation:</strong> Acting opposite to true feelings</div>
+      </div>
+
+      <h3 style="margin-top:16px">Prevalence Data</h3>
+      <div class="key-term"><strong>WHO data:</strong> United States has the HIGHEST rates of diagnosable psychological disorders worldwide</div>
+      <div class="key-term"><strong>US lifetime prevalence:</strong> ~46% of US adults will have a diagnosable disorder at some point in life</div>
+
+      <h3 style="margin-top:16px">Sociocultural Theories</h3>
+      <div class="grid-2">
+        <div class="key-term"><strong>Social Causation Theory:</strong> Poverty and hardship INCREASE the risk of mental illness (poverty → disorder)</div>
+        <div class="key-term"><strong>Downward Drift Theory:</strong> Mental illness causes people to drift downward economically (disorder → poverty)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 2 -->
+  <div class="card" style="padding:0;overflow:hidden;margin-top:16px">
+    <button class="chapter-btn" onclick="toggleChapter('ch2')">
+      <span>📗 Chapter 2: Research Methods</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="chapter-content" id="ch2">
+      <div class="grid-2">
+        <div>
+          <h3>Research Methods</h3>
+          <div class="key-term"><strong>Correlational Method:</strong> Shows ASSOCIATION between variables. Does NOT prove causation. Correlation ≠ Causation.</div>
+          <div class="key-term"><strong>Experimental Method:</strong> Manipulates independent variable; random assignment allows causal conclusions</div>
+          <div class="key-term"><strong>Case Study:</strong> In-depth study of single individual; not generalizable</div>
+          <div class="key-term"><strong>Naturalistic Observation:</strong> Observing behavior in natural settings; no manipulation</div>
+          <div class="key-term"><strong>Survey Method:</strong> Self-report data from large groups; efficient but subject to bias</div>
+        </div>
+        <div>
+          <h3>Key Research Concepts</h3>
+          <div class="key-term"><strong>Random Assignment:</strong> Gold standard for establishing causation; randomly places participants in conditions</div>
+          <div class="key-term"><strong>Independent Variable:</strong> What the researcher manipulates</div>
+          <div class="key-term"><strong>Dependent Variable:</strong> What the researcher measures</div>
+          <div class="key-term"><strong>Control Group:</strong> Does not receive treatment; comparison baseline</div>
+          <div class="key-term"><strong>Double-Blind:</strong> Neither participant nor researcher knows condition assignment</div>
+        </div>
+      </div>
+      <h3 style="margin-top:16px">Research Ethics (IRB)</h3>
+      <p>Institutional Review Boards (IRBs) require: <strong>Informed consent</strong>, <strong>confidentiality</strong>, right to withdraw, debriefing, and protection from harm. These are mandatory requirements — not optional.</p>
+
+      <h3 style="margin-top:16px">Classical vs. Operant Conditioning</h3>
+      <table>
+        <tr><th>Type</th><th>Key Figure</th><th>Mechanism</th><th>Example</th></tr>
+        <tr><td>Classical</td><td>Pavlov</td><td>Neutral stimulus paired with unconditioned stimulus → conditioned response</td><td>Bell → salivation</td></tr>
+        <tr><td>Operant</td><td>Skinner</td><td>Behavior shaped by consequences (reinforcement/punishment)</td><td>Lever press → food</td></tr>
+      </table>
+      <div class="grid-2" style="margin-top:12px">
+        <div class="key-term"><strong>Positive Reinforcement:</strong> Add a pleasant stimulus to INCREASE behavior</div>
+        <div class="key-term"><strong>Negative Reinforcement:</strong> Remove an unpleasant stimulus to INCREASE behavior (≠ punishment!)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 3 -->
+  <div class="card" style="padding:0;overflow:hidden;margin-top:16px">
+    <button class="chapter-btn" onclick="toggleChapter('ch3')">
+      <span>📙 Chapter 3: Assessment & Diagnosis</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="chapter-content" id="ch3">
+      <div class="grid-2">
+        <div>
+          <h3>Reliability vs. Validity</h3>
+          <div class="key-term"><strong>Reliability:</strong> Consistency — same results across repeated administrations</div>
+          <div class="key-term"><strong>Validity:</strong> Accuracy — test actually measures what it claims to measure</div>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-top:8px">A test can be reliable without being valid (consistently wrong), but cannot be valid without being reliable.</p>
+        </div>
+        <div>
+          <h3>Types of Psychological Tests</h3>
+          <div class="key-term"><strong>Objective Tests:</strong> Structured, standardized; MMPI (Minnesota Multiphasic Personality Inventory)</div>
+          <div class="key-term"><strong>Projective Tests:</strong> Unstructured stimuli; reveal unconscious; Rorschach Inkblot Test, TAT</div>
+          <div class="key-term"><strong>Neuropsychological Tests:</strong> Assess brain function and damage</div>
+          <div class="key-term"><strong>Intelligence Tests:</strong> IQ measurement; Wechsler scales</div>
+        </div>
+      </div>
+      <h3 style="margin-top:16px">DSM-5 Overview</h3>
+      <div class="grid-2">
+        <div class="key-term"><strong>Nature:</strong> Descriptive and categorical (NOT explanatory/etiological)</div>
+        <div class="key-term"><strong>Organization:</strong> 20 general categories of mental disorders</div>
+        <div class="key-term"><strong>Strengths:</strong> Common language for clinicians, research tool, guides treatment</div>
+        <div class="key-term"><strong>Limitations:</strong> Overdiagnosis risk, cultural bias, no etiology, boundary issues between categories</div>
+      </div>
+      <h3 style="margin-top:16px">Assessment Methods</h3>
+      <div class="grid-3">
+        <div class="key-term"><strong>Clinical Interview:</strong> Structured or unstructured; gathers history and presenting concerns</div>
+        <div class="key-term"><strong>Mental Status Exam:</strong> Evaluates appearance, mood, speech, cognition</div>
+        <div class="key-term"><strong>Behavioral Assessment:</strong> Observing behavior in context</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 4 -->
+  <div class="card" style="padding:0;overflow:hidden;margin-top:16px">
+    <button class="chapter-btn" onclick="toggleChapter('ch4')">
+      <span>📕 Chapter 4: Anxiety & OCD-Related Disorders</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="chapter-content" id="ch4">
+      <div class="grid-2">
+        <div>
+          <h3>Generalized Anxiety Disorder (GAD)</h3>
+          <div class="key-term"><strong>Core feature:</strong> Excessive, chronic worry across multiple life domains (NOT situation-specific)</div>
+          <div class="key-term"><strong>Duration:</strong> ≥6 months</div>
+          <div class="key-term"><strong>Symptoms:</strong> Restlessness, fatigue, concentration difficulties, irritability, muscle tension, sleep disturbance</div>
+        </div>
+        <div>
+          <h3>Panic Disorder</h3>
+          <div class="key-term"><strong>Core:</strong> Repeated UNEXPECTED panic attacks + ≥1 month persistent fear of recurrence</div>
+          <div class="key-term"><strong>Lifetime prevalence:</strong> ~5.1% in US</div>
+          <div class="key-term"><strong>Panic attack symptoms:</strong> Palpitations, sweating, trembling, shortness of breath, chest pain, dizziness</div>
+          <div class="key-term"><strong>Agoraphobia:</strong> Fear of places/situations where escape may be difficult; can co-occur with panic disorder</div>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:16px">
+        <div>
+          <h3>OCD (Obsessive-Compulsive Disorder)</h3>
+          <div class="key-term"><strong>Obsessions:</strong> Intrusive, unwanted, recurring thoughts/images/urges (ego-dystonic)</div>
+          <div class="key-term"><strong>Compulsions:</strong> Repetitive behaviors performed to reduce anxiety from obsessions</div>
+          <div class="key-term"><strong>Best treatment:</strong> ERP (Exposure and Response Prevention) + CBT — more effective than medication alone</div>
+        </div>
+        <div>
+          <h3>Body Dysmorphic Disorder (BDD)</h3>
+          <div class="key-term"><strong>Core:</strong> Preoccupation with a perceived or exaggerated physical flaw (not an actual disfigurement)</div>
+          <div class="key-term"><strong>Classified under:</strong> OCD-related disorders in DSM-5</div>
+          <div class="key-term"><strong>Distinguish from:</strong> Social phobia (fear of scrutiny) and health anxiety (fear of illness)</div>
+        </div>
+      </div>
+      <h3 style="margin-top:16px">ERP (Exposure and Response Prevention)</h3>
+      <p>Gradually exposes patient to feared stimuli/obsessions while preventing the compulsive response. Combined with CBT, produces greater and more lasting benefits than medication alone. Gold standard for OCD.</p>
+    </div>
+  </div>
+
+  <!-- Chapter 5 -->
+  <div class="card" style="padding:0;overflow:hidden;margin-top:16px">
+    <button class="chapter-btn" onclick="toggleChapter('ch5')">
+      <span>📓 Chapter 5: Trauma & Stressor-Related Disorders</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="chapter-content" id="ch5">
+      <h3>Timeline Comparison — Critical for Exam!</h3>
+      <table>
+        <tr><th>Disorder</th><th>Onset After Trauma</th><th>Duration</th><th>Key Features</th></tr>
+        <tr><td><span class="badge badge-yellow">ASD</span> Acute Stress Disorder</td><td>Immediately after</td><td><strong>3 days – 1 month</strong></td><td>Dissociation, flashbacks, avoidance</td></tr>
+        <tr><td><span class="badge badge-red">PTSD</span></td><td>After 1 month</td><td><strong>&gt; 1 month</strong></td><td>Flashbacks, nightmares, hyperarousal, avoidance</td></tr>
+        <tr><td><span class="badge badge-blue">Adjustment Disorder</span></td><td>Within <strong>3 months</strong></td><td>Resolves within 6 months</td><td>Emotional/behavioral symptoms disproportionate to stressor</td></tr>
+      </table>
+      <div class="tip-box" style="margin-top:16px">
+        <div class="tip-title">⚠️ Exam Alert: Common Mistakes</div>
+        <ul class="check-list">
+          <li>ASD is NOT diagnosed if symptoms last only 2 days (minimum 3 days)</li>
+          <li>PTSD cannot be diagnosed within the first month after trauma</li>
+          <li>Adjustment disorder onset must be within 3 months of stressor (not 1 month)</li>
+          <li>PTSD distinguished from ASD primarily by DURATION (not type of symptoms)</li>
+        </ul>
+      </div>
+
+      <h3 style="margin-top:16px">Sympathetic vs. Parasympathetic Nervous System</h3>
+      <div class="grid-2">
+        <div class="key-term"><strong>Sympathetic (SNS):</strong> "Fight or flight" — activates stress response; increases heart rate, releases cortisol, dilates pupils</div>
+        <div class="key-term"><strong>Parasympathetic (PNS):</strong> "Rest and digest" — calms body; decreases heart rate, promotes digestion</div>
+      </div>
+
+      <h3 style="margin-top:16px">GAS — General Adaptation Syndrome (Hans Selye)</h3>
+      <div class="grid-3">
+        <div class="key-term" style="border-color:#ef4444"><strong>1. Alarm Stage:</strong> Initial response — SNS activation, "fight or flight"</div>
+        <div class="key-term" style="border-color:#f59e0b"><strong>2. Resistance Stage:</strong> Body adapts and attempts to cope with ongoing stressor</div>
+        <div class="key-term" style="border-color:#8b5cf6"><strong>3. Exhaustion Stage:</strong> Resources depleted; vulnerability to illness and breakdown</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 7 -->
+  <div class="card" style="padding:0;overflow:hidden;margin-top:16px">
+    <button class="chapter-btn" onclick="toggleChapter('ch7')">
+      <span>📔 Chapter 7: Mood Disorders</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="chapter-content" id="ch7">
+      <h3>Major Depressive Disorder (MDD)</h3>
+      <div class="grid-2">
+        <div class="key-term"><strong>Lifetime prevalence:</strong> ~20.6% of US adults</div>
+        <div class="key-term"><strong>Duration:</strong> ≥2 weeks of 5+ depressive symptoms</div>
+        <div class="key-term"><strong>Core symptoms:</strong> Depressed mood, anhedonia (loss of pleasure), fatigue, worthlessness, sleep/appetite changes, concentration problems, suicidal ideation</div>
+        <div class="key-term"><strong>Dysthymia (PDD):</strong> Persistent Depressive Disorder — chronic depression ≥2 years (milder but longer)</div>
+      </div>
+
+      <h3 style="margin-top:16px">Bipolar Disorders</h3>
+      <table>
+        <tr><th>Feature</th><th>Bipolar I</th><th>Bipolar II</th></tr>
+        <tr><td>Manic Episodes</td><td>≥1 FULL manic episode (≥7 days or hospitalization)</td><td>NO full mania</td></tr>
+        <tr><td>Hypomanic Episodes</td><td>May occur</td><td>≥1 hypomanic episode (≥4 days)</td></tr>
+        <tr><td>Depressive Episodes</td><td>May occur</td><td>Required</td></tr>
+        <tr><td>Severity</td><td>More severe; psychosis possible</td><td>Less severe</td></tr>
+      </table>
+      <div class="tip-box" style="margin-top:12px">
+        <div class="tip-title">⚠️ Remember: Bipolar II is NOT milder Bipolar I</div>
+        <p style="font-size:0.9rem;margin:0">Bipolar II requires HYPOMANIA + DEPRESSION. Bipolar I requires at least ONE FULL MANIC EPISODE. The absence of full mania defines Bipolar II.</p>
+      </div>
+
+      <h3 style="margin-top:16px">Suicide</h3>
+      <table>
+        <tr><th>Fact</th><th>Details</th></tr>
+        <tr><td>Attempts vs. Deaths</td><td><strong>Women attempt more; Men die more</strong> (more lethal methods)</td></tr>
+        <tr><td>Risk factors</td><td>Previous attempts, hopelessness, social isolation, substance use, mental illness, access to means</td></tr>
+        <tr><td>Protective factors</td><td>Social support, family connectedness, religious beliefs, access to mental health care</td></tr>
+      </table>
+
+      <h3 style="margin-top:16px">Treatments for Mood Disorders</h3>
+      <div class="grid-2">
+        <div class="key-term"><strong>SSRIs (Selective Serotonin Reuptake Inhibitors):</strong> First-line; fewer dangerous side effects, better tolerated than tricyclics</div>
+        <div class="key-term"><strong>Tricyclics:</strong> Older antidepressants; effective but more side effects, lethal in overdose</div>
+        <div class="key-term"><strong>CBT:</strong> Challenges negative thought patterns; effective for depression and anxiety</div>
+        <div class="key-term"><strong>Mood Stabilizers (Lithium):</strong> Primary treatment for bipolar disorder</div>
+      </div>
+
+      <h3 style="margin-top:16px">Causes of MDD — Multiple Perspectives</h3>
+      <div class="grid-3">
+        <div class="key-term"><strong>Biological:</strong> Serotonin/norepinephrine dysregulation, genetic predisposition, HPA axis dysfunction</div>
+        <div class="key-term"><strong>Psychological:</strong> Cognitive distortions (Beck's triad: negative views of self, world, future); learned helplessness</div>
+        <div class="key-term"><strong>Social/Environmental:</strong> Life stressors, social support deficits, trauma, socioeconomic factors</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- PRACTICE SECTION -->
+<div id="practice" class="section">
+  <h1 style="margin-bottom:8px">✏️ Practice Exam</h1>
+  <p style="color:var(--text-muted);margin-bottom:20px">Answer one question at a time — immediate feedback with explanation</p>
+
+  <div class="mode-selector">
+    <button class="mode-btn active-mode" id="mode-shuffle" onclick="setMode('shuffle')">🔀 Shuffle Mode</button>
+    <button class="mode-btn" id="mode-study" onclick="setMode('study')">📚 Chapter Order</button>
+    <button class="mode-btn" id="mode-exam" onclick="setMode('exam')">🎓 Exam Simulation (16 MCQ + 4 T/F)</button>
+    <button class="mode-btn" id="mode-review" onclick="setMode('review')">⭐ Marked for Review</button>
+  </div>
+
+  <div id="practice-container">
+    <div class="practice-header">
+      <div style="flex:1">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:0.85rem;font-weight:600;color:var(--text-muted)" id="q-counter">Question 1 of 38</span>
+          <span style="font-size:0.85rem;font-weight:600;color:var(--text-muted)" id="q-mode-label">Shuffle Mode</span>
+        </div>
+        <div class="progress-bar-outer"><div class="progress-bar-inner" id="progress-bar" style="width:2.6%"></div></div>
+      </div>
+      <div class="score-display">
+        <span class="score-correct">✓ <span id="correct-count">0</span></span>
+        <span class="score-wrong">✗ <span id="wrong-count">0</span></span>
+      </div>
+    </div>
+
+    <div class="question-card" id="question-card">
+      <div class="q-meta" id="q-meta"></div>
+      <div class="question-text" id="question-text">Loading question...</div>
+      <div id="choices-container"></div>
+      <div class="feedback-box" id="feedback-box"></div>
+      <div class="btn-row" id="action-row" style="display:none">
+        <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">Next Question →</button>
+        <button class="mark-btn" id="mark-btn" onclick="toggleMark()">⭐ Mark for Review</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="results-container" style="display:none">
+    <div class="card results-card">
+      <div class="results-score" id="final-score">0/38</div>
+      <div class="results-label">Questions Answered Correctly</div>
+      <div style="font-size:1.2rem;font-weight:600;color:var(--text);margin-bottom:8px" id="final-pct"></div>
+      <div style="font-size:0.9rem;color:var(--text-muted);margin-bottom:24px" id="final-message"></div>
+      <div class="btn-row" style="justify-content:center">
+        <button class="btn btn-primary" onclick="restartPractice()">🔄 Try Again</button>
+        <button class="btn btn-secondary" onclick="showSection('home')">🏠 Home</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FLASHCARDS SECTION -->
+<div id="flashcards" class="section">
+  <h1 style="margin-bottom:8px">🃏 Flashcards</h1>
+  <p style="color:var(--text-muted);margin-bottom:24px">Click any card to flip and reveal the definition</p>
+  <div class="flashcard-grid" id="flashcard-container"></div>
+</div>
+
+<!-- DIAGRAMS SECTION -->
+<div id="diagrams" class="section">
+  <h1 style="margin-bottom:24px">🧠 Visual Diagrams</h1>
+  <div class="diagram-grid">
+
+    <!-- Criteria for Abnormality -->
+    <div class="diagram-card">
+      <div class="diagram-title">Criteria for Abnormality (4 D's)</div>
+      <svg viewBox="0 0 300 300" width="100%" height="260">
+        <defs>
+          <radialGradient id="cg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/><stop offset="100%" stop-color="#6366f1" stop-opacity="0.05"/></radialGradient>
+        </defs>
+        <circle cx="150" cy="150" r="130" fill="url(#cg1)" stroke="#8b5cf6" stroke-width="2"/>
+        <circle cx="150" cy="150" r="50" fill="#6366f1" stroke="none"/>
+        <text x="150" y="145" text-anchor="middle" fill="white" font-size="11" font-weight="bold">ABNORMAL</text>
+        <text x="150" y="162" text-anchor="middle" fill="white" font-size="11" font-weight="bold">BEHAVIOR</text>
+        <!-- Top: Deviance -->
+        <circle cx="150" cy="40" r="30" fill="#6366f1"/>
+        <text x="150" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Deviance</text>
+        <text x="150" y="52" text-anchor="middle" fill="white" font-size="9">Social norms</text>
+        <line x1="150" y1="70" x2="150" y2="100" stroke="#6366f1" stroke-width="2"/>
+        <!-- Right: Dysfunction -->
+        <circle cx="260" cy="150" r="30" fill="#7c3aed"/>
+        <text x="260" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Dysfunc-</text>
+        <text x="260" y="162" text-anchor="middle" fill="white" font-size="12" font-weight="bold">tion</text>
+        <line x1="230" y1="150" x2="200" y2="150" stroke="#7c3aed" stroke-width="2"/>
+        <!-- Bottom: Distress -->
+        <circle cx="150" cy="260" r="30" fill="#a21caf"/>
+        <text x="150" y="255" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Distress</text>
+        <text x="150" y="272" text-anchor="middle" fill="white" font-size="9">Personal suffering</text>
+        <line x1="150" y1="230" x2="150" y2="200" stroke="#a21caf" stroke-width="2"/>
+        <!-- Left: Dangerousness -->
+        <circle cx="40" cy="150" r="30" fill="#dc2626"/>
+        <text x="40" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Danger-</text>
+        <text x="40" y="162" text-anchor="middle" fill="white" font-size="12" font-weight="bold">ousness</text>
+        <line x1="70" y1="150" x2="100" y2="150" stroke="#dc2626" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <!-- GAS Stages -->
+    <div class="diagram-card">
+      <div class="diagram-title">GAS — General Adaptation Syndrome (Selye)</div>
+      <svg viewBox="0 0 320 240" width="100%" height="240">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+          </marker>
+        </defs>
+        <!-- Stage boxes -->
+        <rect x="10" y="80" width="80" height="70" rx="10" fill="#ef4444"/>
+        <text x="50" y="108" text-anchor="middle" fill="white" font-weight="bold" font-size="13">ALARM</text>
+        <text x="50" y="125" text-anchor="middle" fill="white" font-size="9">Fight or Flight</text>
+        <text x="50" y="140" text-anchor="middle" fill="white" font-size="9">SNS activates</text>
+        <rect x="120" y="80" width="80" height="70" rx="10" fill="#f59e0b"/>
+        <text x="160" y="108" text-anchor="middle" fill="white" font-weight="bold" font-size="13">RESISTANCE</text>
+        <text x="160" y="125" text-anchor="middle" fill="white" font-size="9">Body adapts</text>
+        <text x="160" y="140" text-anchor="middle" fill="white" font-size="9">Resources used</text>
+        <rect x="230" y="80" width="80" height="70" rx="10" fill="#8b5cf6"/>
+        <text x="270" y="108" text-anchor="middle" fill="white" font-weight="bold" font-size="13">EXHAUSTION</text>
+        <text x="270" y="125" text-anchor="middle" fill="white" font-size="9">Resources depleted</text>
+        <text x="270" y="140" text-anchor="middle" fill="white" font-size="9">Illness risk ↑</text>
+        <!-- Arrows -->
+        <line x1="92" y1="115" x2="118" y2="115" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="202" y1="115" x2="228" y2="115" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <!-- Labels -->
+        <text x="160" y="30" text-anchor="middle" fill="#1e1b4b" font-size="12" font-weight="bold">Hans Selye's Stress Response</text>
+        <text x="160" y="200" text-anchor="middle" fill="#6b7280" font-size="11">Stressor → Alarm → Resistance → Exhaustion</text>
+        <text x="160" y="220" text-anchor="middle" fill="#6b7280" font-size="10">Order: Alarm → Resistance → Exhaustion (mnemonic: ARE)</text>
+      </svg>
+    </div>
+
+    <!-- Biopsychosocial Model -->
+    <div class="diagram-card">
+      <div class="diagram-title">Biopsychosocial Model</div>
+      <svg viewBox="0 0 300 260" width="100%" height="260">
+        <defs>
+          <filter id="blur"><feGaussianBlur stdDeviation="3"/></filter>
+        </defs>
+        <ellipse cx="150" cy="95" rx="75" ry="55" fill="#6366f1" fill-opacity="0.35" stroke="#6366f1" stroke-width="2"/>
+        <ellipse cx="105" cy="165" rx="75" ry="55" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="2"/>
+        <ellipse cx="195" cy="165" rx="75" ry="55" fill="#0891b2" fill-opacity="0.35" stroke="#0891b2" stroke-width="2"/>
+        <text x="150" y="72" text-anchor="middle" fill="#1e1b4b" font-weight="bold" font-size="13">BIOLOGICAL</text>
+        <text x="150" y="88" text-anchor="middle" fill="#1e1b4b" font-size="9">Genetics, brain</text>
+        <text x="150" y="102" text-anchor="middle" fill="#1e1b4b" font-size="9">chemistry, neurons</text>
+        <text x="75" y="180" text-anchor="middle" fill="#1e1b4b" font-weight="bold" font-size="12">PSYCHO-</text>
+        <text x="75" y="196" text-anchor="middle" fill="#1e1b4b" font-weight="bold" font-size="12">LOGICAL</text>
+        <text x="75" y="212" text-anchor="middle" fill="#1e1b4b" font-size="9">Thoughts, emotions</text>
+        <text x="225" y="180" text-anchor="middle" fill="#1e1b4b" font-weight="bold" font-size="13">SOCIAL</text>
+        <text x="225" y="196" text-anchor="middle" fill="#1e1b4b" font-size="9">Culture, family</text>
+        <text x="225" y="210" text-anchor="middle" fill="#1e1b4b" font-size="9">socioeconomic</text>
+        <circle cx="150" cy="142" r="18" fill="#4f46e5" fill-opacity="0.7"/>
+        <text x="150" y="138" text-anchor="middle" fill="white" font-size="9" font-weight="bold">MENTAL</text>
+        <text x="150" y="152" text-anchor="middle" fill="white" font-size="9" font-weight="bold">HEALTH</text>
+      </svg>
+    </div>
+
+    <!-- Id/Ego/Superego Iceberg -->
+    <div class="diagram-card">
+      <div class="diagram-title">Freud's Iceberg — Id, Ego, Superego</div>
+      <svg viewBox="0 0 300 260" width="100%" height="260">
+        <!-- Water line -->
+        <rect x="0" y="100" width="300" height="10" fill="#bfdbfe" fill-opacity="0.5"/>
+        <text x="10" y="95" fill="#2563eb" font-size="11" font-weight="bold">CONSCIOUS</text>
+        <text x="10" y="125" fill="#1e40af" font-size="11" font-weight="bold">UNCONSCIOUS</text>
+        <!-- Iceberg above water -->
+        <polygon points="150,10 210,100 90,100" fill="#a5b4fc" stroke="#6366f1" stroke-width="2"/>
+        <!-- Iceberg below water -->
+        <polygon points="90,100 210,100 235,250 65,250" fill="#6366f1" fill-opacity="0.7" stroke="#4f46e5" stroke-width="2"/>
+        <!-- Labels -->
+        <text x="150" y="65" text-anchor="middle" fill="#1e1b4b" font-weight="bold" font-size="12">EGO</text>
+        <text x="150" y="82" text-anchor="middle" fill="#1e1b4b" font-size="9">Reality principle</text>
+        <text x="150" y="150" text-anchor="middle" fill="white" font-weight="bold" font-size="12">SUPEREGO</text>
+        <text x="150" y="168" text-anchor="middle" fill="white" font-size="9">Morality/values</text>
+        <text x="150" y="200" text-anchor="middle" fill="white" font-weight="bold" font-size="13">ID</text>
+        <text x="150" y="218" text-anchor="middle" fill="white" font-size="9">Pleasure principle</text>
+        <text x="150" y="234" text-anchor="middle" fill="white" font-size="9">Primitive drives</text>
+      </svg>
+    </div>
+
+    <!-- Trauma Timeline -->
+    <div class="diagram-card">
+      <div class="diagram-title">Trauma Disorder Timeline</div>
+      <svg viewBox="0 0 320 220" width="100%" height="220">
+        <!-- Timeline base -->
+        <line x1="20" y1="110" x2="300" y2="110" stroke="#6b7280" stroke-width="2"/>
+        <!-- Trauma event -->
+        <circle cx="20" cy="110" r="8" fill="#ef4444"/>
+        <text x="20" y="95" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">TRAUMA</text>
+        <!-- 3 days -->
+        <line x1="60" y1="100" x2="60" y2="120" stroke="#6b7280" stroke-width="1.5"/>
+        <text x="60" y="138" text-anchor="middle" fill="#6b7280" font-size="9">3 days</text>
+        <!-- 1 month -->
+        <line x1="140" y1="100" x2="140" y2="120" stroke="#6b7280" stroke-width="1.5"/>
+        <text x="140" y="138" text-anchor="middle" fill="#6b7280" font-size="9">1 month</text>
+        <!-- 3 months -->
+        <line x1="200" y1="100" x2="200" y2="120" stroke="#6b7280" stroke-width="1.5"/>
+        <text x="200" y="138" text-anchor="middle" fill="#6b7280" font-size="9">3 months</text>
+        <!-- ASD bar -->
+        <rect x="60" y="60" width="80" height="20" rx="5" fill="#f59e0b"/>
+        <text x="100" y="75" text-anchor="middle" fill="white" font-weight="bold" font-size="10">ASD</text>
+        <!-- PTSD bar -->
+        <rect x="140" y="60" width="160" height="20" rx="5" fill="#ef4444"/>
+        <text x="220" y="75" text-anchor="middle" fill="white" font-weight="bold" font-size="10">PTSD (&gt; 1 month)</text>
+        <!-- Adjustment Disorder -->
+        <rect x="20" y="155" width="180" height="20" rx="5" fill="#3b82f6"/>
+        <text x="110" y="170" text-anchor="middle" fill="white" font-weight="bold" font-size="10">Adjustment Disorder (within 3 months)</text>
+        <!-- Legend -->
+        <text x="160" y="205" text-anchor="middle" fill="#6b7280" font-size="9">ASD: 3 days–1 month | PTSD: &gt;1 month | Adj: within 3 months</text>
+      </svg>
+    </div>
+
+    <!-- Classical Conditioning -->
+    <div class="diagram-card">
+      <div class="diagram-title">Classical Conditioning (Pavlov)</div>
+      <svg viewBox="0 0 320 200" width="100%" height="200">
+        <defs>
+          <marker id="arr2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#6366f1"/>
+          </marker>
+        </defs>
+        <!-- Before conditioning -->
+        <text x="160" y="22" text-anchor="middle" fill="#6b7280" font-size="10" font-weight="bold">BEFORE CONDITIONING</text>
+        <rect x="10" y="30" width="80" height="30" rx="6" fill="#e0e7ff"/>
+        <text x="50" y="50" text-anchor="middle" fill="#4f46e5" font-size="10" font-weight="bold">UCS (Food)</text>
+        <line x1="92" y1="45" x2="118" y2="45" stroke="#6366f1" stroke-width="2" marker-end="url(#arr2)"/>
+        <rect x="120" y="30" width="80" height="30" rx="6" fill="#d1fae5"/>
+        <text x="160" y="50" text-anchor="middle" fill="#065f46" font-size="10" font-weight="bold">UCR (Salivation)</text>
+        <rect x="220" y="30" width="80" height="30" rx="6" fill="#fee2e2"/>
+        <text x="260" y="50" text-anchor="middle" fill="#991b1b" font-size="10">NS (Bell) → No response</text>
+        <!-- During -->
+        <text x="160" y="85" text-anchor="middle" fill="#6b7280" font-size="10" font-weight="bold">DURING CONDITIONING</text>
+        <rect x="10" y="93" width="80" height="25" rx="6" fill="#fef3c7"/>
+        <text x="50" y="110" text-anchor="middle" fill="#92400e" font-size="9">NS (Bell)</text>
+        <text x="100" y="110" text-anchor="middle" fill="#6b7280" font-size="10">+</text>
+        <rect x="120" y="93" width="80" height="25" rx="6" fill="#e0e7ff"/>
+        <text x="160" y="110" text-anchor="middle" fill="#4f46e5" font-size="9">UCS (Food)</text>
+        <line x1="202" y1="105" x2="218" y2="105" stroke="#6366f1" stroke-width="2" marker-end="url(#arr2)"/>
+        <rect x="220" y="93" width="80" height="25" rx="6" fill="#d1fae5"/>
+        <text x="260" y="110" text-anchor="middle" fill="#065f46" font-size="9">UCR</text>
+        <!-- After -->
+        <text x="160" y="145" text-anchor="middle" fill="#6b7280" font-size="10" font-weight="bold">AFTER CONDITIONING</text>
+        <rect x="10" y="153" width="80" height="30" rx="6" fill="#f3e8ff"/>
+        <text x="50" y="173" text-anchor="middle" fill="#7c3aed" font-size="10" font-weight="bold">CS (Bell)</text>
+        <line x1="92" y1="168" x2="118" y2="168" stroke="#6366f1" stroke-width="2" marker-end="url(#arr2)"/>
+        <rect x="120" y="153" width="80" height="30" rx="6" fill="#d1fae5"/>
+        <text x="160" y="173" text-anchor="middle" fill="#065f46" font-size="10" font-weight="bold">CR (Salivation)</text>
+      </svg>
+    </div>
+
+    <!-- Bipolar I vs II -->
+    <div class="diagram-card">
+      <div class="diagram-title">Bipolar I vs. Bipolar II</div>
+      <svg viewBox="0 0 320 220" width="100%" height="220">
+        <!-- Labels -->
+        <text x="80" y="22" text-anchor="middle" fill="#4f46e5" font-size="13" font-weight="bold">Bipolar I</text>
+        <text x="240" y="22" text-anchor="middle" fill="#7c3aed" font-size="13" font-weight="bold">Bipolar II</text>
+        <!-- Divider -->
+        <line x1="160" y1="30" x2="160" y2="210" stroke="#e5e7eb" stroke-width="2"/>
+        <!-- Bipolar I episodes -->
+        <rect x="10" y="35" width="140" height="35" rx="8" fill="#ef4444"/>
+        <text x="80" y="56" text-anchor="middle" fill="white" font-weight="bold" font-size="11">FULL MANIA</text>
+        <text x="80" y="70" text-anchor="middle" fill="white" font-size="9">(≥7 days, severe)</text>
+        <rect x="10" y="80" width="140" height="35" rx="8" fill="#3b82f6" fill-opacity="0.7"/>
+        <text x="80" y="102" text-anchor="middle" fill="white" font-weight="bold" font-size="11">DEPRESSION</text>
+        <text x="80" y="116" text-anchor="middle" fill="white" font-size="9">(may occur)</text>
+        <text x="80" y="135" text-anchor="middle" fill="#4f46e5" font-size="9">✓ Psychosis possible</text>
+        <text x="80" y="150" text-anchor="middle" fill="#4f46e5" font-size="9">✓ Hospitalization may occur</text>
+        <text x="80" y="165" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="bold">REQUIRES full manic episode</text>
+        <!-- Bipolar II -->
+        <rect x="170" y="35" width="140" height="35" rx="8" fill="#f59e0b"/>
+        <text x="240" y="56" text-anchor="middle" fill="white" font-weight="bold" font-size="11">HYPOMANIA</text>
+        <text x="240" y="70" text-anchor="middle" fill="white" font-size="9">(≥4 days, less severe)</text>
+        <rect x="170" y="80" width="140" height="35" rx="8" fill="#3b82f6"/>
+        <text x="240" y="102" text-anchor="middle" fill="white" font-weight="bold" font-size="11">DEPRESSION</text>
+        <text x="240" y="116" text-anchor="middle" fill="white" font-size="9">(required)</text>
+        <text x="240" y="135" text-anchor="middle" fill="#7c3aed" font-size="9">✗ No full mania</text>
+        <text x="240" y="150" text-anchor="middle" fill="#7c3aed" font-size="9">✗ No psychosis</text>
+        <text x="240" y="165" text-anchor="middle" fill="#059669" font-size="9" font-weight="bold">Hypomania + Depression</text>
+        <!-- Bottom note -->
+        <rect x="10" y="185" width="300" height="25" rx="6" fill="#fef3c7"/>
+        <text x="160" y="201" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">⚠️ Bipolar II is NOT milder Bipolar I — it's a different disorder</text>
+      </svg>
+    </div>
+
+    <!-- Suicide Risk Factors -->
+    <div class="diagram-card">
+      <div class="diagram-title">Suicide: Risk vs. Protective Factors</div>
+      <svg viewBox="0 0 320 250" width="100%" height="250">
+        <!-- Risk side -->
+        <rect x="5" y="5" width="150" height="240" rx="12" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+        <text x="80" y="28" text-anchor="middle" fill="#dc2626" font-weight="bold" font-size="13">⚠️ Risk Factors</text>
+        <text x="80" y="52" text-anchor="middle" fill="#991b1b" font-size="10">Previous attempt(s)</text>
+        <text x="80" y="70" text-anchor="middle" fill="#991b1b" font-size="10">Hopelessness</text>
+        <text x="80" y="88" text-anchor="middle" fill="#991b1b" font-size="10">Social isolation</text>
+        <text x="80" y="106" text-anchor="middle" fill="#991b1b" font-size="10">Substance use</text>
+        <text x="80" y="124" text-anchor="middle" fill="#991b1b" font-size="10">Mental illness (MDD, etc.)</text>
+        <text x="80" y="142" text-anchor="middle" fill="#991b1b" font-size="10">Access to lethal means</text>
+        <text x="80" y="160" text-anchor="middle" fill="#991b1b" font-size="10">Family history</text>
+        <text x="80" y="178" text-anchor="middle" fill="#991b1b" font-size="10">Recent loss/trauma</text>
+        <text x="80" y="210" text-anchor="middle" fill="#7f1d1d" font-size="9" font-weight="bold">Men die more often</text>
+        <text x="80" y="226" text-anchor="middle" fill="#7f1d1d" font-size="9" font-weight="bold">Women attempt more often</text>
+        <!-- Protective side -->
+        <rect x="165" y="5" width="150" height="240" rx="12" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+        <text x="240" y="28" text-anchor="middle" fill="#059669" font-weight="bold" font-size="13">🛡️ Protective</text>
+        <text x="240" y="52" text-anchor="middle" fill="#065f46" font-size="10">Strong social support</text>
+        <text x="240" y="70" text-anchor="middle" fill="#065f46" font-size="10">Family connectedness</text>
+        <text x="240" y="88" text-anchor="middle" fill="#065f46" font-size="10">Religious/spiritual beliefs</text>
+        <text x="240" y="106" text-anchor="middle" fill="#065f46" font-size="10">Reasons for living</text>
+        <text x="240" y="124" text-anchor="middle" fill="#065f46" font-size="10">Mental health access</text>
+        <text x="240" y="142" text-anchor="middle" fill="#065f46" font-size="10">Problem-solving skills</text>
+        <text x="240" y="160" text-anchor="middle" fill="#065f46" font-size="10">Sense of purpose/meaning</text>
+        <text x="240" y="178" text-anchor="middle" fill="#065f46" font-size="10">Reduced access to means</text>
+      </svg>
+    </div>
+  </div>
+</div>
+<!-- ESSAYS SECTION -->
+<div id="essays" class="section">
+  <h1 style="margin-bottom:8px">📝 Essay Prompts & Outlines</h1>
+  <p style="color:var(--text-muted);margin-bottom:24px">2 short essays worth 20 points each (40 pts total) — Click to expand sample outline</p>
+
+  <div class="essay-card">
+    <div class="essay-header" onclick="toggleEssay('e1')">
+      <h3>Essay 1: Define abnormal behavior and explain why no single definition is sufficient.</h3>
+      <span id="e1-arrow">▼</span>
+    </div>
+    <div class="essay-body" id="e1">
+      <div class="outline-item"><strong>Intro:</strong> Define abnormality as deviation from statistical norm, cultural norms, or optimal functioning. Note no universally accepted definition.</div>
+      <div class="outline-item"><strong>Point 1 — 4 D's Criteria:</strong> Deviance, Distress, Dysfunction, Dangerousness. Each alone is insufficient.</div>
+      <div class="outline-item"><strong>Why deviance alone fails:</strong> Some statistically rare behaviors (genius, athleticism) are not disorders. Cultural relativity — deviance varies by culture.</div>
+      <div class="outline-item"><strong>Why distress alone fails:</strong> Some disorders cause no subjective distress (e.g., antisocial personality). Some distress is normal (grief).</div>
+      <div class="outline-item"><strong>Why dysfunction alone fails:</strong> Dysfunction is context-dependent. A phobia of heights may not impair a desk worker.</div>
+      <div class="outline-item"><strong>Why dangerousness alone fails:</strong> Most people with mental disorders are not dangerous; danger can exist without disorder.</div>
+      <div class="outline-item"><strong>Conclusion:</strong> No single criterion captures all cases. A combination of criteria provides the most comprehensive picture. The DSM-5 uses descriptive criteria across domains rather than relying on one definition.</div>
+    </div>
+  </div>
+
+  <div class="essay-card">
+    <div class="essay-header" onclick="toggleEssay('e2')">
+      <h3>Essay 2: Compare and contrast panic disorder and agoraphobia. Can they co-occur?</h3>
+      <span id="e2-arrow">▼</span>
+    </div>
+    <div class="essay-body" id="e2">
+      <div class="outline-item"><strong>Define Panic Disorder:</strong> Repeated unexpected panic attacks + ≥1 month of persistent fear/concern about future attacks or behavioral change. Lifetime prevalence ~5.1%.</div>
+      <div class="outline-item"><strong>Panic Attack Symptoms:</strong> Sudden surge of intense fear with physical symptoms: palpitations, sweating, trembling, shortness of breath, chest pain, dizziness, derealization.</div>
+      <div class="outline-item"><strong>Define Agoraphobia:</strong> Fear/avoidance of situations where escape might be difficult or help unavailable during a panic attack — e.g., crowds, open spaces, public transit, being outside alone.</div>
+      <div class="outline-item"><strong>Key Difference:</strong> Panic disorder = fear of the panic attacks themselves. Agoraphobia = fear of situations associated with or following panic attacks. They are separate DSM-5 diagnoses.</div>
+      <div class="outline-item"><strong>Co-occurrence:</strong> YES — they commonly co-occur. Many individuals develop agoraphobia AS A RESULT of panic disorder (fear of having attacks in public → avoidance). However, either can occur independently in DSM-5.</div>
+      <div class="outline-item"><strong>Treatment:</strong> CBT, exposure therapy; SSRIs/SNRIs for pharmacological treatment.</div>
+      <div class="outline-item"><strong>Conclusion:</strong> Though related, panic disorder and agoraphobia are distinct diagnoses in DSM-5. Their frequent co-occurrence reflects how anxiety disorders can compound over time.</div>
+    </div>
+  </div>
+
+  <div class="essay-card">
+    <div class="essay-header" onclick="toggleEssay('e3')">
+      <h3>Essay 3: What are the strengths and limitations of the DSM-5?</h3>
+      <span id="e3-arrow">▼</span>
+    </div>
+    <div class="essay-body" id="e3">
+      <div class="outline-item"><strong>Overview:</strong> DSM-5 = Diagnostic and Statistical Manual of Mental Disorders, 5th edition. Descriptive, categorical system. 20 general categories.</div>
+      <div class="outline-item"><strong>Strength 1 — Common Language:</strong> Provides standardized criteria enabling communication among clinicians and researchers across settings.</div>
+      <div class="outline-item"><strong>Strength 2 — Research Tool:</strong> Enables consistent research across studies; facilitates epidemiological data collection.</div>
+      <div class="outline-item"><strong>Strength 3 — Treatment Planning:</strong> Diagnosis guides treatment selection and insurance reimbursement.</div>
+      <div class="outline-item"><strong>Limitation 1 — Not Explanatory:</strong> DSM describes what behaviors constitute a disorder but does NOT explain WHY they occur (no etiology).</div>
+      <div class="outline-item"><strong>Limitation 2 — Cultural Bias:</strong> Criteria developed primarily from Western perspectives; some diagnoses may not translate cross-culturally.</div>
+      <div class="outline-item"><strong>Limitation 3 — Overdiagnosis Risk:</strong> Expanding diagnostic categories may medicalize normal human experience (e.g., grief, shyness).</div>
+      <div class="outline-item"><strong>Limitation 4 — Categorical vs. Dimensional:</strong> Mental health exists on a continuum; rigid categories may not reflect clinical reality.</div>
+      <div class="outline-item"><strong>Conclusion:</strong> The DSM-5 is an essential but imperfect tool. Its value lies in standardization; its limitations remind clinicians to treat the whole person, not just the diagnosis.</div>
+    </div>
+  </div>
+
+  <div class="essay-card">
+    <div class="essay-header" onclick="toggleEssay('e4')">
+      <h3>Essay 4: Explain the causes of Major Depressive Disorder using multiple perspectives.</h3>
+      <span id="e4-arrow">▼</span>
+    </div>
+    <div class="essay-body" id="e4">
+      <div class="outline-item"><strong>Intro:</strong> MDD is a complex disorder with ~20.6% lifetime prevalence in US adults. No single cause; best understood through the biopsychosocial model.</div>
+      <div class="outline-item"><strong>Biological Perspective:</strong> Monoamine hypothesis — low serotonin, norepinephrine, dopamine. Genetic predisposition (heritability ~40%). HPA axis dysregulation → cortisol elevation. Structural brain changes (reduced hippocampal volume).</div>
+      <div class="outline-item"><strong>Psychological Perspective:</strong> Beck's Cognitive Triad — negative views of self ("I'm worthless"), the world ("everything is hopeless"), and the future ("nothing will improve"). Learned helplessness (Seligman) — belief that one has no control. Behavioral withdrawal reduces positive reinforcement.</div>
+      <div class="outline-item"><strong>Social/Environmental Perspective:</strong> Life stressors — loss, trauma, chronic illness. Social isolation and lack of support. Socioeconomic factors (poverty, unemployment). Social causation: hardship increases risk.</div>
+      <div class="outline-item"><strong>Integrating with Diathesis-Stress:</strong> Biological vulnerability (diathesis) + environmental stressors → MDD onset. Neither alone is sufficient in many cases.</div>
+      <div class="outline-item"><strong>Treatment Implications:</strong> Biological → SSRIs/SNRIs; Psychological → CBT; Social → social support, community resources. Best outcomes with combined approaches.</div>
+      <div class="outline-item"><strong>Conclusion:</strong> MDD arises from the interplay of biological predispositions, cognitive patterns, and social/environmental stressors. Effective treatment requires addressing all three domains.</div>
+    </div>
+  </div>
+</div>
+<script>
+// ===================== NAVIGATION =====================
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const navMap = {home:0,studyguide:1,practice:2,flashcards:3,diagrams:4,essays:5};
+  document.querySelectorAll('.nav-btn')[navMap[id]]?.classList.add('active');
+  if(id === 'flashcards' && !flashcardsBuilt) buildFlashcards();
+  if(id === 'practice' && !practiceInit) initPractice();
+}
+
+// ===================== ACCORDION =====================
+function toggleChapter(id) {
+  const content = document.getElementById(id);
+  const btn = content.previousElementSibling;
+  const isOpen = content.classList.contains('show');
+  content.classList.toggle('show', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+function toggleEssay(id) {
+  const body = document.getElementById(id);
+  const arrow = document.getElementById(id + '-arrow');
+  const isOpen = body.classList.contains('show');
+  body.classList.toggle('show', !isOpen);
+  if(arrow) arrow.textContent = isOpen ? '▼' : '▲';
+}
+
+// ===================== FLASHCARDS =====================
+let flashcardsBuilt = false;
+const flashcardData = [
+  {term:'Reliability vs. Validity', hint:'Measurement quality', back:'<strong>Reliability</strong> = consistency across repeated tests.<br><strong>Validity</strong> = accuracy — measures what it claims to measure.<br><em>Reliable ≠ Valid; Valid requires Reliable.</em>'},
+  {term:'Objective vs. Projective Tests', hint:'Assessment types', back:'<strong>Objective</strong>: Structured, standardized (e.g., MMPI)<br><strong>Projective</strong>: Unstructured, reveals unconscious (e.g., Rorschach, TAT)'},
+  {term:'ASD vs. PTSD', hint:'Trauma timing', back:'<strong>ASD</strong>: 3 days – 1 month after trauma<br><strong>PTSD</strong>: Symptoms persist &gt; 1 month after trauma<br>Key distinction = DURATION'},
+  {term:'Bipolar I vs. Bipolar II', hint:'Mood disorders', back:'<strong>Bipolar I</strong>: ≥1 FULL manic episode (≥7 days)<br><strong>Bipolar II</strong>: Hypomania (≥4 days) + depression, NO full mania'},
+  {term:'MDD vs. Dysthymia (PDD)', hint:'Depressive disorders', back:'<strong>MDD</strong>: ≥5 symptoms for ≥2 weeks (episodic)<br><strong>Dysthymia</strong>: Milder depression lasting ≥2 YEARS (chronic)'},
+  {term:'Obsession vs. Compulsion', hint:'OCD components', back:'<strong>Obsession</strong>: Intrusive, unwanted, recurring THOUGHT/urge<br><strong>Compulsion</strong>: Repetitive BEHAVIOR to neutralize anxiety from obsession'},
+  {term:'Id vs. Ego vs. Superego', hint:'Freudian structures', back:'<strong>Id</strong>: Pleasure principle — primitive drives, unconscious<br><strong>Ego</strong>: Reality principle — rational mediator<br><strong>Superego</strong>: Morality principle — values/conscience'},
+  {term:'Social Causation vs. Downward Drift', hint:'Poverty & mental illness', back:'<strong>Social Causation</strong>: Poverty/hardship → increases RISK of mental illness<br><strong>Downward Drift</strong>: Mental illness causes people to drift economically downward'},
+  {term:'Hallucination vs. Delusion', hint:'Psychotic features', back:'<strong>Hallucination</strong>: False SENSORY perception (seeing/hearing things that aren\'t there)<br><strong>Delusion</strong>: False fixed BELIEF (e.g., being followed, having special powers)'},
+  {term:'Classical vs. Operant Conditioning', hint:'Learning types', back:'<strong>Classical</strong> (Pavlov): Pair neutral stimulus with unconditioned stimulus → learned response<br><strong>Operant</strong> (Skinner): Behavior shaped by consequences (reinforcement/punishment)'},
+  {term:'Sympathetic vs. Parasympathetic', hint:'Autonomic nervous system', back:'<strong>Sympathetic</strong>: "Fight or flight" — increases arousal, heart rate, cortisol<br><strong>Parasympathetic</strong>: "Rest and digest" — calms body, decreases heart rate'},
+  {term:'Positive vs. Negative Reinforcement', hint:'Operant conditioning', back:'<strong>Positive Reinforcement</strong>: ADD pleasant stimulus → INCREASE behavior<br><strong>Negative Reinforcement</strong>: REMOVE unpleasant stimulus → INCREASE behavior<br>Both INCREASE behavior!'},
+  {term:'ERP', hint:'OCD treatment', back:'<strong>Exposure and Response Prevention</strong><br>Patient is gradually exposed to feared stimuli (obsessions) while PREVENTED from performing compulsive response. Best treatment for OCD when combined with CBT.'},
+  {term:'GAS Stages', hint:'Selye\'s stress theory', back:'<strong>G</strong>eneral <strong>A</strong>daptation <strong>S</strong>yndrome (Hans Selye):<br>1. ALARM — SNS activation, fight or flight<br>2. RESISTANCE — body adapts, coping<br>3. EXHAUSTION — resources depleted, illness risk<br><em>Mnemonic: ARE</em>'},
+  {term:'Diathesis-Stress Model', hint:'Vulnerability + stress', back:'Disorders emerge from interaction of:<br><strong>Diathesis</strong> = biological/psychological vulnerability (genetic predisposition)<br><strong>+</strong><br><strong>Stress</strong> = environmental triggers/stressors<br>Neither alone is sufficient.'}
+];
+function buildFlashcards() {
+  flashcardsBuilt = true;
+  const container = document.getElementById('flashcard-container');
+  container.innerHTML = flashcardData.map((f,i) => `
+    <div class="flashcard" onclick="this.classList.toggle('flipped')" title="Click to flip">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="term">${f.term}</div>
+          <div class="hint">${f.hint}</div>
+          <div style="margin-top:12px;font-size:0.75rem;opacity:0.7">👆 Click to flip</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="def">${f.back}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===================== PRACTICE QUESTIONS =====================
+let practiceInit = false;
+let currentMode = 'shuffle';
+let questions = [];
+let currentIndex = 0;
+let correctCount = 0;
+let wrongCount = 0;
+let markedQuestions = new Set();
+let answered = false;
+let examMode = false;
+
+const allQuestions = [
+  {id:1,type:'mcq',chapter:1,text:'Which of the following is NOT a criterion for abnormality?',choices:['Statistical rarity','Personal distress','Social conformity','Dangerousness'],correct:2,explanation:'Social CONFORMITY is not a criterion. Social DEVIANCE (violating social norms) is one of the 4 D\'s of abnormality. The criteria are: Deviance, Distress, Dysfunction, and Dangerousness.'},
+  {id:2,type:'mcq',chapter:1,text:'According to WHO data, which country had the HIGHEST rates of diagnosable psychological disorders?',choices:['China','Nigeria','United States','United Kingdom'],correct:2,explanation:'The United States has the highest rates of diagnosable psychological disorders according to WHO data. Approximately 46% of US adults will have a diagnosable disorder at some point in their lifetime.'},
+  {id:3,type:'mcq',chapter:1,text:'What percentage of U.S. adults are affected by a diagnosable disorder at some point in life?',choices:['20%','33%','46%','60%'],correct:2,explanation:'Approximately 46% of US adults will meet criteria for at least one diagnosable psychological disorder at some point in their lifetime, according to major epidemiological studies.'},
+  {id:4,type:'mcq',chapter:2,text:'The correlational method proves:',choices:['Causation','Association between variables','Effect of independent variables','Random assignment works'],correct:1,explanation:'Correlation only shows ASSOCIATION between variables — it does NOT prove causation. Causation requires controlled experimental design with random assignment. "Correlation ≠ Causation" is a fundamental research principle.'},
+  {id:5,type:'mcq',chapter:2,text:'Which research design element is the gold standard for establishing causation?',choices:['Large sample size','Random assignment','Naturalistic observation','Survey design'],correct:1,explanation:'Random assignment is the gold standard for establishing causation. When participants are randomly assigned to conditions, it controls for confounding variables, allowing researchers to conclude that the independent variable caused the outcome.'},
+  {id:6,type:'mcq',chapter:2,text:'IRB protocols require which of the following?',choices:['Double-blind conditions','Statistical significance','Informed consent and confidentiality','Control groups'],correct:2,explanation:'Institutional Review Boards (IRBs) require informed consent (participants know what they\'re agreeing to) and confidentiality (their data is protected). These are fundamental ethical requirements for all research involving human subjects.'},
+  {id:7,type:'mcq',chapter:1,text:'The id operates on which principle?',choices:['Reality principle','Morality principle','Pleasure principle','Adaptation principle'],correct:2,explanation:'The ID operates on the PLEASURE PRINCIPLE — it seeks immediate gratification of primitive drives and desires. The EGO operates on the reality principle (mediating between id and reality), and the SUPEREGO operates on the morality principle.'},
+  {id:8,type:'mcq',chapter:1,text:'Which defense mechanism involves redirecting anger from a threatening target to a safer one?',choices:['Repression','Projection','Displacement','Sublimation'],correct:2,explanation:'DISPLACEMENT involves redirecting emotions (typically anger) from a threatening or unavailable target to a safer one — like being angry at your boss and then taking it out on family members. Sublimation channels urges into socially acceptable activities.'},
+  {id:9,type:'mcq',chapter:3,text:'A test that yields consistent results across multiple administrations has high:',choices:['Validity','Reliability','Sensitivity','Specificity'],correct:1,explanation:'RELIABILITY refers to consistency — a reliable test produces the same results when administered multiple times under similar conditions. Validity refers to whether the test measures what it claims to measure. A test can be reliable without being valid.'},
+  {id:10,type:'mcq',chapter:3,text:'The MMPI is an example of which type of psychological test?',choices:['Projective','Neuropsychological','Objective','Behavioral'],correct:2,explanation:'The MMPI (Minnesota Multiphasic Personality Inventory) is an OBJECTIVE test — it is structured, standardized, and uses predetermined questions with specific scoring. Projective tests (like the Rorschach) use ambiguous stimuli to reveal unconscious material.'},
+  {id:11,type:'mcq',chapter:3,text:'The Rorschach Inkblot Test is an example of:',choices:['Objective test','Projective test','Intelligence test','Neuropsychological test'],correct:1,explanation:'The Rorschach Inkblot Test is a PROJECTIVE test. It presents ambiguous stimuli (inkblots) that people interpret, theoretically revealing unconscious thoughts, feelings, and conflicts. Other projective tests include the TAT (Thematic Apperception Test).'},
+  {id:12,type:'mcq',chapter:5,text:'Acute Stress Disorder lasts:',choices:['Less than 3 days','3 days to 1 month','1 to 6 months','More than 6 months'],correct:1,explanation:'Acute Stress Disorder (ASD) lasts from 3 DAYS to 1 MONTH following exposure to trauma. If symptoms persist beyond 1 month, a diagnosis of PTSD may be appropriate. ASD cannot be diagnosed if symptoms last less than 3 days.'},
+  {id:13,type:'mcq',chapter:5,text:'PTSD is distinguished from ASD primarily by:',choices:['Type of trauma','Number of symptoms','Duration (more than 1 month)','Presence of flashbacks'],correct:2,explanation:'PTSD is distinguished from ASD primarily by DURATION. ASD covers the period from 3 days to 1 month after trauma. PTSD requires symptoms lasting MORE THAN 1 MONTH. Both can include flashbacks, avoidance, and hyperarousal — it\'s the timeframe that differentiates them.'},
+  {id:14,type:'mcq',chapter:5,text:'An adjustment disorder must develop within ___ of the stressor onset:',choices:['1 week','1 month','3 months','6 months'],correct:2,explanation:'Adjustment Disorder requires that symptoms develop within 3 MONTHS of the stressor onset. The symptoms must be disproportionate to the severity of the stressor and cause significant distress or impairment. Symptoms typically resolve within 6 months once the stressor ends.'},
+  {id:15,type:'mcq',chapter:4,text:'Which treatment is most effective for OCD?',choices:['Medication only','Psychodynamic therapy','ERP combined with CBT','Humanistic therapy'],correct:2,explanation:'ERP (Exposure and Response Prevention) combined with CBT is considered the gold standard treatment for OCD. Research shows it produces greater and more lasting benefits than medication alone. The patient is gradually exposed to feared stimuli while being prevented from performing compulsions.'},
+  {id:16,type:'mcq',chapter:4,text:'GAD is characterized primarily by:',choices:['Unexpected panic attacks','Excessive chronic worry across multiple life domains','Specific phobias','Social avoidance'],correct:1,explanation:'Generalized Anxiety Disorder (GAD) is characterized by EXCESSIVE, CHRONIC WORRY across multiple life domains (not just one specific situation). This distinguishes it from panic disorder (unexpected panic attacks), specific phobia, or social anxiety disorder.'},
+  {id:17,type:'mcq',chapter:4,text:'Panic disorder requires repeated unexpected panic attacks PLUS at least ___ month(s) of persistent fear:',choices:['1','2','3','6'],correct:0,explanation:'Panic disorder requires repeated UNEXPECTED panic attacks PLUS at least 1 MONTH of persistent concern about future attacks OR significant behavioral change related to the attacks (like avoiding situations where panic might occur).'},
+  {id:18,type:'mcq',chapter:4,text:'Lifetime prevalence of panic disorder in the U.S. is approximately:',choices:['1.2%','5.1%','10.3%','15.7%'],correct:1,explanation:'The lifetime prevalence of panic disorder in the United States is approximately 5.1%. This is an important statistic to know for the exam. Compare to MDD (20.6%) which is much more prevalent.'},
+  {id:19,type:'mcq',chapter:4,text:'Body Dysmorphic Disorder involves:',choices:['Actual physical disfigurement','Preoccupation with a perceived or exaggerated flaw','Fear of social situations','Health anxiety'],correct:1,explanation:'Body Dysmorphic Disorder (BDD) involves preoccupation with a perceived or slightly exaggerated flaw in physical appearance — NOT an actual disfigurement. It is classified under OCD-related disorders in DSM-5, and differs from social phobia (fear of scrutiny) and illness anxiety disorder.'},
+  {id:20,type:'mcq',chapter:7,text:'Lifetime prevalence of MDD in U.S. adults is approximately:',choices:['10.3%','15.4%','20.6%','26.1%'],correct:2,explanation:'The lifetime prevalence of Major Depressive Disorder (MDD) in US adults is approximately 20.6% — meaning about 1 in 5 Americans will experience MDD at some point in their lives. This makes it one of the most prevalent mental health disorders.'},
+  {id:21,type:'mcq',chapter:7,text:'Bipolar I disorder requires:',choices:['Only depressive episodes','At least one full manic episode','Hypomania plus depression','Psychotic features'],correct:1,explanation:'Bipolar I disorder requires at least ONE FULL MANIC EPISODE (lasting ≥7 days or requiring hospitalization). Depressive episodes may or may not occur. Bipolar II, by contrast, requires hypomania (not full mania) plus depression.'},
+  {id:22,type:'mcq',chapter:7,text:'Dysthymia (Persistent Depressive Disorder) is defined by chronic depression lasting at least:',choices:['6 months','1 year','2 years','5 years'],correct:2,explanation:'Persistent Depressive Disorder (formerly dysthymia) is characterized by a chronically depressed mood that lasts for at least 2 YEARS (1 year in children/adolescents). While less severe than MDD, its chronicity makes it debilitating. The long duration distinguishes it from MDD.'},
+  {id:23,type:'mcq',chapter:7,text:'Regarding suicide, which is TRUE?',choices:['Men attempt more; women die more','Women attempt more; men die more','Rates are equal','Young adults die more than older adults'],correct:1,explanation:'WOMEN ATTEMPT suicide more often, but MEN DIE by suicide more often. Men use more lethal methods (firearms), which explains the higher completion rate. This is a critical fact frequently tested on exams.'},
+  {id:24,type:'mcq',chapter:7,text:'SSRIs are favored over tricyclics primarily because:',choices:['They work faster','They are cheaper','They have fewer dangerous side effects and are better tolerated','They treat more disorders'],correct:2,explanation:'SSRIs are preferred over tricyclic antidepressants primarily because they have FEWER DANGEROUS SIDE EFFECTS and are better tolerated by patients. Tricyclics are effective but can be lethal in overdose and have more severe side effects. SSRIs are first-line treatment for depression and anxiety disorders.'},
+  {id:25,type:'mcq',chapter:1,text:'The diathesis-stress model proposes disorders emerge from:',choices:['Genetics alone','Stress alone','Interaction of vulnerability and environmental stressors','Cultural factors only'],correct:2,explanation:'The diathesis-stress model proposes that psychological disorders emerge from the INTERACTION between a pre-existing vulnerability (diathesis — genetic, biological, or psychological) and environmental stressors. Neither the vulnerability nor the stress alone is typically sufficient to cause a disorder.'},
+  {id:26,type:'mcq',chapter:5,text:'Hans Selye\'s GAS stages in order are:',choices:['Alarm→Exhaustion→Resistance','Resistance→Alarm→Exhaustion','Alarm→Resistance→Exhaustion','Exhaustion→Alarm→Resistance'],correct:2,explanation:'The General Adaptation Syndrome (GAS) stages in order are: ALARM (initial fight-or-flight response) → RESISTANCE (body adapts and copes) → EXHAUSTION (resources depleted, vulnerability increases). Mnemonic: "ARE" (Alarm, Resistance, Exhaustion).'},
+  {id:27,type:'mcq',chapter:3,text:'The DSM is best described as:',choices:['Explanatory and etiological','Descriptive and categorical','Dimensional and continuous','Cultural and contextual'],correct:1,explanation:'The DSM-5 is DESCRIPTIVE and CATEGORICAL — it describes the symptoms and criteria that define each disorder but does NOT explain why disorders occur (not etiological). It organizes disorders into categories (not on a continuum). This is an important limitation of the DSM.'},
+  {id:28,type:'mcq',chapter:1,text:'Which theory states that poverty/hardship INCREASE risk of mental illness?',choices:['Downward drift','Social causation','Diathesis-stress','Social selection'],correct:1,explanation:'SOCIAL CAUSATION theory proposes that poverty, hardship, and social disadvantage CAUSE or increase the risk of mental illness. This is the opposite of downward drift theory, which proposes that mental illness causes people to drift economically downward.'},
+  {id:29,type:'mcq',chapter:4,text:'ERP stands for:',choices:['Emotional Response Practices','Exposure and Response Prevention','Evidence-based Rational Psychotherapy','Extinction of Repetitive Patterns'],correct:1,explanation:'ERP stands for EXPOSURE AND RESPONSE PREVENTION. It is the gold standard behavioral treatment for OCD. The patient is gradually exposed to anxiety-provoking stimuli (obsessions) while being prevented from engaging in compulsive responses, allowing anxiety to naturally decrease.'},
+  {id:30,type:'mcq',chapter:1,text:'The biopsychosocial model states:',choices:['Only biology matters','Psychology is most important','Social factors determine behavior','Biological, psychological, and social factors interact'],correct:3,explanation:'The biopsychosocial model holds that BIOLOGICAL (genetics, brain chemistry), PSYCHOLOGICAL (thoughts, emotions, behavior), and SOCIAL (culture, relationships, socioeconomic status) factors all INTERACT to influence mental health. No single factor alone determines behavior or disorder.'},
+  {id:31,type:'tf',chapter:2,text:'Correlation proves causation.',correct:false,explanation:'FALSE. Correlation only demonstrates ASSOCIATION between variables. It does NOT prove causation. To establish causation, an experimental design with random assignment is required. "Correlation ≠ Causation" is a foundational principle of research methodology.'},
+  {id:32,type:'tf',chapter:7,text:'Women are more likely to die by suicide than men.',correct:false,explanation:'FALSE. Women ATTEMPT suicide more often, but MEN DIE by suicide more often. Men tend to use more lethal methods (like firearms), which results in higher completion rates. This gender paradox is a key fact for PSYC 410.'},
+  {id:33,type:'tf',chapter:3,text:'The DSM-5 is organized into 20 general categories of mental disorders.',correct:true,explanation:'TRUE. The DSM-5 is organized into 20 general categories (chapters) of mental disorders, including depressive disorders, anxiety disorders, trauma-related disorders, OCD-related disorders, and more. Each category contains specific diagnoses with defined criteria.'},
+  {id:34,type:'tf',chapter:5,text:'PTSD can be diagnosed after only 3 days of symptoms.',correct:false,explanation:'FALSE. PTSD requires symptoms lasting MORE THAN 1 MONTH after trauma. Symptoms lasting 3 days to 1 month would qualify for Acute Stress Disorder (ASD), not PTSD. The duration criterion is the primary distinction between ASD and PTSD.'},
+  {id:35,type:'tf',chapter:7,text:'Bipolar II includes at least one full manic episode.',correct:false,explanation:'FALSE. Bipolar II involves HYPOMANIA (not full mania) plus depression. A FULL manic episode (lasting ≥7 days) characterizes BIPOLAR I. Bipolar II patients experience hypomanic episodes (≥4 days, less severe) and depressive episodes, but never full mania.'},
+  {id:36,type:'tf',chapter:4,text:'ERP is considered the most effective treatment for OCD.',correct:true,explanation:'TRUE. ERP (Exposure and Response Prevention) combined with CBT is considered the gold standard treatment for OCD. Research consistently shows it produces greater and more lasting benefits than medication alone. It works by breaking the obsession-compulsion cycle through habituation.'},
+  {id:37,type:'tf',chapter:1,text:'The ego operates on the pleasure principle.',correct:false,explanation:'FALSE. The ID operates on the PLEASURE PRINCIPLE (immediate gratification). The EGO operates on the REALITY PRINCIPLE (rational mediation between id impulses and reality). The SUPEREGO operates on the morality/idealistic principle.'},
+  {id:38,type:'tf',chapter:1,text:'According to social causation theory, severe mental illness causes people to drift downward economically.',correct:false,explanation:'FALSE. That describes DOWNWARD DRIFT THEORY. SOCIAL CAUSATION THEORY states that poverty, hardship, and social disadvantage INCREASE the RISK of mental illness. The two theories explain the same correlation (poverty ↔ mental illness) in opposite directions.'}
+];
+
+function initPractice() {
+  practiceInit = true;
+  setMode('shuffle');
+}
+
+function setMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active-mode'));
+  document.getElementById('mode-' + mode)?.classList.add('active-mode');
+  
+  examMode = (mode === 'exam');
+  
+  if(mode === 'shuffle') {
+    questions = [...allQuestions].sort(() => Math.random() - 0.5);
+    document.getElementById('q-mode-label').textContent = 'Shuffle Mode';
+  } else if(mode === 'study') {
+    questions = [...allQuestions].sort((a,b) => a.chapter - b.chapter || a.id - b.id);
+    document.getElementById('q-mode-label').textContent = 'Chapter Order';
+  } else if(mode === 'exam') {
+    const mcqs = allQuestions.filter(q => q.type === 'mcq').sort(() => Math.random() - 0.5).slice(0,16);
+    const tfs = allQuestions.filter(q => q.type === 'tf').sort(() => Math.random() - 0.5).slice(0,4);
+    questions = [...mcqs, ...tfs];
+    document.getElementById('q-mode-label').textContent = 'Exam Simulation';
+  } else if(mode === 'review') {
+    questions = allQuestions.filter(q => markedQuestions.has(q.id));
+    if(questions.length === 0) {
+      alert('No questions marked for review yet! Mark questions using the ⭐ button during practice.');
+      setMode('shuffle');
+      return;
+    }
+    document.getElementById('q-mode-label').textContent = 'Marked for Review';
+  }
+  
+  currentIndex = 0;
+  correctCount = 0;
+  wrongCount = 0;
+  answered = false;
+  document.getElementById('correct-count').textContent = '0';
+  document.getElementById('wrong-count').textContent = '0';
+  document.getElementById('results-container').style.display = 'none';
+  document.getElementById('practice-container').style.display = 'block';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if(currentIndex >= questions.length) {
+    showResults();
+    return;
+  }
+  
+  const q = questions[currentIndex];
+  answered = false;
+  const total = questions.length;
+  
+  document.getElementById('q-counter').textContent = `Question ${currentIndex + 1} of ${total}`;
+  document.getElementById('progress-bar').style.width = ((currentIndex / total) * 100) + '%';
+  
+  const meta = document.getElementById('q-meta');
+  meta.innerHTML = `
+    <span class="badge badge-purple">${q.type === 'mcq' ? '⊙ Multiple Choice' : '✓ True / False'}</span>
+    <span class="badge badge-blue">Chapter ${q.chapter}</span>
+    ${markedQuestions.has(q.id) ? '<span class="badge badge-yellow">⭐ Marked</span>' : ''}
+  `;
+  
+  document.getElementById('question-text').textContent = q.text;
+  
+  const cc = document.getElementById('choices-container');
+  const fb = document.getElementById('feedback-box');
+  fb.className = 'feedback-box';
+  fb.innerHTML = '';
+  document.getElementById('action-row').style.display = 'none';
+  
+  if(q.type === 'mcq') {
+    const letters = ['A','B','C','D'];
+    cc.innerHTML = q.choices.map((c,i) => `
+      <button class="choice-btn" onclick="answerMCQ(${i})" data-idx="${i}">
+        <span class="choice-letter">${letters[i]}</span>
+        <span>${c}</span>
+      </button>
+    `).join('');
+  } else {
+    cc.innerHTML = `
+      <div style="display:flex;gap:20px;margin-top:8px">
+        <button class="tf-btn tf-true" onclick="answerTF(true)">✓ TRUE</button>
+        <button class="tf-btn tf-false" onclick="answerTF(false)">✗ FALSE</button>
+      </div>
+    `;
+  }
+  
+  const markBtn = document.getElementById('mark-btn');
+  markBtn.textContent = markedQuestions.has(q.id) ? '⭐ Unmark' : '⭐ Mark for Review';
+  markBtn.className = 'mark-btn' + (markedQuestions.has(q.id) ? ' marked' : '');
+}
+
+function answerMCQ(idx) {
+  if(answered) return;
+  answered = true;
+  const q = questions[currentIndex];
+  const isCorrect = idx === q.correct;
+  
+  if(isCorrect) correctCount++;
+  else wrongCount++;
+  
+  document.getElementById('correct-count').textContent = correctCount;
+  document.getElementById('wrong-count').textContent = wrongCount;
+  
+  const btns = document.querySelectorAll('.choice-btn');
+  btns.forEach((b, i) => {
+    b.disabled = true;
+    if(i === q.correct) b.classList.add('correct');
+    else if(i === idx && !isCorrect) b.classList.add('wrong');
+  });
+  
+  const fb = document.getElementById('feedback-box');
+  fb.className = 'feedback-box show ' + (isCorrect ? 'feedback-correct' : 'feedback-wrong');
+  fb.innerHTML = `<div class="feedback-title">${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</div><div>${q.explanation}</div>`;
+  
+  document.getElementById('action-row').style.display = 'flex';
+}
+
+function answerTF(answer) {
+  if(answered) return;
+  answered = true;
+  const q = questions[currentIndex];
+  const isCorrect = answer === q.correct;
+  
+  if(isCorrect) correctCount++;
+  else wrongCount++;
+  
+  document.getElementById('correct-count').textContent = correctCount;
+  document.getElementById('wrong-count').textContent = wrongCount;
+  
+  const btns = document.querySelectorAll('.tf-btn');
+  btns.forEach(b => {
+    b.disabled = true;
+    const isTrue = b.classList.contains('tf-true');
+    const btnAnswer = isTrue;
+    if(btnAnswer === q.correct) b.classList.add('correct');
+    else if(btnAnswer === answer && !isCorrect) b.classList.add('wrong');
+  });
+  
+  const fb = document.getElementById('feedback-box');
+  fb.className = 'feedback-box show ' + (isCorrect ? 'feedback-correct' : 'feedback-wrong');
+  fb.innerHTML = `<div class="feedback-title">${isCorrect ? '✓ Correct!' : '✗ Incorrect'} — The statement is ${q.correct ? 'TRUE' : 'FALSE'}</div><div>${q.explanation}</div>`;
+  
+  document.getElementById('action-row').style.display = 'flex';
+}
+
+function nextQuestion() {
+  currentIndex++;
+  renderQuestion();
+}
+
+function toggleMark() {
+  const q = questions[currentIndex];
+  if(markedQuestions.has(q.id)) {
+    markedQuestions.delete(q.id);
+  } else {
+    markedQuestions.add(q.id);
+  }
+  const markBtn = document.getElementById('mark-btn');
+  markBtn.textContent = markedQuestions.has(q.id) ? '⭐ Unmark' : '⭐ Mark for Review';
+  markBtn.className = 'mark-btn' + (markedQuestions.has(q.id) ? ' marked' : '');
+  // Update meta
+  const meta = document.getElementById('q-meta');
+  const badge = meta.querySelector('.badge-yellow');
+  if(markedQuestions.has(q.id) && !badge) {
+    meta.insertAdjacentHTML('beforeend', '<span class="badge badge-yellow">⭐ Marked</span>');
+  } else if(!markedQuestions.has(q.id) && badge) {
+    badge.remove();
+  }
+}
+
+function showResults() {
+  document.getElementById('practice-container').style.display = 'none';
+  document.getElementById('results-container').style.display = 'block';
+  const total = questions.length;
+  const pct = Math.round((correctCount / total) * 100);
+  document.getElementById('final-score').textContent = `${correctCount}/${total}`;
+  document.getElementById('final-pct').textContent = `${pct}% Correct`;
+  let msg = '';
+  if(pct >= 90) msg = '🎉 Outstanding! You\'re ready for the exam!';
+  else if(pct >= 80) msg = '👍 Great work! Review the questions you missed.';
+  else if(pct >= 70) msg = '📚 Good effort! Spend more time on weaker areas.';
+  else if(pct >= 60) msg = '📖 Keep studying! Review the study guide and try again.';
+  else msg = '💪 Don\'t give up! Review all chapters and practice more.';
+  document.getElementById('final-message').textContent = msg;
+}
+
+function restartPractice() {
+  document.getElementById('results-container').style.display = 'none';
+  document.getElementById('practice-container').style.display = 'block';
+  setMode(currentMode);
+}
+</script>
+</body>
+</html>
