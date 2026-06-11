@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>River City Food Bank — Because No One Should Be Hungry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">
+        <div class="nav__logo-icon">🌾</div>
+        <div>
+          <span class="nav__logo-top">River City</span>
+          <span class="nav__logo-bottom">Food Bank</span>
+        </div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#get-help">Get Help</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#get-involved">Get Involved</a></li>
+        <li><a href="#contact" class="nav__donate-btn">Donate</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About Us</a>
+    <a href="#get-help">Get Help</a>
+    <a href="#volunteer">Volunteer</a>
+    <a href="#get-involved">Get Involved</a>
+    <a href="#contact">Donate</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__tag">Sacramento County Since 1983</p>
+      <h1 class="hero__headline">Because No One<br>Should Be Hungry</h1>
+      <p class="hero__sub">River City Food Bank provides healthy, nutritious food to anyone in need — no ID, no proof of income, no zip code restrictions.</p>
+      <div class="hero__cta-group">
+        <a href="#get-help" class="btn btn--primary">Get Help Now</a>
+        <a href="#contact" class="btn btn--outline">Donate Today</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="hero__scroll-arrow">↓</div>
+    </div>
+  </section>
+
+  <!-- ===== QUICK ACTIONS ===== -->
+  <section class="quick-actions">
+    <div class="container">
+      <div class="quick-actions__grid">
+        <a href="#get-help" class="qa-card">
+          <div class="qa-card__icon">🛒</div>
+          <h3>Get Help</h3>
+          <p>Access emergency food distribution at our Midtown and Arden Arcade locations</p>
+          <span class="qa-card__arrow">→</span>
+        </a>
+        <a href="#volunteer" class="qa-card qa-card--featured">
+          <div class="qa-card__icon">🤝</div>
+          <h3>Volunteer</h3>
+          <p>Join 15–20 volunteers needed daily to help neighbors in need</p>
+          <span class="qa-card__arrow">→</span>
+        </a>
+        <a href="#contact" class="qa-card">
+          <div class="qa-card__icon">❤️</div>
+          <h3>Donate</h3>
+          <p>Your generosity helps us provide millions of pounds of food each year</p>
+          <span class="qa-card__arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMPACT STATS ===== -->
+  <section class="impact" id="impact">
+    <div class="container">
+      <div class="impact__header">
+        <p class="section-tag">#FoodConnectsUs</p>
+        <h2 class="section-title">2025 Community Impact</h2>
+      </div>
+      <div class="impact__grid">
+        <div class="impact__stat">
+          <span class="impact__number">3.2M</span>
+          <span class="impact__label">Pounds of food distributed</span>
+        </div>
+        <div class="impact__divider"></div>
+        <div class="impact__stat">
+          <span class="impact__number">326K</span>
+          <span class="impact__label">People served in Sacramento County</span>
+        </div>
+        <div class="impact__divider"></div>
+        <div class="impact__stat">
+          <span class="impact__number">5,000</span>
+          <span class="impact__label">Individuals served each week</span>
+        </div>
+        <div class="impact__divider"></div>
+        <div class="impact__stat">
+          <span class="impact__number">50%</span>
+          <span class="impact__label">Fresh produce in every distribution</span>
+        </div>
+      </div>
+      <div class="impact__breakdown">
+        <h3>Who We Serve</h3>
+        <div class="impact__breakdown-grid">
+          <div class="breakdown-item">
+            <div class="breakdown-bar" style="--pct: 15%"></div>
+            <span class="breakdown-label">Seniors — 15%</span>
+          </div>
+          <div class="breakdown-item">
+            <div class="breakdown-bar" style="--pct: 30%"></div>
+            <span class="breakdown-label">Families with Children — 30%</span>
+          </div>
+          <div class="breakdown-item">
+            <div class="breakdown-bar" style="--pct: 25%"></div>
+            <span class="breakdown-label">Working Poor — 25%</span>
+          </div>
+          <div class="breakdown-item">
+            <div class="breakdown-bar" style="--pct: 30%"></div>
+            <span class="breakdown-label">Other Neighbors in Need — 30%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__text">
+          <p class="section-tag">About Us</p>
+          <h2 class="section-title">Our Mission</h2>
+          <p class="about__body">River City Food Bank's mission is to alleviate hunger in Sacramento County by providing consistent access to healthy, meaningful food for all.</p>
+          <p class="about__body">RCFB helps people avoid a crisis and work toward self-reliance by providing a short-term food supply when they are unable to meet basic living expenses. Our programs serve low-income families, children, seniors, individuals who are medically fragile, refugees and asylum-seekers, individuals experiencing homelessness, the working poor and individuals with disabilities.</p>
+          <p class="about__body">RCFB serves all people experiencing food insecurity <strong>regardless of race, ethnicity, gender, sexual orientation, age and background</strong> in Sacramento County — with no zip code restrictions.</p>
+        </div>
+        <div class="about__visual">
+          <div class="about__quote-card">
+            <div class="about__quote-mark">"</div>
+            <p>We treat every guest with dignity, compassion, and respect — because that's what community means.</p>
+            <cite>— River City Food Bank</cite>
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-year">2020</span>
+            <span class="about__badge-label">California Nonprofit<br>of the Year</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE VALUES ===== -->
+  <section class="values">
+    <div class="container">
+      <p class="section-tag center">What Guides Us</p>
+      <h2 class="section-title center">Our Core Values</h2>
+      <div class="values__grid">
+        <div class="values__card">
+          <div class="values__icon">👨‍👩‍👧‍👦</div>
+          <h3>Inclusivity</h3>
+          <p>We welcome everyone — no barriers, no judgment, no exclusions.</p>
+        </div>
+        <div class="values__card">
+          <div class="values__icon">💛</div>
+          <h3>Dignity, Compassion & Respect</h3>
+          <p>We treat every person with dignity, compassion and respect in every interaction.</p>
+        </div>
+        <div class="values__card">
+          <div class="values__icon">⚙️</div>
+          <h3>Adaptability</h3>
+          <p>We adapt to meet the needs of our community through innovation, efficiency and sustainability.</p>
+        </div>
+        <div class="values__card">
+          <div class="values__icon">🍎</div>
+          <h3>Health</h3>
+          <p>We offer nutritious food choices to promote health and well-being for every guest.</p>
+        </div>
+      </div>
+      <p class="values__tagline">These guide our work to alleviate hunger and advance racial equity.</p>
+    </div>
+  </section>
+
+  <!-- ===== UNIQUE APPROACH ===== -->
+  <section class="approach">
+    <div class="container">
+      <p class="section-tag center">What Makes Us Different</p>
+      <h2 class="section-title center">Our Unique Approach</h2>
+      <div class="approach__grid">
+        <div class="approach__card">
+          <div class="approach__icon">🪪</div>
+          <div>
+            <p class="approach__sub">Distribute healthy food</p>
+            <strong>TO ANYONE WITHOUT PROOF OF ID OR INCOME REQUIRED</strong>
+          </div>
+        </div>
+        <div class="approach__card">
+          <div class="approach__icon">🤗</div>
+          <div>
+            <p class="approach__sub">Serve each guest with</p>
+            <strong>DIGNITY, COMPASSION AND RESPECT</strong>
+          </div>
+        </div>
+        <div class="approach__card">
+          <div class="approach__icon">🥦</div>
+          <div>
+            <p class="approach__sub">Offer each guest</p>
+            <strong>FRESH, SEASONAL FRUITS AND VEGETABLES</strong>
+          </div>
+        </div>
+        <div class="approach__card">
+          <div class="approach__icon">🛒</div>
+          <div>
+            <p class="approach__sub">Provide CalFresh assistance</p>
+            <strong>TO INCREASE NUTRITION FOR HOUSEHOLDS WITH LOW INCOMES</strong>
+          </div>
+        </div>
+      </div>
+      <div class="approach__list">
+        <h3>What makes RCFB unique:</h3>
+        <ul>
+          <li>Helping anyone experiencing food insecurity in Sacramento County — <strong>no zip code requirements</strong></li>
+          <li>Providing a <strong>no-barrier intake process</strong> — no IDs or proof of income required</li>
+          <li>Hosting a <strong>Choice Distribution Model</strong> featuring healthy options (50% fresh produce)</li>
+          <li>Acting as a <strong>safety net provider</strong> — playing a critical role to keep families from emergencies, including homelessness</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GET HELP ===== -->
+  <section class="get-help" id="get-help">
+    <div class="container">
+      <p class="section-tag center">We're Here For You</p>
+      <h2 class="section-title center">Get Help</h2>
+      <p class="get-help__intro">Anyone experiencing hunger in Sacramento County is welcome. No ID, no proof of income — just come as you are.</p>
+
+      <div class="get-help__tabs">
+        <button class="tab-btn active" data-tab="food">🍽️ Emergency Food Distribution</button>
+        <button class="tab-btn" data-tab="calfresh">🛒 CalFresh Outreach</button>
+      </div>
+
+      <div class="tab-content active" id="tab-food">
+        <div class="service-card">
+          <div class="service-card__body">
+            <h3>Emergency Food Distribution</h3>
+            <p>Located in Midtown and Arden Arcade, RCFB's emergency food distribution provides healthy, nutritious food to individuals and families experiencing hunger with our signature <strong>"Choice Model"</strong> distribution. This model enables guests to select their own food to ensure they receive food that best meets their needs.</p>
+            <p>The program allows people to choose healthy food including fresh fruits and vegetables, dairy, meat, and shelf-stable commodities. The choice model is a tangible demonstration of our core values — dignity, compassion, respect, health and nutrition.</p>
+            <p>RCFB serves approximately <strong>5,000 individuals each week</strong>.</p>
+
+            <div class="service-card__eligibility">
+              <h4>Eligibility</h4>
+              <p>Anyone who lives in Sacramento County and is experiencing hunger is welcome. RCFB utilizes a low-barrier intake process which does not require ID or proof of income to ensure that all people in need are served.</p>
+            </div>
+          </div>
+          <div class="service-card__sidebar">
+            <div class="hours-card">
+              <h4>📍 Distribution Hours</h4>
+              <div class="hours-location">
+                <strong>Midtown</strong>
+                <p>1800 28th Street, Sacramento, CA 95816</p>
+                <span class="hours-time">Tuesday & Thursday · 10:30 a.m. – 1:30 p.m.</span>
+              </div>
+              <div class="hours-location">
+                <strong>Arden Arcade (Center at St. Matthew's)</strong>
+                <p>2300 Edison Ave., Sacramento, CA 95821</p>
+                <span class="hours-time">Wednesday & Friday · 10:30 a.m. – 1:30 p.m.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-calfresh">
+        <div class="service-card">
+          <div class="service-card__body">
+            <h3>CalFresh Outreach</h3>
+            <p><strong>More than 74% of CalFresh participants are families with children</strong>, showing the immense need for food assistance programs. At RCFB, the CalFresh Outreach team provides the following services to individuals and families facing hunger:</p>
+            <ul class="calfresh-list">
+              <li>Completing applications for CalFresh benefits</li>
+              <li>Rescheduling CalFresh appointments with the county</li>
+              <li>Discovering the nearest Farmers' Market and stores that accept EBT</li>
+              <li>Requesting a replacement EBT card</li>
+              <li>Troubleshooting CalFresh cases</li>
+              <li>Maintaining benefits to meet annual deadlines for renewal</li>
+            </ul>
+            <p>RCFB's CalFresh Outreach staff walk each guest through the process with patience and compassion — explaining each step and answering questions as they arise. Guests can pick up healthy food from our emergency food distribution sites while they visit with the CalFresh team.</p>
+            <p class="calfresh-note">Appointments with CalFresh Outreach staff are currently outdoors.</p>
+          </div>
+          <div class="service-card__sidebar">
+            <div class="hours-card">
+              <h4>📞 Contact CalFresh Team</h4>
+              <p>Call us at <a href="tel:9162334075"><strong>916-233-4075</strong></a></p>
+              <p>Email: <a href="mailto:CalFresh@Rivercityfoodbank.org">CalFresh@Rivercityfoodbank.org</a></p>
+              <div class="calfresh-badge">
+                <span>No forms needed — just call or walk in during distribution hours.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VOLUNTEER ===== -->
+  <section class="volunteer" id="volunteer">
+    <div class="container">
+      <p class="section-tag center">Make a Difference</p>
+      <h2 class="section-title center">Volunteer With Us</h2>
+
+      <!-- Why Volunteer -->
+      <div class="volunteer__why">
+        <div class="volunteer__why-text">
+          <p>With two locations and a variety of shifts available, we have plenty to offer individuals, groups and organizations looking to give back. Volunteering at RCFB provides the opportunity to work together toward a common goal and have an immediate, positive impact on someone's day.</p>
+          <p><strong>There's a role for everyone!</strong></p>
+        </div>
+        <div class="volunteer__stats-row">
+          <div class="volunteer__stat-box">
+            <span class="volunteer__stat-num">31,823</span>
+            <span>volunteer hours in 2025</span>
+          </div>
+          <div class="volunteer__stat-box">
+            <span class="volunteer__stat-num">2.7M</span>
+            <span>meals served per year by volunteers</span>
+          </div>
+          <div class="volunteer__stat-box">
+            <span class="volunteer__stat-num">15–20</span>
+            <span>volunteers needed each shift</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Who Can Volunteer Info Cards -->
+      <div class="volunteer__info-grid">
+        <div class="vol-info-card">
+          <div class="vol-info-card__icon">👤</div>
+          <h4>Individuals</h4>
+          <p>Both Arden and Midtown sites host individual volunteers. Sign up for any shift that works for your schedule — one time or regularly.</p>
+        </div>
+        <div class="vol-info-card">
+          <div class="vol-info-card__icon">👥</div>
+          <h4>Groups</h4>
+          <p>Groups of 3 or more from a workplace, organization, or church can volunteer together — up to 8 people per site per shift.</p>
+        </div>
+        <div class="vol-info-card">
+          <div class="vol-info-card__icon">👨‍👩‍👧</div>
+          <h4>Families</h4>
+          <p>Families are welcome! Use the individual application to create an account for each family member. Youth 15+ may volunteer independently; ages 10–14 must be accompanied by an adult.</p>
+        </div>
+        <div class="vol-info-card">
+          <div class="vol-info-card__icon">🎓</div>
+          <h4>Students</h4>
+          <p>Students can complete volunteer service hours here. Sign up as an individual on CERVIS — the Volunteer Coordinator will sign off on hours as completed. Must be 15+ to volunteer independently.</p>
+        </div>
+      </div>
+
+      <!-- Volunteer FAQ -->
+      <div class="volunteer__faq">
+        <h3 class="volunteer__faq-title">Frequently Asked Questions</h3>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+            <button class="faq-question">How do I sign up to volunteer? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>All volunteers are required to create a volunteer profile on the CERVIS platform. Once your profile is set up, you can choose any available shift that fits your schedule. Multiple shifts per day are offered.</p>
+              <p>To sign up for multiple shifts at once, view the open volunteer opportunities, click all the dates you'd like, and confirm by clicking "Register."</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can I bring my kids to volunteer? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>Youth volunteers aged <strong>10–14</strong> must be accompanied by an adult during the entire shift. Volunteers aged <strong>15 and up</strong> are welcome to come on their own.</p>
+              <p>Unfortunately, we are unable to host children under the age of 10 due to safety concerns. All volunteers, including kids, need a volunteer profile to sign up for shifts.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What if I need to cancel a shift? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>You can cancel your shift through your confirmation email, on your volunteer profile, or by contacting the Volunteer Coordinator directly.</p>
+              <p>📞 Text or call: <a href="tel:9162841396">(916) 284-1396</a></p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What if I have physical limitations? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>A typical volunteer shift requires standing for at least 2 hours. While not required, volunteers may be asked to lift, push, or pull 20+ pounds.</p>
+              <p>Please notify staff of any physical restrictions when you arrive and we will do our best to accommodate them.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Is there required training before I start? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>Yes — there is a short volunteer orientation video to watch before your first shift. There is also a required <strong>Civil Rights Training</strong> to complete once a year, which can be done through your profile or as a paper version during your first shift.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can I complete court-mandated service hours? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. RCFB is in partnership with the Sacramento Sheriff's Department's Alternative Sentencing Program. If you have court-appointed community service hours to complete, notify us when you sign up for a shift.</p>
+              <p>⚠️ If two scheduled shifts are missed, your service will be terminated.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Supervision guidelines for children & adults with disabilities <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>To ensure a safe and meaningful experience for all:</p>
+              <ul>
+                <li><strong>Children ages 10–14:</strong> One adult chaperone for every four children</li>
+                <li><strong>Adults with disabilities:</strong> One support staff person for every three adults</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What ages can volunteer? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>Volunteers must be <strong>15 years or older</strong> to volunteer independently. Volunteers ages 10–14 must be supervised by an adult at all times. We cannot accommodate children younger than 10 years old.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Volunteer Coordinator Contact -->
+      <div class="volunteer__coordinator">
+        <div class="coordinator-card">
+          <div class="coordinator-card__icon">📋</div>
+          <div>
+            <h4>Volunteer Coordinator</h4>
+            <p class="coordinator-name">Lauren Graffigna</p>
+            <div class="coordinator-contacts">
+              <a href="tel:9162841396">📞 (916) 284-1396</a>
+              <a href="mailto:lgraffigna@rivercityfoodbank.org">✉️ lgraffigna@rivercityfoodbank.org</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GET INVOLVED ===== -->
+  <section class="get-involved" id="get-involved">
+    <div class="container">
+      <p class="section-tag center">Beyond Volunteering</p>
+      <h2 class="section-title center">More Ways to Get Involved</h2>
+      <div class="involved__grid">
+        <div class="involved__card">
+          <div class="involved__icon">🏢</div>
+          <h3>Corporate Partnerships</h3>
+          <p>Partner with RCFB through corporate giving, employee volunteer programs, and food drives to make a lasting community impact.</p>
+        </div>
+        <div class="involved__card">
+          <div class="involved__icon">🍲</div>
+          <h3>Host a Food Drive</h3>
+          <p>Organize a food drive at your school, workplace, or community organization and donate directly to those in need.</p>
+        </div>
+        <div class="involved__card">
+          <div class="involved__icon">📣</div>
+          <h3>Spread the Word</h3>
+          <p>Follow us on social media and share our mission. Awareness is a powerful tool in the fight against hunger.</p>
+          <div class="involved__social">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEET YOUR NEIGHBORS ===== -->
+  <section class="neighbors">
+    <div class="container">
+      <div class="neighbors__inner">
+        <div class="neighbors__portraits">
+          <div class="neighbor-portrait neighbor-portrait--1">👴</div>
+          <div class="neighbor-portrait neighbor-portrait--2">👩</div>
+          <div class="neighbor-portrait neighbor-portrait--3">👵</div>
+        </div>
+        <div class="neighbors__text">
+          <h2>Meet Your Neighbors</h2>
+          <p>Behind every number is a person with a story. Our guests are your neighbors — seniors, families, workers, and individuals who simply need a hand up.</p>
+          <a href="https://rivercityfoodbank.org" class="btn btn--primary" target="_blank" rel="noopener">Listen to their stories</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER / CONTACT ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <span class="footer__logo-icon">🌾</span>
+          <div>
+            <span class="footer__logo-top">River City</span>
+            <span class="footer__logo-bottom">Food Bank</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Because No One Should Be Hungry</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+        <a href="https://rivercityfoodbank.org/donate" class="btn btn--primary footer__donate" target="_blank" rel="noopener">Donate Now</a>
+      </div>
+
+      <div class="footer__info">
+        <h4>Food Distribution Hours</h4>
+        <div class="footer__hours">
+          <div>
+            <strong>Midtown</strong>
+            <p>Tuesday & Thursday<br>10:30 a.m. – 1:30 p.m.</p>
+          </div>
+          <div>
+            <strong>Arden Arcade</strong>
+            <p>Wednesday & Friday<br>10:30 a.m. – 1:30 p.m.</p>
+          </div>
+        </div>
+        <div class="footer__addresses">
+          <p><strong>Midtown:</strong> 1800 28th Street, Sacramento, CA 95816</p>
+          <p><strong>Center at St. Matthew's:</strong> 2300 Edison Ave., Sacramento, CA 95821</p>
+        </div>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Contact</h4>
+        <p>📞 <a href="tel:9164462627">916-446-2627</a></p>
+        <p>📬 P.O. Box 160204<br>Sacramento, CA 95816</p>
+        <p class="footer__tax">Tax ID: 91-1851398</p>
+        <p class="footer__eop">This institution is an equal opportunity provider.</p>
+        <div class="footer__award">
+          <span class="award-badge">🏆 2020 California Nonprofit of the Year</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 River City Food Bank. All rights reserved.</p>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#get-help">Get Help</a>
+          <a href="#volunteer">Volunteer</a>
+          <a href="#get-involved">Get Involved</a>
+          <a href="#contact">Donate</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
