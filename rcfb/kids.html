@@ -6,16 +6,22 @@
   <title>River City Food Bank — For Kids!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="kids.css?v=3" />
+  <link rel="stylesheet" href="kids.css?v=4" />
+  <style>
+    .lang-bar{background:#7B2555;padding:.6rem 1.5rem;display:flex!important;align-items:center;gap:.75rem;flex-wrap:wrap;font-size:.85rem;color:rgba(255,255,255,.8);}
+    .lang-btn{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.35);color:rgba(255,255,255,.85);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;padding:.35rem 1rem;border-radius:50px;cursor:pointer;}
+    .lang-btn:hover{background:rgba(255,255,255,.25);color:#fff;}
+    .lang-btn.active{background:#fff;color:#7B2555;border-color:#fff;}
+  </style>
 </head>
 <body>
 
   <!-- ===== LANGUAGE BAR ===== -->
-  <div class="lang-bar">
-    <span data-i18n="lang_label">Language:</span>
-    <button class="lang-btn active" data-lang="en">🇺🇸 English</button>
-    <button class="lang-btn" data-lang="fa">🇮🇷 فارسی</button>
-    <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+  <div class="lang-bar" style="background:#7B2555;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
+    <span style="color:rgba(255,255,255,.8);font-size:.85rem;" data-i18n="lang_label">Language:</span>
+    <button class="lang-btn active" data-lang="en" style="background:#fff;color:#7B2555;border:1.5px solid #fff;font-weight:700;padding:.35rem 1rem;border-radius:50px;cursor:pointer;">🇺🇸 English</button>
+    <button class="lang-btn" data-lang="fa" style="background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35);font-weight:700;padding:.35rem 1rem;border-radius:50px;cursor:pointer;">🇮🇷 فارسی</button>
+    <button class="lang-btn" data-lang="ru" style="background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35);font-weight:700;padding:.35rem 1rem;border-radius:50px;cursor:pointer;">🇷🇺 Русский</button>
   </div>
 
   <!-- ===== HEADER ===== -->
