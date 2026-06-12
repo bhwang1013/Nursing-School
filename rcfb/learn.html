@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>River City Food Bank — Kids Learning Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet"/>
+<style>
+:root{--maroon:#7B2555;--green:#4E8A16;--gold:#E8A020;--tan:#FDF6E8;--white:#FFFDF7;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--white);color:#2c2c2c;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+/* LANG BAR */
+#lang-bar{
+  position:sticky;top:0;z-index:999;
+  background:#7B2555;
+  padding:10px 20px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+#lang-bar span{color:rgba(255,255,255,.85);font-weight:700;font-size:14px;}
+.lb{
+  background:rgba(255,255,255,.15);
+  border:2px solid rgba(255,255,255,.4);
+  color:#fff;font-family:'Nunito',sans-serif;
+  font-weight:800;font-size:14px;
+  padding:6px 16px;border-radius:50px;cursor:pointer;
+  transition:.2s;
+}
+.lb:hover{background:rgba(255,255,255,.28);}
+.lb.on{background:#fff;color:#7B2555;border-color:#fff;}
+
+/* HEADER */
+.hdr{background:#fff;padding:14px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.hdr-icon{font-size:28px;}
+.hdr-name{font-family:'Fredoka One',sans-serif;font-size:18px;color:#7B2555;line-height:1;}
+.hdr-sub{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#4E8A16;}
+
+/* HERO */
+.hero{
+  min-height:90vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:60px 24px 40px;
+  background:linear-gradient(135deg,#7B2555 0%,#A33070 50%,#4E8A16 100%);
+  position:relative;overflow:hidden;
+}
+.bubbles{position:absolute;inset:0;pointer-events:none;}
+.bubbles span{position:absolute;font-size:clamp(24px,6vw,48px);animation:bob linear infinite;opacity:.45;}
+.bubbles span:nth-child(1){left:5%;top:15%;animation-duration:8s;}
+.bubbles span:nth-child(2){left:18%;top:70%;animation-duration:10s;animation-delay:1s;}
+.bubbles span:nth-child(3){left:30%;top:28%;animation-duration:7s;animation-delay:2s;}
+.bubbles span:nth-child(4){left:58%;top:78%;animation-duration:9s;animation-delay:.5s;}
+.bubbles span:nth-child(5){left:72%;top:18%;animation-duration:11s;animation-delay:3s;}
+.bubbles span:nth-child(6){left:82%;top:58%;animation-duration:6s;animation-delay:1.5s;}
+.bubbles span:nth-child(7){left:90%;top:38%;animation-duration:8s;animation-delay:4s;}
+.bubbles span:nth-child(8){left:45%;top:8%;animation-duration:12s;animation-delay:2.5s;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-28px);}}
+.wave{font-size:52px;animation:wv 1.6s infinite;display:inline-block;margin-bottom:12px;}
+@keyframes wv{0%,100%{transform:rotate(0);}25%{transform:rotate(20deg);}75%{transform:rotate(-10deg);}}
+.hero h1{font-family:'Fredoka One',sans-serif;font-size:clamp(42px,12vw,72px);color:#fff;line-height:1.05;margin-bottom:16px;position:relative;z-index:2;text-shadow:0 4px 20px rgba(0,0,0,.25);}
+.hero p{font-size:clamp(15px,4vw,19px);color:rgba(255,255,255,.9);max-width:560px;line-height:1.65;margin-bottom:28px;position:relative;z-index:2;}
+.hero-btn{display:inline-block;background:#fff;color:#7B2555;font-family:'Fredoka One',sans-serif;font-size:20px;padding:14px 36px;border-radius:50px;box-shadow:0 8px 28px rgba(0,0,0,.2);position:relative;z-index:2;transition:.2s;}
+.hero-btn:hover{transform:translateY(-3px);}
+
+/* SECTIONS */
+.sec{padding:60px 0;}
+.sec--tan{background:var(--tan);}
+.sec--white{background:var(--white);}
+.sec--maroon{background:#7B2555;}
+.sec--green{background:#4E8A16;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+.sec-icon{font-size:36px;display:block;text-align:center;margin-bottom:8px;}
+.sec-title{font-family:'Fredoka One',sans-serif;font-size:clamp(26px,6vw,40px);text-align:center;color:#7B2555;margin-bottom:24px;}
+.sec-title--light{color:#fff;}
+.sec-intro{text-align:center;font-size:16px;color:#666;max-width:600px;margin:-10px auto 28px;line-height:1.7;}
+.sec-intro--light{color:rgba(255,255,255,.9);}
+
+/* EXPLAINER CARDS */
+.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px;}
+.ex-card{border-radius:20px;padding:28px 22px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.12);transition:.25s;}
+.ex-card:hover{transform:translateY(-6px);}
+.ex-card--m{background:#7B2555;color:#fff;}
+.ex-card--g{background:#4E8A16;color:#fff;}
+.ex-card--o{background:#E8A020;color:#fff;}
+.ex-icon{font-size:44px;margin-bottom:12px;}
+.ex-card h3{font-family:'Fredoka One',sans-serif;font-size:18px;margin-bottom:10px;}
+.ex-card p{font-size:14px;line-height:1.65;opacity:.92;}
+.motto{background:#fff;border-radius:20px;padding:20px 28px;text-align:center;border:3px dashed var(--gold);font-size:16px;}
+
+/* STEPS */
+.steps{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.step{background:#fff;border-radius:20px;padding:24px 18px;text-align:center;flex:1;min-width:150px;max-width:210px;box-shadow:0 6px 24px rgba(0,0,0,.1);border-top:5px solid #4E8A16;position:relative;transition:.25s;}
+.step:hover{transform:translateY(-5px);}
+.step-num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#4E8A16;color:#fff;font-family:'Fredoka One',sans-serif;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.step-ico{font-size:36px;margin-bottom:10px;}
+.step h3{font-family:'Fredoka One',sans-serif;font-size:16px;color:#7B2555;margin-bottom:6px;}
+.step p{font-size:13px;color:#666;line-height:1.55;}
+.step-arrow{font-size:22px;color:#4E8A16;font-weight:900;}
+.callout{border-radius:20px;padding:18px 24px;display:flex;align-items:center;gap:14px;font-size:15px;line-height:1.6;}
+.callout--g{background:#6DB01F;color:#fff;}
+.callout--m{background:rgba(123,37,85,.08);border:2px solid #7B2555;}
+.callout-ico{font-size:28px;flex-shrink:0;}
+
+/* FACTS */
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:0;}
+.fact{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.25);border-radius:20px;padding:22px 16px;text-align:center;transition:.25s;}
+.fact:hover{transform:translateY(-5px);background:rgba(255,255,255,.2);}
+.fact-num{font-family:'Fredoka One',sans-serif;font-size:clamp(28px,6vw,44px);color:#F5BC4A;line-height:1;margin-bottom:6px;}
+.fact-num span{font-size:.6em;}
+.fact-label{font-size:13px;color:rgba(255,255,255,.85);margin-bottom:10px;line-height:1.4;}
+.fact-vis{font-size:20px;margin-bottom:10px;letter-spacing:.15em;}
+.fact-note{font-size:12px;color:rgba(255,255,255,.7);font-style:italic;}
+
+/* WHO */
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
+.who-card{background:#fff;border-radius:20px;padding:22px 16px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.1);border-bottom:5px solid #4E8A16;transition:.25s;}
+.who-card:hover{transform:translateY(-5px);}
+.who-ico{font-size:36px;margin-bottom:10px;}
+.who-card h3{font-family:'Fredoka One',sans-serif;font-size:16px;color:#7B2555;margin-bottom:6px;}
+.who-card p{font-size:13px;color:#666;line-height:1.55;}
+
+/* VALUES */
+.val-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.val{border-radius:20px;padding:22px;text-align:center;color:#fff;flex:1;min-width:170px;max-width:240px;box-shadow:0 6px 24px rgba(0,0,0,.12);transition:.25s;}
+.val:hover{transform:scale(1.04);}
+.val--m{background:#7B2555;}.val--g{background:#3A6610;}.val--o{background:#E8A020;color:#3a2200;}
+.val span{font-size:32px;display:block;margin-bottom:8px;}
+.val strong{font-family:'Fredoka One',sans-serif;font-size:15px;display:block;margin-bottom:6px;}
+.val p{font-size:13px;opacity:.9;}
+
+/* HELP */
+.help-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.help-card{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);border-radius:20px;padding:22px 18px;text-align:center;transition:.25s;}
+.help-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.22);}
+.help-ico{font-size:42px;margin-bottom:12px;}
+.help-card h3{font-family:'Fredoka One',sans-serif;font-size:16px;color:#fff;margin-bottom:8px;}
+.help-card p{font-size:13px;color:rgba(255,255,255,.88);line-height:1.6;margin-bottom:12px;}
+.badge{display:inline-block;background:#fff;color:#3A6610;font-weight:900;font-size:12px;padding:4px 12px;border-radius:50px;}
+
+/* FOOD FACTS */
+.food-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px;}
+.food-btn{background:#fff;border:3px solid var(--tan);border-radius:18px;padding:16px 10px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.1);transition:.2s;font-family:'Nunito',sans-serif;}
+.food-btn:hover{transform:translateY(-5px) scale(1.06);border-color:#6DB01F;}
+.food-emo{font-size:36px;}
+.food-name{font-weight:800;font-size:13px;color:#7B2555;}
+.food-tap{font-size:11px;color:#4E8A16;font-weight:700;}
+.food-popup{display:none;background:#7B2555;color:#fff;border-radius:18px;padding:18px 24px;text-align:center;font-size:16px;font-weight:700;margin-top:8px;animation:pop .3s ease;}
+.food-popup.show{display:block;}
+@keyframes pop{from{transform:scale(.85);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+/* LOCATIONS */
+.loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:24px;}
+.loc-card{background:#fff;border-radius:20px;padding:28px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.1);border-top:6px solid #7B2555;transition:.25s;}
+.loc-card:hover{transform:translateY(-4px);}
+.loc-ico{font-size:42px;margin-bottom:10px;}
+.loc-card h3{font-family:'Fredoka One',sans-serif;font-size:22px;color:#7B2555;margin-bottom:8px;}
+.loc-addr{color:#666;font-size:14px;margin-bottom:14px;}
+.loc-hours{background:var(--tan);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:4px;}
+.loc-hours span{font-size:14px;font-weight:700;color:#3A6610;}
+.contact-wrap{text-align:center;font-size:18px;font-weight:800;}
+.contact-wrap a{color:#7B2555;}
+
+/* CLOSING */
+.closing{padding:60px 24px;background:linear-gradient(135deg,#E8A020,#F5BC4A);text-align:center;}
+.closing-star{font-size:56px;display:block;margin-bottom:12px;animation:spin 4s linear infinite;}
+@keyframes spin{0%{transform:rotate(0) scale(1);}50%{transform:rotate(180deg) scale(1.1);}100%{transform:rotate(360deg) scale(1);}}
+.closing h2{font-family:'Fredoka One',sans-serif;font-size:clamp(32px,8vw,52px);color:#3a2200;margin-bottom:12px;}
+.closing p{font-size:16px;color:#4a2e00;line-height:1.7;max-width:560px;margin:0 auto 16px;}
+.closing-emos{font-size:22px;letter-spacing:.2em;opacity:.65;}
+
+/* FOOTER */
+footer{background:#1A0E13;padding:28px 20px;color:rgba(255,255,255,.65);}
+.ft-inner{max-width:1100px;margin:0 auto;display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start;}
+.ft-logo{display:flex;align-items:center;gap:10px;font-size:26px;}
+.ft-logo strong{display:block;color:#fff;font-size:15px;}
+.ft-logo em{font-style:normal;font-size:12px;color:#6DB01F;}
+.ft-text p{font-size:13px;margin-bottom:6px;}
+.ft-text a{color:#F5BC4A;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .ex-grid{grid-template-columns:1fr;}
+  .facts-grid{grid-template-columns:1fr 1fr;}
+  .who-grid{grid-template-columns:1fr 1fr;}
+  .help-grid{grid-template-columns:1fr 1fr;}
+  .food-grid{grid-template-columns:repeat(3,1fr);}
+  .loc-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .steps{flex-direction:column;align-items:center;}
+  .step-arrow{transform:rotate(90deg);}
+  .step{max-width:280px;width:100%;}
+  .facts-grid{grid-template-columns:1fr 1fr;}
+  .help-grid{grid-template-columns:1fr;}
+  .who-grid{grid-template-columns:1fr 1fr;}
+  .food-grid{grid-template-columns:repeat(2,1fr);}
+  .val-row{flex-direction:column;align-items:center;}
+  .val{max-width:100%;}
+}
+/* RTL */
+body.rtl{direction:rtl;}
+body.rtl .steps{flex-direction:row-reverse;}
+body.rtl .step-arrow{transform:scaleX(-1);}
+body.rtl .callout{flex-direction:row-reverse;}
+body.rtl .ft-inner{flex-direction:row-reverse;}
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div id="lang-bar">
+  <span id="ll">Language:</span>
+  <button class="lb on" onclick="setLang('en')">🇺🇸 English</button>
+  <button class="lb" onclick="setLang('fa')">🇮🇷 فارسی</button>
+  <button class="lb" onclick="setLang('ru')">🇷🇺 Русский</button>
+</div>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-icon">🌾</div>
+  <div>
+    <div class="hdr-name">River City Food Bank</div>
+    <div class="hdr-sub" id="h-sub">Learning Corner</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bubbles" aria-hidden="true">
+    <span>🍎</span><span>🥕</span><span>🥦</span><span>🍊</span>
+    <span>🥑</span><span>🍇</span><span>🥬</span><span>🍓</span>
+  </div>
+  <div class="wave">👋</div>
+  <h1 id="h-title">Hi there, friend!</h1>
+  <p id="h-text">Welcome to River City Food Bank's Learning Corner — a place just for <strong>YOU</strong> to learn how we help families in Sacramento get the food they need!</p>
+  <a href="#what" class="hero-btn" id="h-btn">Let's Learn! →</a>
+</section>
+
+<!-- WHAT IS A FOOD BANK -->
+<section class="sec sec--tan" id="what">
+  <div class="wrap">
+    <span class="sec-icon">🏦</span>
+    <h2 class="sec-title" id="w-title">What is a Food Bank?</h2>
+    <div class="ex-grid">
+      <div class="ex-card ex-card--m">
+        <div class="ex-icon">🏪</div>
+        <h3 id="w1t">A Food Bank is like a special store…</h3>
+        <p id="w1p">…where families can come to pick up healthy food <strong>for free</strong> when they really need it!</p>
+      </div>
+      <div class="ex-card ex-card--g">
+        <div class="ex-icon">❓</div>
+        <h3 id="w2t">Why do families need it?</h3>
+        <p id="w2p">Sometimes people don't have enough money to buy food. That doesn't mean anything is wrong with them — it can happen to anyone!</p>
+      </div>
+      <div class="ex-card ex-card--o">
+        <div class="ex-icon">🤗</div>
+        <h3 id="w3t">Who can come here?</h3>
+        <p id="w3p"><strong>Anyone</strong> who is hungry in Sacramento County. No ID, no proof of income, no zip code needed. You're always welcome!</p>
+      </div>
+    </div>
+    <div class="motto"><p id="w-motto">🌟 Our motto: <strong>"Because No One Should Be Hungry"</strong></p></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec sec--white" id="how">
+  <div class="wrap">
+    <span class="sec-icon">⚙️</span>
+    <h2 class="sec-title" id="hw-title">How Does It Work?</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-ico">🚶</div><h3 id="s1t">Walk In</h3><p id="s1p">Families come to one of our two locations. No appointment needed!</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">2</div><div class="step-ico">🛒</div><h3 id="s2t">Choose Food</h3><p id="s2p">Guests pick the food <em>they</em> want — just like shopping! We call this the <strong>Choice Model</strong>.</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">3</div><div class="step-ico">🥗</div><h3 id="s3t">Take It Home</h3><p id="s3p">Fresh fruits, vegetables, dairy, meat and more to feed their family.</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">4</div><div class="step-ico">😊</div><h3 id="s4t">Come Back!</h3><p id="s4p">Families can return whenever they need help. Open 4 days a week!</p></div>
+    </div>
+    <div class="callout callout--g"><span class="callout-ico">🥬</span><p id="hw-note"><strong>Cool fact:</strong> Half of ALL the food we give out is fresh fruits and vegetables!</p></div>
+  </div>
+</section>
+
+<!-- FUN FACTS -->
+<section class="sec sec--maroon" id="facts">
+  <div class="wrap">
+    <span class="sec-icon">🌟</span>
+    <h2 class="sec-title sec-title--light" id="f-title">Wow — Did You Know?</h2>
+    <div class="facts-grid">
+      <div class="fact"><div class="fact-num">3.2<span>M</span></div><div class="fact-label" id="f1l">pounds of food given out in 2025</div><div class="fact-vis">🍎🍎🍎🍎🍎</div><p class="fact-note" id="f1n">Heavier than <strong>400 elephants!</strong> 🐘</p></div>
+      <div class="fact"><div class="fact-num">326<span>K</span></div><div class="fact-label" id="f2l">people helped in 2025</div><div class="fact-vis">👨‍👩‍👧‍👦👨‍👩‍👧‍👦👨‍👩‍👧‍👦</div><p class="fact-note" id="f2n">Like filling a stadium <strong>3+ times!</strong> 🏟️</p></div>
+      <div class="fact"><div class="fact-num">5<span>K</span></div><div class="fact-label" id="f3l">people fed every week</div><div class="fact-vis">🌟🌟🌟🌟🌟</div><p class="fact-note" id="f3n">Like every student in <strong>10 schools!</strong> 🏫</p></div>
+      <div class="fact"><div class="fact-num">40+</div><div class="fact-label" id="f4l">years helping Sacramento</div><div class="fact-vis">🎂🎂🎂🎂</div><p class="fact-note" id="f4n">Started in <strong>1983!</strong> 👴</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE HELP -->
+<section class="sec sec--tan" id="who">
+  <div class="wrap">
+    <span class="sec-icon">💛</span>
+    <h2 class="sec-title" id="wh-title">Who Do We Help?</h2>
+    <p class="sec-intro" id="wh-intro">Hunger can happen to anyone. We help all kinds of neighbors in Sacramento:</p>
+    <div class="who-grid">
+      <div class="who-card"><div class="who-ico">👨‍👩‍👧‍👦</div><h3 id="wh1t">Families</h3><p id="wh1p">Parents and kids who need a helping hand getting food on the table</p></div>
+      <div class="who-card"><div class="who-ico">👴👵</div><h3 id="wh2t">Seniors</h3><p id="wh2p">Older adults on fixed budgets who need nutritious meals</p></div>
+      <div class="who-card"><div class="who-ico">👷</div><h3 id="wh3t">Working Adults</h3><p id="wh3p">People who work hard but still struggle to make ends meet</p></div>
+      <div class="who-card"><div class="who-ico">🌍</div><h3 id="wh4t">Everyone</h3><p id="wh4p">Refugees, individuals with disabilities, anyone going through a tough time</p></div>
+    </div>
+    <div class="callout callout--m"><span class="callout-ico">❤️</span><p id="wh-note">We help <strong>everyone</strong> — no matter their race, age, or background. <strong>Everyone deserves food!</strong></p></div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="sec sec--white">
+  <div class="wrap">
+    <span class="sec-icon">⭐</span>
+    <h2 class="sec-title" id="v-title">What We Believe In</h2>
+    <div class="val-row">
+      <div class="val val--m"><span>👨‍👩‍👧‍👦</span><strong id="v1t">Inclusivity</strong><p id="v1p">We welcome EVERYONE</p></div>
+      <div class="val val--g"><span>💛</span><strong id="v2t">Dignity & Respect</strong><p id="v2p">We treat every person with kindness</p></div>
+      <div class="val val--o"><span>💡</span><strong id="v3t">Adaptability</strong><p id="v3p">We find new ways to help</p></div>
+      <div class="val val--m"><span>🍎</span><strong id="v4t">Health</strong><p id="v4p">We offer nutritious food choices</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO HELP -->
+<section class="sec sec--green" id="help">
+  <div class="wrap">
+    <span class="sec-icon">🙌</span>
+    <h2 class="sec-title sec-title--light" id="hp-title">How YOU Can Help!</h2>
+    <p class="sec-intro sec-intro--light" id="hp-intro">You don't have to be a grown-up to make a difference!</p>
+    <div class="help-grid">
+      <div class="help-card"><div class="help-ico">📢</div><h3 id="hp1t">Spread the Word</h3><p id="hp1p">Tell your friends and family about River City Food Bank. Sometimes people don't know where to get help!</p><div class="badge" id="hp1b">Easy to do!</div></div>
+      <div class="help-card"><div class="help-ico">🥫</div><h3 id="hp2t">Host a Food Drive</h3><p id="hp2p">Ask your teacher if your class can collect canned food. Even a small box makes a big difference!</p><div class="badge" id="hp2b">Do it at school!</div></div>
+      <div class="help-card"><div class="help-ico">🤝</div><h3 id="hp3t">Volunteer (with a grown-up!)</h3><p id="hp3p">Kids ages 10+ can volunteer WITH a parent or adult. You help sort and give out food to neighbors!</p><div class="badge" id="hp3b">Ages 10+</div></div>
+      <div class="help-card"><div class="help-ico">💌</div><h3 id="hp4t">Be Kind</h3><p id="hp4p">If you know someone going through a hard time, be their friend. Kindness is one of the best gifts!</p><div class="badge" id="hp4b">Anyone can do this!</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOD FACTS -->
+<section class="sec sec--white">
+  <div class="wrap">
+    <span class="sec-icon">🔬</span>
+    <h2 class="sec-title" id="fd-title">Food is Amazing!</h2>
+    <p class="sec-intro" id="fd-intro">Tap each food to learn a cool fact!</p>
+    <div class="food-grid">
+      <button class="food-btn" onclick="showFood('carrot')"><span class="food-emo">🥕</span><span class="food-name" id="fn-carrot">Carrots</span><span class="food-tap" id="ft">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('banana')"><span class="food-emo">🍌</span><span class="food-name" id="fn-banana">Bananas</span><span class="food-tap">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('broccoli')"><span class="food-emo">🥦</span><span class="food-name" id="fn-broccoli">Broccoli</span><span class="food-tap">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('orange')"><span class="food-emo">🍊</span><span class="food-name" id="fn-orange">Oranges</span><span class="food-tap">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('beans')"><span class="food-emo">🫘</span><span class="food-name" id="fn-beans">Beans</span><span class="food-tap">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('strawberry')"><span class="food-emo">🍓</span><span class="food-name" id="fn-strawberry">Strawberries</span><span class="food-tap">Tap me!</span></button>
+    </div>
+    <div class="food-popup" id="food-popup"></div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="sec sec--tan">
+  <div class="wrap">
+    <span class="sec-icon">📍</span>
+    <h2 class="sec-title" id="lc-title">Where Are We?</h2>
+    <p class="sec-intro" id="lc-intro">We have two locations in Sacramento!</p>
+    <div class="loc-grid">
+      <div class="loc-card"><div class="loc-ico">🏙️</div><h3 id="lc1n">Midtown</h3><p class="loc-addr">1800 28th Street, Sacramento, CA 95816</p><div class="loc-hours"><span id="lc1d">📅 Tuesday & Thursday</span><span id="lct">🕙 10:30 a.m. – 1:30 p.m.</span></div></div>
+      <div class="loc-card"><div class="loc-ico">🌳</div><h3 id="lc2n">Arden Arcade</h3><p class="loc-addr">Center at St. Matthew's · 2300 Edison Ave., Sacramento, CA 95821</p><div class="loc-hours"><span id="lc2d">📅 Wednesday & Friday</span><span>🕙 10:30 a.m. – 1:30 p.m.</span></div></div>
+    </div>
+    <div class="contact-wrap"><p id="lc-ph">📞 Questions? Call us: <a href="tel:9164462627">(916) 446-2627</a></p></div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <span class="closing-star">🌟</span>
+  <h2 id="cl-title">You're Amazing!</h2>
+  <p id="cl-text">Thanks for learning about River City Food Bank today. Remember — <strong>everyone deserves to have enough food</strong>, and communities like ours help make that happen!</p>
+  <div class="closing-emos">🍎 🥕 🥦 🍊 🍇 🥑 🍓 🥬 🍌 🫘</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-logo"><span>🌾</span><div><strong>River City Food Bank</strong><em id="ft-motto">Because No One Should Be Hungry</em></div></div>
+    <div class="ft-text">
+      <p id="ft-note">This page was made for kids to learn while their families visit us.</p>
+      <p id="ft-adult">For adult info, visit <a href="https://rivercityfoodbank.org" target="_blank">rivercityfoodbank.org</a></p>
+      <p>📞 <a href="tel:9164462627">(916) 446-2627</a> &nbsp;·&nbsp; © 2026 River City Food Bank</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  en:{
+    ll:'Language:',hs:'Learning Corner',ht:'Hi there, friend!',
+    hx:'Welcome to River City Food Bank\'s Learning Corner — a place just for <strong>YOU</strong> to learn how we help families in Sacramento get the food they need!',
+    hb:'Let\'s Learn! →',
+    wt:'What is a Food Bank?',w1t:'A Food Bank is like a special store…',w1p:'…where families can come to pick up healthy food <strong>for free</strong> when they really need it!',
+    w2t:'Why do families need it?',w2p:'Sometimes people don\'t have enough money to buy food. That doesn\'t mean anything is wrong with them — it can happen to anyone!',
+    w3t:'Who can come here?',w3p:'<strong>Anyone</strong> who is hungry in Sacramento County. No ID, no proof of income, no zip code needed. You\'re always welcome!',
+    wm:'🌟 Our motto: <strong>"Because No One Should Be Hungry"</strong>',
+    hwt:'How Does It Work?',s1t:'Walk In',s1p:'Families come to one of our two locations. No appointment needed!',
+    s2t:'Choose Food',s2p:'Guests pick the food <em>they</em> want — just like shopping! We call this the <strong>Choice Model</strong>.',
+    s3t:'Take It Home',s3p:'Fresh fruits, vegetables, dairy, meat and more to feed their family.',
+    s4t:'Come Back!',s4p:'Families can return whenever they need help. Open 4 days a week!',
+    hwn:'<strong>Cool fact:</strong> Half of ALL the food we give out is fresh fruits and vegetables!',
+    ft:'Wow — Did You Know?',f1l:'pounds of food given out in 2025',f1n:'Heavier than <strong>400 elephants!</strong> 🐘',
+    f2l:'people helped in 2025',f2n:'Like filling a stadium <strong>3+ times!</strong> 🏟️',
+    f3l:'people fed every week',f3n:'Like every student in <strong>10 schools!</strong> 🏫',
+    f4l:'years helping Sacramento',f4n:'Started in <strong>1983!</strong> 👴',
+    wht:'Who Do We Help?',whi:'Hunger can happen to anyone. We help all kinds of neighbors in Sacramento:',
+    wh1t:'Families',wh1p:'Parents and kids who need a helping hand getting food on the table',
+    wh2t:'Seniors',wh2p:'Older adults on fixed budgets who need nutritious meals',
+    wh3t:'Working Adults',wh3p:'People who work hard but still struggle to make ends meet',
+    wh4t:'Everyone',wh4p:'Refugees, individuals with disabilities, anyone going through a tough time',
+    whn:'We help <strong>everyone</strong> — no matter their race, age, or background. <strong>Everyone deserves food!</strong>',
+    vt:'What We Believe In',v1t:'Inclusivity',v1p:'We welcome EVERYONE',v2t:'Dignity & Respect',v2p:'We treat every person with kindness',v3t:'Adaptability',v3p:'We find new ways to help',v4t:'Health',v4p:'We offer nutritious food choices',
+    hpt:'How YOU Can Help!',hpi:'You don\'t have to be a grown-up to make a difference!',
+    hp1t:'Spread the Word',hp1p:'Tell your friends and family about River City Food Bank. Sometimes people don\'t know where to get help!',hp1b:'Easy to do!',
+    hp2t:'Host a Food Drive',hp2p:'Ask your teacher if your class can collect canned food. Even a small box makes a big difference!',hp2b:'Do it at school!',
+    hp3t:'Volunteer (with a grown-up!)',hp3p:'Kids ages 10+ can volunteer WITH a parent or adult. You help sort and give out food to neighbors!',hp3b:'Ages 10+',
+    hp4t:'Be Kind',hp4p:'If you know someone going through a hard time, be their friend. Kindness is one of the best gifts!',hp4b:'Anyone can do this!',
+    fdt:'Food is Amazing!',fdi:'Tap each food to learn a cool fact!',tap:'Tap me!',
+    fncarrot:'Carrots',fnbanana:'Bananas',fnbroccoli:'Broccoli',fnorange:'Oranges',fnbeans:'Beans',fnstrawberry:'Strawberries',
+    fcarrot:'Carrots help you see in the dark! Full of Vitamin A. 🥕👁️',fbanana:'Bananas give you energy! Athletes eat them before games. 🍌⚡',
+    fbroccoli:'Broccoli is a "superfood" — Vitamins C, K, and fiber! 🥦💪',forange:'Oranges have Vitamin C to keep you from getting sick! 🍊🛡️',
+    fbeans:'Beans are full of protein that builds your muscles! 🫘💪',fstrawberry:'Strawberries help your brain and improve memory! 🍓🧠',
+    lct:'Where Are We?',lci:'We have two locations in Sacramento!',lc1n:'Midtown',lc1d:'📅 Tuesday & Thursday',lctime:'🕙 10:30 a.m. – 1:30 p.m.',lc2n:'Arden Arcade',lc2d:'📅 Wednesday & Friday',
+    lcph:'📞 Questions? Call us: <a href="tel:9164462627">(916) 446-2627</a>',
+    clt:'You\'re Amazing!',clx:'Thanks for learning about River City Food Bank today. Remember — <strong>everyone deserves to have enough food</strong>, and communities like ours help make that happen!',
+    ftm:'Because No One Should Be Hungry',ftn:'This page was made for kids to learn while their families visit us.',fta:'For adult info, visit <a href="https://rivercityfoodbank.org" target="_blank">rivercityfoodbank.org</a>'
+  },
+  fa:{
+    ll:'زبان:',hs:'گوشه یادگیری',ht:'سلام، دوست!',
+    hx:'به گوشه یادگیری بانک غذای ریور سیتی خوش آمدید — جایی فقط برای <strong>شما</strong> تا یاد بگیرید چطور ما به خانواده‌های ساکرامنتو کمک می‌کنیم!',
+    hb:'بیا یاد بگیریم! ←',
+    wt:'بانک غذا چیست؟',w1t:'بانک غذا مثل یک فروشگاه ویژه است…',w1p:'…جایی که خانواده‌ها می‌توانند غذای سالم را <strong>رایگان</strong> بگیرند، وقتی واقعاً نیاز دارند!',
+    w2t:'چرا خانواده‌ها به آن نیاز دارند؟',w2p:'گاهی مردم پول کافی برای خرید غذا ندارند. این می‌تواند برای هر کسی اتفاق بیفتد!',
+    w3t:'چه کسی می‌تواند بیاید؟',w3p:'<strong>هر کسی</strong> که در ساکرامنتو گرسنه است. بدون کارت شناسایی، بدون مدرک درآمد، بدون کد پستی. همیشه خوش آمدید!',
+    wm:'🌟 شعار ما: <strong>«چون هیچ‌کس نباید گرسنه باشد»</strong>',
+    hwt:'چطور کار می‌کند؟',s1t:'وارد شوید',s1p:'خانواده‌ها به یکی از دو مکان ما می‌آیند. هیچ وقت قبلی لازم نیست!',
+    s2t:'غذا انتخاب کنید',s2p:'مهمانان غذایی که <em>خودشان</em> می‌خواهند انتخاب می‌کنند — مثل خرید! ما این را <strong>مدل انتخاب</strong> می‌نامیم.',
+    s3t:'به خانه ببرید',s3p:'میوه‌های تازه، سبزیجات، لبنیات، گوشت و بیشتر برای خانواده.',
+    s4t:'برگردید!',s4p:'خانواده‌ها هر وقت نیاز داشتند می‌توانند برگردند. هفته‌ای ۴ روز باز هستیم!',
+    hwn:'<strong>نکته جالب:</strong> نصف تمام غذایی که می‌دهیم میوه و سبزیجات تازه است!',
+    ft:'واو — آیا می‌دانستید؟',f1l:'پوند غذا در سال ۲۰۲۵ توزیع شد',f1n:'از <strong>۴۰۰ فیل</strong> سنگین‌تر است! 🐘',
+    f2l:'نفر در سال ۲۰۲۵ کمک گرفتند',f2n:'مثل پر کردن یک استادیوم <strong>بیش از ۳ بار!</strong> 🏟️',
+    f3l:'نفر در هر هفته غذا می‌گیرند',f3n:'مثل تمام دانش‌آموزان <strong>۱۰ مدرسه!</strong> 🏫',
+    f4l:'سال کمک به خانواده‌های ساکرامنتو',f4n:'از <strong>۱۹۸۳</strong> شروع کردیم! 👴',
+    wht:'به چه کسی کمک می‌کنیم؟',whi:'گرسنگی می‌تواند برای هر کسی اتفاق بیفتد:',
+    wh1t:'خانواده‌ها',wh1p:'پدران، مادران و بچه‌هایی که نیاز به کمک برای تامین غذا دارند',
+    wh2t:'سالمندان',wh2p:'بزرگ‌سالان مسن‌تر که نیاز به وعده‌های غذایی مغذی دارند',
+    wh3t:'افراد شاغل',wh3p:'مردمی که سخت کار می‌کنند اما هنوز برای تامین هزینه‌ها مشکل دارند',
+    wh4t:'همه',wh4p:'پناهندگان، افراد معلول و هر کسی که در دوران سختی است',
+    whn:'ما به <strong>همه</strong> کمک می‌کنیم. <strong>همه لایق غذا هستند!</strong>',
+    vt:'آنچه به آن ایمان داریم',v1t:'فراگیری',v1p:'از همه استقبال می‌کنیم',v2t:'کرامت و احترام',v2p:'با هر شخص با مهربانی رفتار می‌کنیم',v3t:'سازگاری',v3p:'راه‌های جدیدی برای کمک پیدا می‌کنیم',v4t:'سلامت',v4p:'گزینه‌های غذایی مغذی ارائه می‌دهیم',
+    hpt:'شما چطور می‌توانید کمک کنید!',hpi:'لازم نیست بزرگسال باشید تا تفاوتی ایجاد کنید!',
+    hp1t:'خبر را پخش کنید',hp1p:'به دوستان و خانواده‌تان درباره بانک غذای ریور سیتی بگویید!',hp1b:'آسان است!',
+    hp2t:'جمع‌آوری غذا برگزار کنید',hp2p:'از معلمتان بخواهید کلاس شما کنسرو جمع‌آوری کند. حتی یک جعبه کوچک تفاوت بزرگی ایجاد می‌کند!',hp2b:'در مدرسه انجام دهید!',
+    hp3t:'داوطلب شوید (با یک بزرگسال!)',hp3p:'بچه‌های ۱۰ سال به بالا می‌توانند با والدین داوطلب شوند!',hp3b:'از ۱۰ سال به بالا',
+    hp4t:'مهربان باشید',hp4p:'اگر کسی را می‌شناسید که روز سختی دارد، دوستش باشید!',hp4b:'همه می‌توانند این کار را بکنند!',
+    fdt:'غذا شگفت‌انگیز است!',fdi:'روی هر غذا بزنید تا یک حقیقت جالب بدانید!',tap:'بزنید!',
+    fncarrot:'هویج',fnbanana:'موز',fnbroccoli:'بروکلی',fnorange:'پرتقال',fnbeans:'لوبیا',fnstrawberry:'توت فرنگی',
+    fcarrot:'هویج کمک می‌کند در تاریکی بهتر ببینید! پر از ویتامین A است. 🥕👁️',fbanana:'موز به شما انرژی می‌دهد! 🍌⚡',
+    fbroccoli:'بروکلی "ابرغذا" است — ویتامین C، K و فیبر! 🥦💪',forange:'پرتقال پر از ویتامین C است که شما را از بیماری دور نگه می‌دارد! 🍊🛡️',
+    fbeans:'لوبیا پر از پروتئین است که عضلات شما را می‌سازد! 🫘💪',fstrawberry:'توت فرنگی به حافظه و مغز کمک می‌کند! 🍓🧠',
+    lct:'کجا هستیم؟',lci:'ما دو مکان در ساکرامنتو داریم!',lc1n:'میدتاون',lc1d:'📅 سه‌شنبه و پنج‌شنبه',lctime:'🕙 ۱۰:۳۰ صبح تا ۱:۳۰ بعد از ظهر',lc2n:'آردن آرکید',lc2d:'📅 چهارشنبه و جمعه',
+    lcph:'📞 سوال دارید؟ زنگ بزنید: <a href="tel:9164462627">(916) 446-2627</a>',
+    clt:'شما شگفت‌انگیز هستید!',clx:'ممنون که امروز یاد گرفتید. <strong>همه لایق غذای کافی هستند!</strong>',
+    ftm:'چون هیچ‌کس نباید گرسنه باشد',ftn:'این صفحه برای بچه‌ها ساخته شده.',fta:'برای اطلاعات بزرگسالان: <a href="https://rivercityfoodbank.org" target="_blank">rivercityfoodbank.org</a>'
+  },
+  ru:{
+    ll:'Язык:',hs:'Уголок знаний',ht:'Привет, друг!',
+    hx:'Добро пожаловать в Уголок знаний банка питания River City — место для <strong>ТЕБЯ</strong>, где ты узнаешь, как мы помогаем семьям в Сакраменто!',
+    hb:'Давай учиться! →',
+    wt:'Что такое банк питания?',w1t:'Банк питания — это особый магазин…',w1p:'…где семьи могут получить здоровую еду <strong>бесплатно</strong>, когда им это нужно!',
+    w2t:'Почему семьям нужна помощь?',w2p:'Иногда у людей не хватает денег на еду. Это может случиться с каждым!',
+    w3t:'Кто может прийти?',w3p:'<strong>Любой</strong>, кто голоден в округе Сакраменто. Без документов, без подтверждения дохода. Мы всегда рады!',
+    wm:'🌟 Наш девиз: <strong>«Потому что никто не должен быть голодным»</strong>',
+    hwt:'Как это работает?',s1t:'Войти',s1p:'Семьи приходят в одно из двух наших мест. Запись не нужна!',
+    s2t:'Выбрать еду',s2p:'Гости выбирают еду, которую <em>они</em> хотят — как в магазине! Мы называем это <strong>«Модель выбора»</strong>.',
+    s3t:'Взять домой',s3p:'Свежие фрукты, овощи, молочные продукты, мясо и многое другое.',
+    s4t:'Возвращайтесь!',s4p:'Семьи могут приходить когда угодно. Открыто 4 дня в неделю!',
+    hwn:'<strong>Интересный факт:</strong> Половина всей еды — свежие фрукты и овощи!',
+    ft:'Вау — ты знал?',f1l:'фунтов еды роздано в 2025 году',f1n:'Тяжелее, чем <strong>400 слонов!</strong> 🐘',
+    f2l:'человек получили помощь в 2025 году',f2n:'Как заполнить стадион <strong>3+ раза!</strong> 🏟️',
+    f3l:'человек получают еду каждую неделю',f3n:'Как все ученики <strong>10 школ!</strong> 🏫',
+    f4l:'лет помощи семьям Сакраменто',f4n:'Начали в <strong>1983 году!</strong> 👴',
+    wht:'Кому мы помогаем?',whi:'Голод может коснуться каждого. Мы помогаем разным соседям в Сакраменто:',
+    wh1t:'Семьи',wh1p:'Родители и дети, которым нужна помощь с едой',
+    wh2t:'Пожилые люди',wh2p:'Пожилые взрослые с фиксированным бюджетом',
+    wh3t:'Работающие взрослые',wh3p:'Люди, которые работают, но всё равно с трудом сводят концы с концами',
+    wh4t:'Все',wh4p:'Беженцы, люди с ограниченными возможностями и все, кому трудно',
+    whn:'Мы помогаем <strong>всем</strong> — независимо от возраста и происхождения. <strong>Каждый заслуживает еды!</strong>',
+    vt:'Во что мы верим',v1t:'Инклюзивность',v1p:'Мы приветствуем ВСЕХ',v2t:'Достоинство и уважение',v2p:'Мы относимся к каждому с добротой',v3t:'Гибкость',v3p:'Мы находим новые способы помочь',v4t:'Здоровье',v4p:'Мы предлагаем питательные продукты',
+    hpt:'Как ТЫ можешь помочь!',hpi:'Не нужно быть взрослым, чтобы изменить ситуацию!',
+    hp1t:'Расскажи другим',hp1p:'Расскажи друзьям и семье о банке питания River City!',hp1b:'Легко сделать!',
+    hp2t:'Организуй сбор продуктов',hp2p:'Попроси учителя организовать сбор консервов. Даже небольшая коробка важна!',hp2b:'Сделай это в школе!',
+    hp3t:'Стань волонтёром (со взрослым!)',hp3p:'Дети от 10 лет могут помогать ВМЕСТЕ с родителем!',hp3b:'От 10 лет',
+    hp4t:'Будь добрым',hp4p:'Если кому-то трудно, будь другом. Доброта — один из лучших подарков!',hp4b:'Это может каждый!',
+    fdt:'Еда — это удивительно!',fdi:'Нажми на каждый продукт, чтобы узнать интересный факт!',tap:'Нажми!',
+    fncarrot:'Морковь',fnbanana:'Бананы',fnbroccoli:'Брокколи',fnorange:'Апельсины',fnbeans:'Фасоль',fnstrawberry:'Клубника',
+    fcarrot:'Морковь помогает видеть в темноте! Много витамина A. 🥕👁️',fbanana:'Бананы дают энергию! Спортсмены едят их перед играми. 🍌⚡',
+    fbroccoli:'Брокколи — «суперпродукт» — витамины C, K и клетчатка! 🥦💪',forange:'Апельсины богаты витамином C — защита от болезней! 🍊🛡️',
+    fbeans:'Фасоль богата белком для роста мышц! 🫘💪',fstrawberry:'Клубника улучшает память и работу мозга! 🍓🧠',
+    lct:'Где мы находимся?',lci:'У нас два места в Сакраменто!',lc1n:'Мидтаун',lc1d:'📅 Вторник и четверг',lctime:'🕙 10:30 — 13:30',lc2n:'Арден Аркейд',lc2d:'📅 Среда и пятница',
+    lcph:'📞 Есть вопросы? Позвони: <a href="tel:9164462627">(916) 446-2627</a>',
+    clt:'Ты замечательный!',clx:'Спасибо, что узнал о банке питания River City. <strong>Каждый заслуживает достаточно еды!</strong>',
+    ftm:'Потому что никто не должен быть голодным',ftn:'Эта страница создана для детей.',fta:'Для взрослых: <a href="https://rivercityfoodbank.org" target="_blank">rivercityfoodbank.org</a>'
+  }
+};
+
+let lang='en';
+
+function setLang(l){
+  lang=l;
+  const t=T[l];
+  document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.getAttribute('onclick').includes("'"+l+"'")));
+  if(l==='fa'){document.documentElement.setAttribute('dir','rtl');document.body.classList.add('rtl');}
+  else{document.documentElement.setAttribute('dir','ltr');document.body.classList.remove('rtl');}
+  const ids={
+    'll':'ll','hs':'h-sub','ht':'h-title','hx':'h-text','hb':'h-btn',
+    'wt':'w-title','w1t':'w1t','w1p':'w1p','w2t':'w2t','w2p':'w2p','w3t':'w3t','w3p':'w3p','wm':'w-motto',
+    'hwt':'hw-title','s1t':'s1t','s1p':'s1p','s2t':'s2t','s2p':'s2p','s3t':'s3t','s3p':'s3p','s4t':'s4t','s4p':'s4p','hwn':'hw-note',
+    'ft':'f-title','f1l':'f1l','f1n':'f1n','f2l':'f2l','f2n':'f2n','f3l':'f3l','f3n':'f3n','f4l':'f4l','f4n':'f4n',
+    'wht':'wh-title','whi':'wh-intro','wh1t':'wh1t','wh1p':'wh1p','wh2t':'wh2t','wh2p':'wh2p','wh3t':'wh3t','wh3p':'wh3p','wh4t':'wh4t','wh4p':'wh4p','whn':'wh-note',
+    'vt':'v-title','v1t':'v1t','v1p':'v1p','v2t':'v2t','v2p':'v2p','v3t':'v3t','v3p':'v3p','v4t':'v4t','v4p':'v4p',
+    'hpt':'hp-title','hpi':'hp-intro','hp1t':'hp1t','hp1p':'hp1p','hp1b':'hp1b','hp2t':'hp2t','hp2p':'hp2p','hp2b':'hp2b','hp3t':'hp3t','hp3p':'hp3p','hp3b':'hp3b','hp4t':'hp4t','hp4p':'hp4p','hp4b':'hp4b',
+    'fdt':'fd-title','fdi':'fd-intro','tap':'ft',
+    'fncarrot':'fn-carrot','fnbanana':'fn-banana','fnbroccoli':'fn-broccoli','fnorange':'fn-orange','fnbeans':'fn-beans','fnstrawberry':'fn-strawberry',
+    'lct':'lc-title','lci':'lc-intro','lc1n':'lc1n','lc1d':'lc1d','lctime':'lct','lc2n':'lc2n','lc2d':'lc2d','lcph':'lc-ph',
+    'clt':'cl-title','clx':'cl-text','ftm':'ft-motto','ftn':'ft-note','fta':'ft-adult'
+  };
+  for(const[k,id] of Object.entries(ids)){
+    const el=document.getElementById(id);
+    if(el&&t[k]!==undefined)el.innerHTML=t[k];
+  }
+  // update all tap-me spans
+  document.querySelectorAll('.food-tap').forEach(el=>el.textContent=t['tap']);
+  document.getElementById('food-popup').classList.remove('show');
+}
+
+function showFood(key){
+  const p=document.getElementById('food-popup');
+  p.innerHTML=T[lang]['f'+key]||'';
+  p.classList.add('show');
+}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.food-btn')&&!e.target.closest('#food-popup'))
+    document.getElementById('food-popup').classList.remove('show');
+});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
