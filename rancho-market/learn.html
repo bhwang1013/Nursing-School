@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rancho Cordova Certified Farmers' Market — Kids Learning Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet"/>
+<style>
+:root{--green:#3A6610;--green2:#4E8A16;--orange:#E8A020;--tan:#FDF6E8;--white:#FFFDF7;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--white);color:#2c2c2c;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+/* LANG BAR */
+#lang-bar{
+  position:sticky;top:0;z-index:999;
+  background:var(--green);
+  padding:10px 20px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+#lang-bar span{color:rgba(255,255,255,.85);font-weight:700;font-size:14px;}
+.lb{
+  background:rgba(255,255,255,.15);
+  border:2px solid rgba(255,255,255,.4);
+  color:#fff;font-family:'Nunito',sans-serif;
+  font-weight:800;font-size:14px;
+  padding:6px 16px;border-radius:50px;cursor:pointer;
+  transition:.2s;
+}
+.lb:hover{background:rgba(255,255,255,.28);}
+.lb.on{background:#fff;color:var(--green);border-color:#fff;}
+
+/* HEADER */
+.hdr{background:#fff;padding:14px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.hdr-icon{font-size:28px;}
+.hdr-name{font-family:'Fredoka One',sans-serif;font-size:18px;color:var(--green);line-height:1;}
+.hdr-sub{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);}
+
+/* HERO */
+.hero{
+  min-height:90vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:60px 24px 40px;
+  background:linear-gradient(135deg,#3A6610 0%,#4E8A16 50%,#E8A020 100%);
+  position:relative;overflow:hidden;
+}
+.bubbles{position:absolute;inset:0;pointer-events:none;}
+.bubbles span{position:absolute;font-size:clamp(24px,6vw,48px);animation:bob linear infinite;opacity:.45;}
+.bubbles span:nth-child(1){left:5%;top:15%;animation-duration:8s;}
+.bubbles span:nth-child(2){left:18%;top:70%;animation-duration:10s;animation-delay:1s;}
+.bubbles span:nth-child(3){left:30%;top:28%;animation-duration:7s;animation-delay:2s;}
+.bubbles span:nth-child(4){left:58%;top:78%;animation-duration:9s;animation-delay:.5s;}
+.bubbles span:nth-child(5){left:72%;top:18%;animation-duration:11s;animation-delay:3s;}
+.bubbles span:nth-child(6){left:82%;top:58%;animation-duration:6s;animation-delay:1.5s;}
+.bubbles span:nth-child(7){left:90%;top:38%;animation-duration:8s;animation-delay:4s;}
+.bubbles span:nth-child(8){left:45%;top:8%;animation-duration:12s;animation-delay:2.5s;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-28px);}}
+.wave{font-size:52px;animation:wv 1.6s infinite;display:inline-block;margin-bottom:12px;}
+@keyframes wv{0%,100%{transform:rotate(0);}25%{transform:rotate(20deg);}75%{transform:rotate(-10deg);}}
+.hero h1{font-family:'Fredoka One',sans-serif;font-size:clamp(42px,12vw,72px);color:#fff;line-height:1.05;margin-bottom:16px;position:relative;z-index:2;text-shadow:0 4px 20px rgba(0,0,0,.25);}
+.hero p{font-size:clamp(15px,4vw,19px);color:rgba(255,255,255,.95);max-width:560px;line-height:1.65;margin-bottom:28px;position:relative;z-index:2;}
+.hero-btn{display:inline-block;background:#fff;color:var(--green);font-family:'Fredoka One',sans-serif;font-size:20px;padding:14px 36px;border-radius:50px;box-shadow:0 8px 28px rgba(0,0,0,.2);position:relative;z-index:2;transition:.2s;}
+.hero-btn:hover{transform:translateY(-3px);}
+
+/* SECTIONS */
+.sec{padding:60px 0;}
+.sec--tan{background:var(--tan);}
+.sec--white{background:var(--white);}
+.sec--green{background:var(--green);}
+.sec--orange{background:var(--orange);}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+.sec-icon{font-size:36px;display:block;text-align:center;margin-bottom:8px;}
+.sec-title{font-family:'Fredoka One',sans-serif;font-size:clamp(26px,6vw,40px);text-align:center;color:var(--green);margin-bottom:24px;}
+.sec-title--light{color:#fff;}
+.sec-intro{text-align:center;font-size:16px;color:#666;max-width:600px;margin:-10px auto 28px;line-height:1.7;}
+.sec-intro--light{color:rgba(255,255,255,.9);}
+
+/* EXPLAINER CARDS */
+.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px;}
+.ex-card{border-radius:20px;padding:28px 22px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.12);transition:.25s;}
+.ex-card:hover{transform:translateY(-6px);}
+.ex-card--g{background:var(--green);color:#fff;}
+.ex-card--g2{background:var(--green2);color:#fff;}
+.ex-card--o{background:var(--orange);color:#fff;}
+.ex-icon{font-size:44px;margin-bottom:12px;}
+.ex-card h3{font-family:'Fredoka One',sans-serif;font-size:18px;margin-bottom:10px;}
+.ex-card p{font-size:14px;line-height:1.65;opacity:.92;}
+.motto{background:#fff;border-radius:20px;padding:20px 28px;text-align:center;border:3px dashed var(--orange);font-size:16px;}
+
+/* STEPS */
+.steps{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.step{background:#fff;border-radius:20px;padding:24px 18px;text-align:center;flex:1;min-width:150px;max-width:210px;box-shadow:0 6px 24px rgba(0,0,0,.1);border-top:5px solid var(--green2);position:relative;transition:.25s;}
+.step:hover{transform:translateY(-5px);}
+.step-num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green2);color:#fff;font-family:'Fredoka One',sans-serif;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.step-ico{font-size:36px;margin-bottom:10px;}
+.step h3{font-family:'Fredoka One',sans-serif;font-size:16px;color:var(--green);margin-bottom:6px;}
+.step p{font-size:13px;color:#666;line-height:1.55;}
+.step-arrow{font-size:22px;color:var(--green2);font-weight:900;}
+.callout{border-radius:20px;padding:18px 24px;display:flex;align-items:center;gap:14px;font-size:15px;line-height:1.6;}
+.callout--o{background:var(--orange);color:#fff;}
+.callout--g{background:rgba(58,102,16,.08);border:2px solid var(--green);}
+.callout-ico{font-size:28px;flex-shrink:0;}
+
+/* FACTS */
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:0;}
+.fact{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);border-radius:20px;padding:22px 16px;text-align:center;transition:.25s;}
+.fact:hover{transform:translateY(-5px);background:rgba(255,255,255,.24);}
+.fact-num{font-family:'Fredoka One',sans-serif;font-size:clamp(28px,6vw,44px);color:#fff;line-height:1;margin-bottom:6px;}
+.fact-num span{font-size:.6em;}
+.fact-label{font-size:13px;color:rgba(255,255,255,.9);margin-bottom:10px;line-height:1.4;}
+.fact-vis{font-size:20px;margin-bottom:10px;letter-spacing:.15em;}
+
+/* WHO */
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
+.who-card{background:#fff;border-radius:20px;padding:22px 16px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.1);border-bottom:5px solid var(--green2);transition:.25s;}
+.who-card:hover{transform:translateY(-5px);}
+.who-ico{font-size:36px;margin-bottom:10px;}
+.who-card h3{font-family:'Fredoka One',sans-serif;font-size:16px;color:var(--green);margin-bottom:6px;}
+.who-card p{font-size:13px;color:#666;line-height:1.55;}
+
+/* VALUES */
+.val-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.val{border-radius:20px;padding:22px;text-align:center;color:#fff;flex:1;min-width:170px;max-width:240px;box-shadow:0 6px 24px rgba(0,0,0,.12);transition:.25s;}
+.val:hover{transform:scale(1.04);}
+.val--g{background:var(--green);}.val--g2{background:var(--green2);}.val--o{background:var(--orange);color:#3a2200;}
+.val span{font-size:32px;display:block;margin-bottom:8px;}
+.val strong{font-family:'Fredoka One',sans-serif;font-size:15px;display:block;margin-bottom:6px;}
+.val p{font-size:13px;opacity:.9;}
+
+/* HELP */
+.help-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.help-card{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);border-radius:20px;padding:22px 18px;text-align:center;transition:.25s;}
+.help-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.22);}
+.help-ico{font-size:42px;margin-bottom:12px;}
+.help-card h3{font-family:'Fredoka One',sans-serif;font-size:16px;color:#fff;margin-bottom:8px;}
+.help-card p{font-size:13px;color:rgba(255,255,255,.92);line-height:1.6;margin-bottom:12px;}
+.badge{display:inline-block;background:#fff;color:var(--green);font-weight:900;font-size:12px;padding:4px 12px;border-radius:50px;}
+
+/* FOOD FACTS */
+.food-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px;}
+.food-btn{background:#fff;border:3px solid var(--tan);border-radius:18px;padding:16px 10px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.1);transition:.2s;font-family:'Nunito',sans-serif;}
+.food-btn:hover{transform:translateY(-5px) scale(1.06);border-color:var(--green2);}
+.food-emo{font-size:36px;}
+.food-name{font-weight:800;font-size:13px;color:var(--green);}
+.food-tap{font-size:11px;color:var(--green2);font-weight:700;}
+.food-popup{display:none;background:var(--green);color:#fff;border-radius:18px;padding:18px 24px;text-align:center;font-size:16px;font-weight:700;margin-top:8px;animation:pop .3s ease;}
+.food-popup.show{display:block;}
+@keyframes pop{from{transform:scale(.85);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+/* LOCATION */
+.loc-card{background:#fff;border-radius:20px;padding:28px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.1);border-top:6px solid var(--green);max-width:520px;margin:0 auto 24px;}
+.loc-ico{font-size:42px;margin-bottom:10px;}
+.loc-card h3{font-family:'Fredoka One',sans-serif;font-size:22px;color:var(--green);margin-bottom:8px;}
+.loc-addr{color:#666;font-size:14px;margin-bottom:14px;}
+.loc-hours{background:var(--tan);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:4px;margin-bottom:10px;}
+.loc-hours span{font-size:14px;font-weight:700;color:var(--green);}
+.loc-pet{font-size:13px;color:#666;}
+.contact-wrap{text-align:center;font-size:18px;font-weight:800;}
+.contact-wrap a{color:var(--green);}
+
+/* CLOSING */
+.closing{padding:60px 24px;background:linear-gradient(135deg,var(--orange),#F5BC4A);text-align:center;}
+.closing-star{font-size:56px;display:block;margin-bottom:12px;animation:spin 4s linear infinite;}
+@keyframes spin{0%{transform:rotate(0) scale(1);}50%{transform:rotate(180deg) scale(1.1);}100%{transform:rotate(360deg) scale(1);}}
+.closing h2{font-family:'Fredoka One',sans-serif;font-size:clamp(32px,8vw,52px);color:#3a2200;margin-bottom:12px;}
+.closing p{font-size:16px;color:#4a2e00;line-height:1.7;max-width:560px;margin:0 auto 16px;}
+.closing-emos{font-size:22px;letter-spacing:.2em;opacity:.65;}
+
+/* FOOTER */
+footer{background:#16240A;padding:28px 20px;color:rgba(255,255,255,.65);}
+.ft-inner{max-width:1100px;margin:0 auto;display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start;}
+.ft-logo{display:flex;align-items:center;gap:10px;font-size:26px;}
+.ft-logo strong{display:block;color:#fff;font-size:15px;}
+.ft-logo em{font-style:normal;font-size:12px;color:var(--orange);}
+.ft-text p{font-size:13px;margin-bottom:6px;}
+.ft-text a{color:var(--orange);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .ex-grid{grid-template-columns:1fr;}
+  .facts-grid{grid-template-columns:1fr 1fr;}
+  .who-grid{grid-template-columns:1fr 1fr;}
+  .help-grid{grid-template-columns:1fr 1fr;}
+  .food-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:600px){
+  .steps{flex-direction:column;align-items:center;}
+  .step-arrow{transform:rotate(90deg);}
+  .step{max-width:280px;width:100%;}
+  .facts-grid{grid-template-columns:1fr 1fr;}
+  .help-grid{grid-template-columns:1fr;}
+  .who-grid{grid-template-columns:1fr 1fr;}
+  .food-grid{grid-template-columns:repeat(2,1fr);}
+  .val-row{flex-direction:column;align-items:center;}
+  .val{max-width:100%;}
+}
+/* RTL */
+body.rtl{direction:rtl;}
+body.rtl .steps{flex-direction:row-reverse;}
+body.rtl .step-arrow{transform:scaleX(-1);}
+body.rtl .callout{flex-direction:row-reverse;}
+body.rtl .ft-inner{flex-direction:row-reverse;}
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div id="lang-bar">
+  <span id="ll">Language:</span>
+  <button class="lb on" onclick="setLang('en')">🇺🇸 English</button>
+  <button class="lb" onclick="setLang('es')">🇪🇸 Español</button>
+  <button class="lb" onclick="setLang('ru')">🇷🇺 Русский</button>
+  <button class="lb" onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
+  <button class="lb" onclick="setLang('tl')">🇵🇭 Tagalog</button>
+  <button class="lb" onclick="setLang('zh')">🇨🇳 中文</button>
+  <button class="lb" onclick="setLang('fa')">🇮🇷 فارسی</button>
+</div>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-icon">🧺</div>
+  <div>
+    <div class="hdr-name">Rancho Cordova Certified Farmers' Market</div>
+    <div class="hdr-sub" id="h-sub">Kids Learning Corner</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bubbles" aria-hidden="true">
+    <span>🍎</span><span>🥕</span><span>🥦</span><span>🍊</span>
+    <span>🥑</span><span>🍇</span><span>🍯</span><span>🌻</span>
+  </div>
+  <div class="wave">👋</div>
+  <h1 id="h-title">Hi there, friend!</h1>
+  <p id="h-text">Welcome to the Rancho Cordova Certified Farmers' Market Learning Corner — a place just for <strong>YOU</strong> to learn all about our market and the yummy food grown near you!</p>
+  <a href="#what" class="hero-btn" id="h-btn">Let's Learn! →</a>
+</section>
+
+<!-- WHAT IS A FARMERS MARKET -->
+<section class="sec sec--tan" id="what">
+  <div class="wrap">
+    <span class="sec-icon">🧺</span>
+    <h2 class="sec-title" id="w-title">What is a Farmers' Market?</h2>
+    <div class="ex-grid">
+      <div class="ex-card ex-card--g">
+        <div class="ex-icon">🚜</div>
+        <h3 id="w1t">It's a market full of farmers!</h3>
+        <p id="w1p">Real farmers bring fruits, vegetables, honey, nuts, flowers, breakfast, lunch and more — all grown nearby!</p>
+      </div>
+      <div class="ex-card ex-card--g2">
+        <div class="ex-icon">✅</div>
+        <h3 id="w2t">What does "Certified" mean?</h3>
+        <p id="w2p">Certified means every farmer here really grows what they sell. The State checks to make sure it's true!</p>
+      </div>
+      <div class="ex-card ex-card--o">
+        <div class="ex-icon">🤗</div>
+        <h3 id="w3t">Who can come?</h3>
+        <p id="w3p"><strong>Everyone</strong> is welcome! Families, friends, and neighbors come every Saturday to shop and have fun.</p>
+      </div>
+    </div>
+    <div class="motto"><p id="w-motto">🌟 Open since 2010 — Rancho Cordova's only certified farmers' market!</p></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec sec--white" id="how">
+  <div class="wrap">
+    <span class="sec-icon">⚙️</span>
+    <h2 class="sec-title" id="hw-title">How Does It Work?</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-ico">🚶</div><h3 id="s1t">Walk In</h3><p id="s1p">Come to Sunrise Station every Saturday morning. No tickets needed!</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">2</div><div class="step-ico">👩‍🌾</div><h3 id="s2t">Say Hi to Farmers</h3><p id="s2p">Walk around and meet the farmers who grew your food!</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">3</div><div class="step-ico">🛒</div><h3 id="s3t">Pick Your Food</h3><p id="s3p">Choose fresh fruits, veggies, honey, baked goods, and more.</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">4</div><div class="step-ico">😊</div><h3 id="s4t">Pay & Go Home</h3><p id="s4p">Pay with cash, card, or EBT, then take your yummy food home!</p></div>
+    </div>
+    <div class="callout callout--o"><span class="callout-ico">💵</span><p id="hw-note"><strong>Cool fact:</strong> You can use EBT/CalFresh here, and get up to <strong>$15 extra</strong> to spend on fruits & veggies with Market Match!</p></div>
+  </div>
+</section>
+
+<!-- FUN FACTS -->
+<section class="sec sec--green" id="facts">
+  <div class="wrap">
+    <span class="sec-icon">🌟</span>
+    <h2 class="sec-title sec-title--light" id="f-title">Wow — Did You Know?</h2>
+    <div class="facts-grid">
+      <div class="fact"><div class="fact-num">2010</div><div class="fact-label" id="f1l">the year our market first opened</div><div class="fact-vis">🎉🎉🎉</div></div>
+      <div class="fact"><div class="fact-num">52</div><div class="fact-label" id="f2l">Saturdays every year you can visit!</div><div class="fact-vis">📅📅📅</div></div>
+      <div class="fact"><div class="fact-num">$15</div><div class="fact-label" id="f3l">extra dollars you can earn with Market Match</div><div class="fact-vis">💵💵💵</div></div>
+      <div class="fact"><div class="fact-num">25<span>+</span></div><div class="fact-label" id="f4l">local farms & vendors selling treats each week</div><div class="fact-vis">🚜🚜🚜</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO SHOPS HERE -->
+<section class="sec sec--tan" id="who">
+  <div class="wrap">
+    <span class="sec-icon">💛</span>
+    <h2 class="sec-title" id="wh-title">Who Shops Here?</h2>
+    <p class="sec-intro" id="wh-intro">Every kind of neighbor comes to our market!</p>
+    <div class="who-grid">
+      <div class="who-card"><div class="who-ico">👨‍👩‍👧‍👦</div><h3 id="wh1t">Families</h3><p id="wh1p">Kids and parents shopping together for healthy, yummy food</p></div>
+      <div class="who-card"><div class="who-ico">🚲</div><h3 id="wh2t">Bike Riders</h3><p id="wh2p">Get free bike tune-ups on select Saturdays!</p></div>
+      <div class="who-card"><div class="who-ico">🪪</div><h3 id="wh3t">EBT/CalFresh Shoppers</h3><p id="wh3p">Use your benefits and get bonus Market Match dollars</p></div>
+      <div class="who-card"><div class="who-ico">🌍</div><h3 id="wh4t">Everyone!</h3><p id="wh4p">Neighbors of all kinds come to shop, eat, and have fun</p></div>
+    </div>
+    <div class="callout callout--g"><span class="callout-ico">❤️</span><p id="wh-note">No matter who you are, you're always <strong>welcome</strong> at our market!</p></div>
+  </div>
+</section>
+
+<!-- WHAT MAKES US SPECIAL -->
+<section class="sec sec--white">
+  <div class="wrap">
+    <span class="sec-icon">⭐</span>
+    <h2 class="sec-title" id="v-title">What Makes Us Special</h2>
+    <div class="val-row">
+      <div class="val val--g"><span>🌱</span><strong id="v1t">Fresh & Local</strong><p id="v1p">Food grown right here near Sacramento</p></div>
+      <div class="val val--g2"><span>😊</span><strong id="v2t">Friendly Faces</strong><p id="v2p">We love meeting new friends every Saturday</p></div>
+      <div class="val val--o"><span>🥗</span><strong id="v3t">Healthy Choices</strong><p id="v3p">Lots of fruits, veggies, and yummy treats</p></div>
+      <div class="val val--g"><span>🤝</span><strong id="v4t">Community Spirit</strong><p id="v4p">We celebrate Rancho Cordova together</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO HELP -->
+<section class="sec sec--orange" id="help">
+  <div class="wrap">
+    <span class="sec-icon">🙌</span>
+    <h2 class="sec-title sec-title--light" id="hp-title">How YOU Can Help!</h2>
+    <p class="sec-intro sec-intro--light" id="hp-intro">You don't have to be a grown-up to make a difference!</p>
+    <div class="help-grid">
+      <div class="help-card"><div class="help-ico">👨‍👩‍👧‍👦</div><h3 id="hp1t">Bring Your Family</h3><p id="hp1p">Come shop and support local farmers every Saturday!</p><div class="badge" id="hp1b">Easy to do!</div></div>
+      <div class="help-card"><div class="help-ico">🍓</div><h3 id="hp2t">Try New Foods</h3><p id="hp2p">Be brave and taste something new each visit!</p><div class="badge" id="hp2b">So fun!</div></div>
+      <div class="help-card"><div class="help-ico">🚲</div><h3 id="hp3t">Ride Your Bike</h3><p id="hp3p">Get a free tune-up the 3rd Saturday (July–Sept) or 4th Saturday starting in October!</p><div class="badge" id="hp3b">Free!</div></div>
+      <div class="help-card"><div class="help-ico">💌</div><h3 id="hp4t">Be Kind to Vendors</h3><p id="hp4p">Say thank you to the farmers who grow your food!</p><div class="badge" id="hp4b">Anyone can do this!</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOD FACTS -->
+<section class="sec sec--white">
+  <div class="wrap">
+    <span class="sec-icon">🔬</span>
+    <h2 class="sec-title" id="fd-title">Food is Amazing!</h2>
+    <p class="sec-intro" id="fd-intro">Tap each food to learn a cool fact!</p>
+    <div class="food-grid">
+      <button class="food-btn" onclick="showFood('carrot')"><span class="food-emo">🥕</span><span class="food-name" id="fn-carrot">Carrots</span><span class="food-tap" id="ft">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('banana')"><span class="food-emo">🍌</span><span class="food-name" id="fn-banana">Bananas</span><span class="food-tap">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('broccoli')"><span class="food-emo">🥦</span><span class="food-name" id="fn-broccoli">Broccoli</span><span class="food-tap">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('orange')"><span class="food-emo">🍊</span><span class="food-name" id="fn-orange">Oranges</span><span class="food-tap">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('beans')"><span class="food-emo">🫘</span><span class="food-name" id="fn-beans">Beans</span><span class="food-tap">Tap me!</span></button>
+      <button class="food-btn" onclick="showFood('strawberry')"><span class="food-emo">🍓</span><span class="food-name" id="fn-strawberry">Strawberries</span><span class="food-tap">Tap me!</span></button>
+    </div>
+    <div class="food-popup" id="food-popup"></div>
+  </div>
+</section>
+
+<!-- VISIT US -->
+<section class="sec sec--tan">
+  <div class="wrap">
+    <span class="sec-icon">📍</span>
+    <h2 class="sec-title" id="lc-title">Visit Us!</h2>
+    <p class="sec-intro" id="lc-intro">Find us at Sunrise Light Rail Station every Saturday!</p>
+    <div class="loc-card">
+      <div class="loc-ico">🚉</div>
+      <h3 id="lc-name">Sunrise Light Rail Station</h3>
+      <p class="loc-addr">11164 Folsom Blvd., Rancho Cordova, CA 95742</p>
+      <div class="loc-hours">
+        <span id="lc-when">📅 Saturdays, Year-Round</span>
+        <span id="lc-time">🕗 8:00 a.m. – Noon</span>
+        <span id="lc-closed">❄️ Closed only on Christmas Day & in extreme weather</span>
+      </div>
+      <p class="loc-pet" id="lc-pet">🐕 No dogs allowed (service animals are always welcome)</p>
+    </div>
+    <div class="contact-wrap"><p id="lc-ph">📞 Questions? Call us: <a href="tel:9162450316">(916) 245-0316</a></p></div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <span class="closing-star">🌟</span>
+  <h2 id="cl-title">You're Amazing!</h2>
+  <p id="cl-text">Thanks for learning about the Rancho Cordova Certified Farmers' Market today! Remember — eating fresh fruits and veggies helps you grow strong, and shopping local helps our whole community!</p>
+  <div class="closing-emos">🍎 🥕 🥦 🍊 🍇 🥑 🍓 🍯 🌻 🚜</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-logo"><span>🧺</span><div><strong>Rancho Cordova Certified Farmers' Market</strong><em id="ft-motto">Fresh. Local. Community.</em></div></div>
+    <div class="ft-text">
+      <p id="ft-note">This page was made for kids to learn while their families shop at the market.</p>
+      <p id="ft-adult">For adult info, visit <a href="https://alchemistcdc.org/rancho/" target="_blank">alchemistcdc.org/rancho</a></p>
+      <p>📞 <a href="tel:9162450316">(916) 245-0316</a> &nbsp;·&nbsp; A program of Alchemist Community Development Corporation</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  en:{
+    ll:'Language:',hs:'Kids Learning Corner',ht:'Hi there, friend!',
+    hx:'Welcome to the Rancho Cordova Certified Farmers\' Market Learning Corner — a place just for <strong>YOU</strong> to learn all about our market and the yummy food grown near you!',
+    hb:'Let\'s Learn! →',
+    wt:'What is a Farmers\' Market?',w1t:'It\'s a market full of farmers!',w1p:'Real farmers bring fruits, vegetables, honey, nuts, flowers, breakfast, lunch and more — all grown nearby!',
+    w2t:'What does "Certified" mean?',w2p:'Certified means every farmer here really grows what they sell. The State checks to make sure it\'s true!',
+    w3t:'Who can come?',w3p:'<strong>Everyone</strong> is welcome! Families, friends, and neighbors come every Saturday to shop and have fun.',
+    wm:'🌟 Open since 2010 — Rancho Cordova\'s only certified farmers\' market!',
+    hwt:'How Does It Work?',s1t:'Walk In',s1p:'Come to Sunrise Station every Saturday morning. No tickets needed!',
+    s2t:'Say Hi to Farmers',s2p:'Walk around and meet the farmers who grew your food!',
+    s3t:'Pick Your Food',s3p:'Choose fresh fruits, veggies, honey, baked goods, and more.',
+    s4t:'Pay & Go Home',s4p:'Pay with cash, card, or EBT, then take your yummy food home!',
+    hwn:'<strong>Cool fact:</strong> You can use EBT/CalFresh here, and get up to <strong>$15 extra</strong> to spend on fruits & veggies with Market Match!',
+    ft:'Wow — Did You Know?',f1l:'the year our market first opened',f2l:'Saturdays every year you can visit!',f3l:'extra dollars you can earn with Market Match',f4l:'local farms & vendors selling treats each week',
+    wht:'Who Shops Here?',whi:'Every kind of neighbor comes to our market!',
+    wh1t:'Families',wh1p:'Kids and parents shopping together for healthy, yummy food',
+    wh2t:'Bike Riders',wh2p:'Get free bike tune-ups on select Saturdays!',
+    wh3t:'EBT/CalFresh Shoppers',wh3p:'Use your benefits and get bonus Market Match dollars',
+    wh4t:'Everyone!',wh4p:'Neighbors of all kinds come to shop, eat, and have fun',
+    whn:'No matter who you are, you\'re always <strong>welcome</strong> at our market!',
+    vt:'What Makes Us Special',v1t:'Fresh & Local',v1p:'Food grown right here near Sacramento',v2t:'Friendly Faces',v2p:'We love meeting new friends every Saturday',v3t:'Healthy Choices',v3p:'Lots of fruits, veggies, and yummy treats',v4t:'Community Spirit',v4p:'We celebrate Rancho Cordova together',
+    hpt:'How YOU Can Help!',hpi:'You don\'t have to be a grown-up to make a difference!',
+    hp1t:'Bring Your Family',hp1p:'Come shop and support local farmers every Saturday!',hp1b:'Easy to do!',
+    hp2t:'Try New Foods',hp2p:'Be brave and taste something new each visit!',hp2b:'So fun!',
+    hp3t:'Ride Your Bike',hp3p:'Get a free tune-up the 3rd Saturday (July–Sept) or 4th Saturday starting in October!',hp3b:'Free!',
+    hp4t:'Be Kind to Vendors',hp4p:'Say thank you to the farmers who grow your food!',hp4b:'Anyone can do this!',
+    fdt:'Food is Amazing!',fdi:'Tap each food to learn a cool fact!',tap:'Tap me!',
+    fncarrot:'Carrots',fnbanana:'Bananas',fnbroccoli:'Broccoli',fnorange:'Oranges',fnbeans:'Beans',fnstrawberry:'Strawberries',
+    fcarrot:'Carrots help you see in the dark! Full of Vitamin A. 🥕👁️',fbanana:'Bananas give you energy! Athletes eat them before games. 🍌⚡',
+    fbroccoli:'Broccoli is a "superfood" — Vitamins C, K, and fiber! 🥦💪',forange:'Oranges have Vitamin C to keep you from getting sick! 🍊🛡️',
+    fbeans:'Beans are full of protein that builds your muscles! 🫘💪',fstrawberry:'Strawberries help your brain and improve memory! 🍓🧠',
+    lct:'Visit Us!',lci:'Find us at Sunrise Light Rail Station every Saturday!',lcname:'Sunrise Light Rail Station',lcwhen:'📅 Saturdays, Year-Round',lctime:'🕗 8:00 a.m. – Noon',lcclosed:'❄️ Closed only on Christmas Day & in extreme weather',lcpet:'🐕 No dogs allowed (service animals are always welcome)',
+    lcph:'📞 Questions? Call us: <a href="tel:9162450316">(916) 245-0316</a>',
+    clt:'You\'re Amazing!',clx:'Thanks for learning about the Rancho Cordova Certified Farmers\' Market today! Remember — eating fresh fruits and veggies helps you grow strong, and shopping local helps our whole community!',
+    ftm:'Fresh. Local. Community.',ftn:'This page was made for kids to learn while their families shop at the market.',fta:'For adult info, visit <a href="https://alchemistcdc.org/rancho/" target="_blank">alchemistcdc.org/rancho</a>'
+  },
+  es:{
+    ll:'Idioma:',hs:'Rincón de Aprendizaje para Niños',ht:'¡Hola, amigo!',
+    hx:'Bienvenido al Rincón de Aprendizaje del Mercado de Agricultores Certificado de Rancho Cordova — un lugar solo para <strong>TI</strong> para aprender todo sobre nuestro mercado y la comida deliciosa que se cultiva cerca de ti!',
+    hb:'¡Vamos a aprender! →',
+    wt:'¿Qué es un Mercado de Agricultores?',w1t:'¡Es un mercado lleno de agricultores!',w1p:'Agricultores de verdad traen frutas, verduras, miel, nueces, flores, desayuno, almuerzo y más — ¡todo cultivado cerca de aquí!',
+    w2t:'¿Qué significa "Certificado"?',w2p:'Certificado significa que cada agricultor aquí realmente cultiva lo que vende. ¡El Estado lo revisa para asegurarse de que sea verdad!',
+    w3t:'¿Quién puede venir?',w3p:'<strong>Todos</strong> son bienvenidos! Familias, amigos y vecinos vienen cada sábado a comprar y divertirse.',
+    wm:'🌟 ¡Abierto desde 2010 — el único mercado de agricultores certificado de Rancho Cordova!',
+    hwt:'¿Cómo Funciona?',s1t:'Entrar',s1p:'Ven a la Estación Sunrise cada sábado por la mañana. ¡No se necesitan boletos!',
+    s2t:'Saluda a los Agricultores',s2p:'¡Camina y conoce a los agricultores que cultivaron tu comida!',
+    s3t:'Elige Tu Comida',s3p:'Elige frutas frescas, verduras, miel, productos horneados y más.',
+    s4t:'Paga y Vete a Casa',s4p:'¡Paga con efectivo, tarjeta o EBT, y luego lleva tu rica comida a casa!',
+    hwn:'<strong>Dato curioso:</strong> Puedes usar EBT/CalFresh aquí, y recibir hasta <strong>$15 extra</strong> para gastar en frutas y verduras con Market Match!',
+    ft:'Vaya — ¿Sabías Que…?',f1l:'el año en que nuestro mercado abrió por primera vez',f2l:'¡sábados cada año que puedes visitar!',f3l:'dólares extra que puedes ganar con Market Match',f4l:'granjas y vendedores locales vendiendo cada semana',
+    wht:'¿Quién Compra Aquí?',whi:'¡Todo tipo de vecino viene a nuestro mercado!',
+    wh1t:'Familias',wh1p:'Niños y padres comprando juntos comida saludable y deliciosa',
+    wh2t:'Ciclistas',wh2p:'¡Recibe ajustes gratuitos de bicicleta en sábados seleccionados!',
+    wh3t:'Compradores con EBT/CalFresh',wh3p:'Usa tus beneficios y recibe dólares adicionales de Market Match',
+    wh4t:'¡Todos!',wh4p:'Vecinos de todo tipo vienen a comprar, comer y divertirse',
+    whn:'No importa quién seas, siempre eres <strong>bienvenido</strong> en nuestro mercado!',
+    vt:'Lo Que Nos Hace Especiales',v1t:'Fresco y Local',v1p:'Comida cultivada aquí cerca de Sacramento',v2t:'Caras Amigables',v2p:'Nos encanta conocer nuevos amigos cada sábado',v3t:'Opciones Saludables',v3p:'Muchas frutas, verduras y dulces ricos',v4t:'Espíritu Comunitario',v4p:'Celebramos Rancho Cordova juntos',
+    hpt:'¡Cómo TÚ Puedes Ayudar!',hpi:'¡No tienes que ser un adulto para hacer la diferencia!',
+    hp1t:'Trae a Tu Familia',hp1p:'¡Ven a comprar y apoya a los agricultores locales cada sábado!',hp1b:'¡Fácil de hacer!',
+    hp2t:'Prueba Comidas Nuevas',hp2p:'¡Sé valiente y prueba algo nuevo en cada visita!',hp2b:'¡Muy divertido!',
+    hp3t:'Anda en Bicicleta',hp3p:'¡Recibe un ajuste gratis el tercer sábado (julio-septiembre) o el cuarto sábado a partir de octubre!',hp3b:'¡Gratis!',
+    hp4t:'Sé Amable con los Vendedores',hp4p:'¡Dale las gracias a los agricultores que cultivan tu comida!',hp4b:'¡Cualquiera puede hacerlo!',
+    fdt:'¡La Comida es Increíble!',fdi:'¡Toca cada alimento para aprender un dato genial!',tap:'¡Tócame!',
+    fncarrot:'Zanahorias',fnbanana:'Plátanos',fnbroccoli:'Brócoli',fnorange:'Naranjas',fnbeans:'Frijoles',fnstrawberry:'Fresas',
+    fcarrot:'¡Las zanahorias te ayudan a ver en la oscuridad! Llenas de Vitamina A. 🥕👁️',fbanana:'¡Los plátanos te dan energía! Los atletas los comen antes de los juegos. 🍌⚡',
+    fbroccoli:'¡El brócoli es un "superalimento" — Vitaminas C, K y fibra! 🥦💪',forange:'¡Las naranjas tienen Vitamina C para evitar que te enfermes! 🍊🛡️',
+    fbeans:'¡Los frijoles están llenos de proteína que fortalece tus músculos! 🫘💪',fstrawberry:'¡Las fresas ayudan a tu cerebro y mejoran la memoria! 🍓🧠',
+    lct:'¡Visítanos!',lci:'¡Encuéntranos en la Estación Sunrise cada sábado!',lcname:'Estación Sunrise',lcwhen:'📅 Sábados, todo el año',lctime:'🕗 8:00 a.m. – Mediodía',lcclosed:'❄️ Cerrado solo el día de Navidad y en clima extremo',lcpet:'🐕 No se permiten perros (los animales de servicio siempre son bienvenidos)',
+    lcph:'📞 ¿Preguntas? Llámanos: <a href="tel:9162450316">(916) 245-0316</a>',
+    clt:'¡Eres Increíble!',clx:'¡Gracias por aprender sobre el Mercado de Agricultores Certificado de Rancho Cordova hoy! Recuerda — comer frutas y verduras frescas te ayuda a crecer fuerte, ¡y comprar local ayuda a toda nuestra comunidad!',
+    ftm:'Fresco. Local. Comunidad.',ftn:'Esta página fue hecha para que los niños aprendan mientras sus familias compran en el mercado.',fta:'Para información de adultos, visita <a href="https://alchemistcdc.org/rancho/" target="_blank">alchemistcdc.org/rancho</a>'
+  },
+  ru:{
+    ll:'Язык:',hs:'Уголок знаний для детей',ht:'Привет, друг!',
+    hx:'Добро пожаловать в Уголок знаний Сертифицированного фермерского рынка Rancho Cordova — место только для <strong>ТЕБЯ</strong>, чтобы узнать всё о нашем рынке и вкусной еде, выращенной рядом с тобой!',
+    hb:'Давай учиться! →',
+    wt:'Что такое фермерский рынок?',w1t:'Это рынок, полный фермеров!',w1p:'Настоящие фермеры приносят фрукты, овощи, мёд, орехи, цветы, завтрак, обед и многое другое — всё выращено рядом!',
+    w2t:'Что значит «Сертифицированный»?',w2p:'Сертифицированный означает, что каждый фермер здесь действительно выращивает то, что продаёт. Штат проверяет, чтобы это было правдой!',
+    w3t:'Кто может прийти?',w3p:'<strong>Все</strong> приветствуются! Семьи, друзья и соседи приходят каждую субботу, чтобы делать покупки и веселиться.',
+    wm:'🌟 Открыт с 2010 года — единственный сертифицированный фермерский рынок Rancho Cordova!',
+    hwt:'Как это работает?',s1t:'Войти',s1p:'Приходи на станцию Sunrise каждую субботу утром. Билеты не нужны!',
+    s2t:'Поздоровайся с фермерами',s2p:'Прогуляйся и познакомься с фермерами, которые вырастили твою еду!',
+    s3t:'Выбери еду',s3p:'Выбирай свежие фрукты, овощи, мёд, выпечку и многое другое.',
+    s4t:'Оплати и иди домой',s4p:'Оплати наличными, картой или EBT, и забери вкусную еду домой!',
+    hwn:'<strong>Интересный факт:</strong> Здесь можно использовать EBT/CalFresh и получить до <strong>15 дополнительных долларов</strong> на фрукты и овощи по программе Market Match!',
+    ft:'Вау — Ты Знал?',f1l:'год, когда наш рынок впервые открылся',f2l:'субботы каждый год, когда ты можешь прийти!',f3l:'дополнительных долларов можно получить с Market Match',f4l:'местных ферм и продавцов каждую неделю',
+    wht:'Кто делает покупки здесь?',whi:'Самые разные соседи приходят на наш рынок!',
+    wh1t:'Семьи',wh1p:'Дети и родители вместе покупают здоровую, вкусную еду',
+    wh2t:'Велосипедисты',wh2p:'Получи бесплатное обслуживание велосипеда в выбранные субботы!',
+    wh3t:'Покупатели с EBT/CalFresh',wh3p:'Используй свои льготы и получи дополнительные доллары Market Match',
+    wh4t:'Все!',wh4p:'Соседи всех видов приходят, чтобы делать покупки, есть и веселиться',
+    whn:'Кем бы ты ни был, ты всегда <strong>желанный гость</strong> на нашем рынке!',
+    vt:'Что делает нас особенными',v1t:'Свежее и местное',v1p:'Еда, выращенная рядом с Сакраменто',v2t:'Дружелюбные лица',v2p:'Мы любим встречать новых друзей каждую субботу',v3t:'Полезный выбор',v3p:'Много фруктов, овощей и вкусных угощений',v4t:'Дух сообщества',v4p:'Мы празднуем Rancho Cordova вместе',
+    hpt:'Как ТЫ можешь помочь!',hpi:'Не нужно быть взрослым, чтобы изменить ситуацию!',
+    hp1t:'Приведи свою семью',hp1p:'Приходи делать покупки и поддерживать местных фермеров каждую субботу!',hp1b:'Легко сделать!',
+    hp2t:'Попробуй новую еду',hp2p:'Будь смелым и попробуй что-то новое при каждом визите!',hp2b:'Так весело!',
+    hp3t:'Покатайся на велосипеде',hp3p:'Получи бесплатное обслуживание в третью субботу (июль–сентябрь) или четвёртую субботу с октября!',hp3b:'Бесплатно!',
+    hp4t:'Будь добр к продавцам',hp4p:'Скажи спасибо фермерам, которые выращивают твою еду!',hp4b:'Это может каждый!',
+    fdt:'Еда — это удивительно!',fdi:'Нажми на каждый продукт, чтобы узнать интересный факт!',tap:'Нажми!',
+    fncarrot:'Морковь',fnbanana:'Бананы',fnbroccoli:'Брокколи',fnorange:'Апельсины',fnbeans:'Фасоль',fnstrawberry:'Клубника',
+    fcarrot:'Морковь помогает видеть в темноте! Много витамина A. 🥕👁️',fbanana:'Бананы дают энергию! Спортсмены едят их перед играми. 🍌⚡',
+    fbroccoli:'Брокколи — «суперпродукт» — витамины C, K и клетчатка! 🥦💪',forange:'Апельсины богаты витамином C — защита от болезней! 🍊🛡️',
+    fbeans:'Фасоль богата белком для роста мышц! 🫘💪',fstrawberry:'Клубника улучшает память и работу мозга! 🍓🧠',
+    lct:'Посети нас!',lci:'Найди нас на станции Sunrise Light Rail каждую субботу!',lcname:'Станция Sunrise Light Rail',lcwhen:'📅 Субботы, весь год',lctime:'🕗 8:00 — 12:00',lcclosed:'❄️ Закрыто только в Рождество и в экстремальную погоду',lcpet:'🐕 Собаки не допускаются (служебные животные всегда желанны)',
+    lcph:'📞 Есть вопросы? Позвони: <a href="tel:9162450316">(916) 245-0316</a>',
+    clt:'Ты замечательный!',clx:'Спасибо, что узнал о Сертифицированном фермерском рынке Rancho Cordova сегодня! Помни — свежие фрукты и овощи помогают тебе расти сильным, а покупки у местных помогают всему нашему сообществу!',
+    ftm:'Свежее. Местное. Сообщество.',ftn:'Эта страница создана для детей, чтобы они учились, пока их семьи делают покупки на рынке.',fta:'Для взрослых: <a href="https://alchemistcdc.org/rancho/" target="_blank">alchemistcdc.org/rancho</a>'
+  },
+  vi:{
+    ll:'Ngôn ngữ:',hs:'Góc Học Tập Cho Trẻ Em',ht:'Xin chào, bạn ơi!',
+    hx:'Chào mừng đến với Góc Học Tập của Chợ Nông Sản Được Chứng Nhận Rancho Cordova — nơi chỉ dành cho <strong>BẠN</strong> để tìm hiểu mọi thứ về chợ của chúng tôi và những thực phẩm ngon được trồng gần bạn!',
+    hb:'Cùng học nào! →',
+    wt:'Chợ Nông Sản Là Gì?',w1t:'Đây là một khu chợ đầy nông dân!',w1p:'Những nông dân thật sự mang đến trái cây, rau củ, mật ong, hạt, hoa, bữa sáng, bữa trưa và nhiều hơn nữa — tất cả được trồng gần đây!',
+    w2t:'"Được Chứng Nhận" Nghĩa Là Gì?',w2p:'Được chứng nhận có nghĩa là mỗi nông dân ở đây thực sự trồng những gì họ bán. Tiểu bang kiểm tra để đảm bảo điều đó là sự thật!',
+    w3t:'Ai Có Thể Đến?',w3p:'<strong>Tất cả mọi người</strong> đều được hoan nghênh! Các gia đình, bạn bè và láng giềng đến mỗi thứ Bảy để mua sắm và vui chơi.',
+    wm:'🌟 Mở cửa từ năm 2010 — chợ nông sản được chứng nhận duy nhất của Rancho Cordova!',
+    hwt:'Hoạt Động Như Thế Nào?',s1t:'Đi Vào',s1p:'Hãy đến Trạm Sunrise mỗi sáng thứ Bảy. Không cần vé!',
+    s2t:'Chào Hỏi Nông Dân',s2p:'Đi dạo và gặp những người nông dân đã trồng thực phẩm cho bạn!',
+    s3t:'Chọn Thực Phẩm',s3p:'Chọn trái cây tươi, rau củ, mật ong, đồ nướng và nhiều hơn nữa.',
+    s4t:'Thanh Toán Và Về Nhà',s4p:'Thanh toán bằng tiền mặt, thẻ hoặc EBT, sau đó mang thực phẩm ngon về nhà!',
+    hwn:'<strong>Sự thật thú vị:</strong> Bạn có thể dùng EBT/CalFresh ở đây, và nhận thêm tới <strong>15 đô la</strong> để mua trái cây & rau củ với Market Match!',
+    ft:'Ồ — Bạn Có Biết Không?',f1l:'năm chợ của chúng tôi mở cửa lần đầu tiên',f2l:'thứ Bảy mỗi năm bạn có thể đến thăm!',f3l:'đô la thêm bạn có thể nhận được với Market Match',f4l:'nông trại và người bán địa phương mỗi tuần',
+    wht:'Ai Đến Mua Sắm Ở Đây?',whi:'Mọi loại láng giềng đều đến chợ của chúng tôi!',
+    wh1t:'Các Gia Đình',wh1p:'Trẻ em và cha mẹ cùng mua sắm thực phẩm lành mạnh, ngon miệng',
+    wh2t:'Người Đi Xe Đạp',wh2p:'Nhận bảo dưỡng xe đạp miễn phí vào những thứ Bảy được chọn!',
+    wh3t:'Người Mua Hàng Bằng EBT/CalFresh',wh3p:'Sử dụng quyền lợi của bạn và nhận thêm tiền Market Match',
+    wh4t:'Mọi Người!',wh4p:'Láng giềng của mọi loại đến mua sắm, ăn uống và vui chơi',
+    whn:'Bất kể bạn là ai, bạn luôn được <strong>hoan nghênh</strong> tại chợ của chúng tôi!',
+    vt:'Điều Làm Chúng Tôi Đặc Biệt',v1t:'Tươi Và Địa Phương',v1p:'Thực phẩm được trồng ngay gần Sacramento',v2t:'Những Khuôn Mặt Thân Thiện',v2p:'Chúng tôi yêu thích gặp những người bạn mới mỗi thứ Bảy',v3t:'Lựa Chọn Lành Mạnh',v3p:'Nhiều trái cây, rau củ và món ngon',v4t:'Tinh Thần Cộng Đồng',v4p:'Chúng tôi cùng nhau kỷ niệm Rancho Cordova',
+    hpt:'BẠN Có Thể Giúp Như Thế Nào!',hpi:'Bạn không cần phải là người lớn để tạo ra sự khác biệt!',
+    hp1t:'Đưa Gia Đình Bạn Đến',hp1p:'Hãy đến mua sắm và hỗ trợ nông dân địa phương mỗi thứ Bảy!',hp1b:'Dễ làm!',
+    hp2t:'Thử Thực Phẩm Mới',hp2p:'Hãy can đảm và thử một thứ mới mỗi lần đến!',hp2b:'Rất vui!',
+    hp3t:'Đạp Xe Của Bạn',hp3p:'Nhận bảo dưỡng miễn phí vào thứ Bảy thứ ba (Tháng 7–Tháng 9) hoặc thứ Bảy thứ tư kể từ tháng Mười!',hp3b:'Miễn phí!',
+    hp4t:'Hãy Tử Tế Với Người Bán',hp4p:'Hãy cảm ơn những người nông dân đã trồng thực phẩm cho bạn!',hp4b:'Ai cũng có thể làm điều này!',
+    fdt:'Thực Phẩm Thật Tuyệt Vời!',fdi:'Chạm vào mỗi loại thực phẩm để biết một sự thật thú vị!',tap:'Chạm vào tôi!',
+    fncarrot:'Cà Rốt',fnbanana:'Chuối',fnbroccoli:'Bông Cải Xanh',fnorange:'Cam',fnbeans:'Đậu',fnstrawberry:'Dâu Tây',
+    fcarrot:'Cà rốt giúp bạn nhìn rõ trong bóng tối! Đầy Vitamin A. 🥕👁️',fbanana:'Chuối cho bạn năng lượng! Các vận động viên ăn chúng trước các trận đấu. 🍌⚡',
+    fbroccoli:'Bông cải xanh là "siêu thực phẩm" — Vitamin C, K và chất xơ! 🥦💪',forange:'Cam có Vitamin C giúp bạn không bị bệnh! 🍊🛡️',
+    fbeans:'Đậu chứa nhiều protein giúp xây dựng cơ bắp của bạn! 🫘💪',fstrawberry:'Dâu tây giúp não bộ và cải thiện trí nhớ! 🍓🧠',
+    lct:'Hãy Đến Thăm Chúng Tôi!',lci:'Hãy tìm chúng tôi tại Trạm Sunrise Light Rail mỗi thứ Bảy!',lcname:'Trạm Sunrise Light Rail',lcwhen:'📅 Thứ Bảy, cả năm',lctime:'🕗 8:00 sáng – 12:00 trưa',lcclosed:'❄️ Chỉ đóng vào Ngày Lễ Giáng Sinh & khi thời tiết khắc nghiệt',lcpet:'🐕 Không cho phép chó (động vật hỗ trợ luôn được hoan nghênh)',
+    lcph:'📞 Có câu hỏi? Gọi cho chúng tôi: <a href="tel:9162450316">(916) 245-0316</a>',
+    clt:'Bạn Thật Tuyệt Vời!',clx:'Cảm ơn bạn đã tìm hiểu về Chợ Nông Sản Được Chứng Nhận Rancho Cordova hôm nay! Hãy nhớ — ăn trái cây và rau củ tươi giúp bạn lớn khỏe mạnh, và mua sắm địa phương giúp cả cộng đồng của chúng ta!',
+    ftm:'Tươi. Địa Phương. Cộng Đồng.',ftn:'Trang này được tạo ra để trẻ em học hỏi khi gia đình của các em mua sắm tại chợ.',fta:'Để biết thông tin cho người lớn, hãy truy cập <a href="https://alchemistcdc.org/rancho/" target="_blank">alchemistcdc.org/rancho</a>'
+  },
+  tl:{
+    ll:'Wika:',hs:'Sulok ng Pagkatuto para sa mga Bata',ht:'Hi, kaibigan!',
+    hx:'Maligayang pagdating sa Sulok ng Pagkatuto ng Rancho Cordova Certified Farmers\' Market — isang lugar para lang sa <strong>IYO</strong> upang matutunan ang lahat tungkol sa aming palengke at ang masarap na pagkain na itinanim malapit sa iyo!',
+    hb:'Mag-aral tayo! →',
+    wt:'Ano ang Farmers\' Market?',w1t:'Isang palengke na puno ng mga magsasaka!',w1p:'Ang totoong mga magsasaka ay nagdadala ng prutas, gulay, pulot-pukyutan, mani, bulaklak, almusal, tanghalian, at iba pa — lahat ay itinanim malapit dito!',
+    w2t:'Ano ang ibig sabihin ng "Certified"?',w2p:'Ang Certified ay nangangahulugan na bawat magsasaka dito ay talagang nagtatanim ng kanilang ibinebenta. Sinusuri ng Estado upang matiyak na totoo ito!',
+    w3t:'Sino ang Maaaring Pumunta?',w3p:'<strong>Lahat</strong> ay malugod tanggapin! Ang mga pamilya, kaibigan, at kapitbahay ay pumupunta bawat Sabado upang mamili at magsaya.',
+    wm:'🌟 Bukas mula 2010 — ang tanging certified farmers\' market ng Rancho Cordova!',
+    hwt:'Paano Ito Gumagana?',s1t:'Pumasok',s1p:'Pumunta sa Sunrise Station bawat umaga ng Sabado. Hindi kailangan ng tiket!',
+    s2t:'Bumati sa mga Magsasaka',s2p:'Maglakad-lakad at makilala ang mga magsasaka na nagtanim ng iyong pagkain!',
+    s3t:'Piliin ang Iyong Pagkain',s3p:'Pumili ng sariwang prutas, gulay, pulot-pukyutan, niluto na tinapay, at iba pa.',
+    s4t:'Magbayad at Umuwi',s4p:'Magbayad gamit ang cash, card, o EBT, at dalhin ang iyong masarap na pagkain sa bahay!',
+    hwn:'<strong>Magandang katotohanan:</strong> Maaari kang gumamit ng EBT/CalFresh dito, at makakuha ng hanggang <strong>$15 karagdagan</strong> para gastusin sa prutas at gulay sa Market Match!',
+    ft:'Wow — Alam Mo Ba?',f1l:'ang taon na unang binuksan ang aming palengke',f2l:'Sabado bawat taon na maaari mong bisitahin!',f3l:'karagdagang dolyar na maaari mong makuha sa Market Match',f4l:'lokal na sakahan at nagtitinda bawat linggo',
+    wht:'Sino ang Namimili Dito?',whi:'Lahat ng uri ng kapitbahay ay pupunta sa aming palengke!',
+    wh1t:'Mga Pamilya',wh1p:'Mga bata at magulang na sama-samang namimili ng malusog at masarap na pagkain',
+    wh2t:'Mga Nagbibisikleta',wh2p:'Makakuha ng libreng bicycle tune-up sa ilang piling Sabado!',
+    wh3t:'Mga Bumibili Gamit ang EBT/CalFresh',wh3p:'Gamitin ang iyong mga benepisyo at makakuha ng karagdagang dolyar mula sa Market Match',
+    wh4t:'Lahat!',wh4p:'Lahat ng uri ng kapitbahay ay pupunta upang mamili, kumain, at magsaya',
+    whn:'Kahit sino ka, lagi kang <strong>malugod tanggapin</strong> sa aming palengke!',
+    vt:'Kung Ano ang Gumagawa Sa Aming Espesyal',v1t:'Sariwa at Lokal',v1p:'Pagkain na itinanim malapit dito sa Sacramento',v2t:'Mababait na Mukha',v2p:'Gustung-gusto naming makilala ang mga bagong kaibigan bawat Sabado',v3t:'Malusog na Pagpili',v3p:'Marami sa prutas, gulay, at masarap na meryenda',v4t:'Diwa ng Komunidad',v4p:'Sama-sama naming ipinagdiriwang ang Rancho Cordova',
+    hpt:'Paano IKAW Makakatulong!',hpi:'Hindi kailangang maging matanda para gumawa ng pagbabago!',
+    hp1t:'Dalhin ang Iyong Pamilya',hp1p:'Pumunta at mamili upang suportahan ang mga lokal na magsasaka bawat Sabado!',hp1b:'Madali lang!',
+    hp2t:'Subukan ang Bagong Pagkain',hp2p:'Magtapang at tikman ang isang bagong bagay sa bawat pagbisita!',hp2b:'Ang saya!',
+    hp3t:'Sakyan ang Iyong Bisikleta',hp3p:'Makakuha ng libreng tune-up sa ikatlong Sabado (Hulyo-Setyembre) o ikaapat na Sabado simula Oktubre!',hp3b:'Libre!',
+    hp4t:'Magpakabait sa mga Vendor',hp4p:'Pasalamatan ang mga magsasaka na nagtanim ng iyong pagkain!',hp4b:'Kaya ng kaninuman ito gawin!',
+    fdt:'Kamangha-mangha ang Pagkain!',fdi:'Pindutin ang bawat pagkain upang matuto ng kawili-wiling katotohanan!',tap:'Pindutin ako!',
+    fncarrot:'Karot',fnbanana:'Saging',fnbroccoli:'Broccoli',fnorange:'Dalandan',fnbeans:'Beans',fnstrawberry:'Strawberry',
+    fcarrot:'Ang karot ay tumutulong sa iyo na makakita sa dilim! Puno ng Vitamin A. 🥕👁️',fbanana:'Ang saging ay nagbibigay sa iyo ng enerhiya! Kinakain ito ng mga atleta bago ang laro. 🍌⚡',
+    fbroccoli:'Ang broccoli ay isang "superfood" — Vitamin C, K, at fiber! 🥦💪',forange:'Ang dalandan ay may Vitamin C upang hindi ka magkasakit! 🍊🛡️',
+    fbeans:'Ang beans ay puno ng protina na nagpapalakas ng iyong mga kalamnan! 🫘💪',fstrawberry:'Ang strawberry ay tumutulong sa iyong utak at nagpapabuti ng memorya! 🍓🧠',
+    lct:'Bisitahin Kami!',lci:'Hanapin kami sa Sunrise Light Rail Station bawat Sabado!',lcname:'Sunrise Light Rail Station',lcwhen:'📅 Sabado, Buong Taon',lctime:'🕗 8:00 a.m. – Tanghali',lcclosed:'❄️ Sarado lamang sa Araw ng Pasko at sa matinding panahon',lcpet:'🐕 Hindi pinapayagan ang mga aso (lagi tinatanggap ang mga service animal)',
+    lcph:'📞 May tanong? Tawagan kami: <a href="tel:9162450316">(916) 245-0316</a>',
+    clt:'Ikaw ay Kamangha-mangha!',clx:'Salamat sa pag-aaral tungkol sa Rancho Cordova Certified Farmers\' Market ngayon! Tandaan — ang kumain ng sariwang prutas at gulay ay tumutulong sa iyo na lumakas, at ang pamimili nang lokal ay tumutulong sa buong komunidad natin!',
+    ftm:'Sariwa. Lokal. Komunidad.',ftn:'Ang pahinang ito ay ginawa para matuto ang mga bata habang namimili ang kanilang pamilya sa palengke.',fta:'Para sa impormasyon ng matatanda, bisitahin ang <a href="https://alchemistcdc.org/rancho/" target="_blank">alchemistcdc.org/rancho</a>'
+  },
+  zh:{
+    ll:'语言：',hs:'儿童学习角',ht:'你好，小朋友！',
+    hx:'欢迎来到兰乔科多瓦认证农夫市场学习角——一个专属于<strong>你</strong>的地方，了解我们的市场以及在你身边种植的美味食物！',
+    hb:'我们开始学习吧！→',
+    wt:'什么是农夫市场？',w1t:'这是一个满是农民的市场！',w1p:'真正的农民带来水果、蔬菜、蜂蜜、坚果、鲜花、早餐、午餐等等——全都是在附近种植的！',
+    w2t:'"认证"是什么意思？',w2p:'认证意味着这里的每位农民确实种植了他们出售的东西。州政府会进行检查，确保这是真的！',
+    w3t:'谁可以来？',w3p:'<strong>每个人</strong>都受欢迎！家庭、朋友和邻居每周六都来购物、玩乐。',
+    wm:'🌟 自2010年开放——兰乔科多瓦唯一的认证农夫市场！',
+    hwt:'它是如何运作的？',s1t:'走进来',s1p:'每周六早上来日出站。不需要门票！',
+    s2t:'向农民问好',s2p:'四处走走，认识种植你食物的农民！',
+    s3t:'挑选你的食物',s3p:'选择新鲜的水果、蔬菜、蜂蜜、烘焙食品等。',
+    s4t:'付款回家',s4p:'用现金、刷卡或EBT付款，然后把美味的食物带回家！',
+    hwn:'<strong>有趣的事实：</strong>你可以在这里使用EBT/CalFresh，并通过Market Match获得高达<strong>15美元</strong>的额外补助，用于购买水果和蔬菜！',
+    ft:'哇——你知道吗？',f1l:'我们市场首次开放的年份',f2l:'每年你可以来访问的周六数量！',f3l:'通过Market Match可以获得的额外美元',f4l:'每周参与的本地农场和摊贩数量',
+    wht:'谁来这里购物？',whi:'各种各样的邻居都来我们的市场！',
+    wh1t:'家庭',wh1p:'孩子和家长一起购买健康美味的食物',
+    wh2t:'骑自行车的人',wh2p:'在特定的周六获得免费的自行车保养！',
+    wh3t:'使用EBT/CalFresh的顾客',wh3p:'使用你的福利，获得额外的Market Match补助',
+    wh4t:'每一个人！',wh4p:'各种各样的邻居都来购物、用餐和玩乐',
+    whn:'无论你是谁，在我们的市场里你永远<strong>受欢迎</strong>！',
+    vt:'我们的特别之处',v1t:'新鲜本地',v1p:'就在萨克拉门托附近种植的食物',v2t:'友好的面孔',v2p:'我们喜欢每个周六认识新朋友',v3t:'健康选择',v3p:'有很多水果、蔬菜和美味小吃',v4t:'社区精神',v4p:'我们一起庆祝兰乔科多瓦',
+    hpt:'你能怎样帮忙！',hpi:'你不必是大人才能有所作为！',
+    hp1t:'带你的家人来',hp1p:'每周六来购物，支持本地农民！',hp1b:'很容易做到！',
+    hp2t:'尝试新食物',hp2p:'勇敢一点，每次来都尝试新东西！',hp2b:'很好玩！',
+    hp3t:'骑你的自行车',hp3p:'在每月第三个周六（7月-9月）或从10月起的第四个周六获得免费保养！',hp3b:'免费！',
+    hp4t:'对摊贩友善',hp4p:'感谢种植你食物的农民！',hp4b:'任何人都能做到！',
+    fdt:'食物真神奇！',fdi:'点一下每种食物，了解一个有趣的事实！',tap:'点我！',
+    fncarrot:'胡萝卜',fnbanana:'香蕉',fnbroccoli:'西兰花',fnorange:'橙子',fnbeans:'豆类',fnstrawberry:'草莓',
+    fcarrot:'胡萝卜能帮你在黑暗中看得更清楚！富含维生素A。🥕👁️',fbanana:'香蕉能给你能量！运动员在比赛前会吃香蕉。🍌⚡',
+    fbroccoli:'西兰花是一种"超级食物"——含维生素C、K和纤维！🥦💪',forange:'橙子含有维生素C，能让你不容易生病！🍊🛡️',
+    fbeans:'豆类富含蛋白质，能强健你的肌肉！🫘💪',fstrawberry:'草莓有助于大脑，能提高记忆力！🍓🧠',
+    lct:'来看看我们吧！',lci:'每周六在日出轻轨站找到我们！',lcname:'日出轻轨站',lcwhen:'📅 全年周六',lctime:'🕗 上午8:00 – 正午',lcclosed:'❄️ 仅在圣诞节和极端天气时关闭',lcpet:'🐕 不允许带狗（服务型动物始终欢迎）',
+    lcph:'📞 有问题吗？打电话给我们：<a href="tel:9162450316">(916) 245-0316</a>',
+    clt:'你真棒！',clx:'感谢你今天了解了兰乔科多瓦认证农夫市场！请记住——吃新鲜的水果和蔬菜能帮助你健康成长，购买本地产品能帮助我们整个社区！',
+    ftm:'新鲜。本地。社区。',ftn:'这个页面是为孩子们在家人在市场购物时学习而制作的。',fta:'欲了解成人信息，请访问<a href="https://alchemistcdc.org/rancho/" target="_blank">alchemistcdc.org/rancho</a>'
+  },
+  fa:{
+    ll:'زبان:',hs:'گوشه یادگیری کودکان',ht:'سلام، دوست!',
+    hx:'به گوشه یادگیری بازار کشاورزان معتبر رانچو کوردووا خوش آمدید — جایی فقط برای <strong>شما</strong> تا همه چیز را درباره بازار ما و غذای خوشمزه‌ای که نزدیک شما رشد می‌کند یاد بگیرید!',
+    hb:'بیا یاد بگیریم! ←',
+    wt:'بازار کشاورزان چیست؟',w1t:'این بازاری پر از کشاورزان است!',w1p:'کشاورزان واقعی میوه، سبزیجات، عسل، آجیل، گل، صبحانه، ناهار و بیشتر می‌آورند — همه نزدیک اینجا رشد کرده‌اند!',
+    w2t:'«معتبر» چه معنایی دارد؟',w2p:'معتبر یعنی هر کشاورز در اینجا واقعاً چیزی را که می‌فروشد رشد می‌دهد. ایالت بررسی می‌کند تا مطمئن شود این درست است!',
+    w3t:'چه کسی می‌تواند بیاید؟',w3p:'<strong>همه</strong> خوش‌آمدند! خانواده‌ها، دوستان و همسایه‌ها هر شنبه می‌آیند تا خرید کنند و خوش بگذرانند.',
+    wm:'🌟 از سال ۲۰۱۰ باز است — تنها بازار کشاورزان معتبر رانچو کوردووا!',
+    hwt:'چطور کار می‌کند؟',s1t:'وارد شوید',s1p:'هر صبح شنبه به ایستگاه سان‌رایز بیایید. بلیط لازم نیست!',
+    s2t:'به کشاورزان سلام کنید',s2p:'قدم بزنید و با کشاورزانی که غذای شما را رشد دادند آشنا شوید!',
+    s3t:'غذای خود را انتخاب کنید',s3p:'میوه‌های تازه، سبزیجات، عسل، نان‌های پخته شده و بیشتر را انتخاب کنید.',
+    s4t:'پرداخت کنید و به خانه بروید',s4p:'با نقد، کارت یا EBT پرداخت کنید و غذای خوشمزه خود را به خانه ببرید!',
+    hwn:'<strong>نکته جالب:</strong> می‌توانید از EBT/CalFresh اینجا استفاده کنید و تا <strong>۱۵ دلار اضافی</strong> برای میوه و سبزیجات با Market Match دریافت کنید!',
+    ft:'واو — آیا می‌دانستید؟',f1l:'سالی که بازار ما برای اولین بار باز شد',f2l:'شنبه‌هایی که هر سال می‌توانید بیایید!',f3l:'دلار اضافی که می‌توانید با Market Match دریافت کنید',f4l:'مزارع و فروشندگان محلی هر هفته',
+    wht:'چه کسانی اینجا خرید می‌کنند؟',whi:'هر نوع همسایه‌ای به بازار ما می‌آید!',
+    wh1t:'خانواده‌ها',wh1p:'کودکان و والدینی که با هم غذای سالم و خوشمزه می‌خرند',
+    wh2t:'دوچرخه‌سواران',wh2p:'در شنبه‌های منتخب تعمیر رایگان دوچرخه دریافت کنید!',
+    wh3t:'خریداران با EBT/CalFresh',wh3p:'از مزایای خود استفاده کنید و دلارهای اضافی Market Match دریافت کنید',
+    wh4t:'همه!',wh4p:'همسایگانی از هر نوع برای خرید، خوردن و خوش‌گذرانی می‌آیند',
+    whn:'هر که باشید، همیشه در بازار ما <strong>خوش‌آمدید</strong>!',
+    vt:'چه چیزی ما را خاص می‌کند',v1t:'تازه و محلی',v1p:'غذایی که همین نزدیک ساکرامنتو رشد کرده',v2t:'چهره‌های دوستانه',v2p:'ما عاشق ملاقات دوستان جدید هر شنبه هستیم',v3t:'انتخاب‌های سالم',v3p:'میوه، سبزیجات و خوراکی‌های خوشمزه زیاد',v4t:'روحیه اجتماعی',v4p:'ما رانچو کوردووا را با هم جشن می‌گیریم',
+    hpt:'شما چطور می‌توانید کمک کنید!',hpi:'لازم نیست بزرگسال باشید تا تفاوتی ایجاد کنید!',
+    hp1t:'خانواده خود را بیاورید',hp1p:'هر شنبه بیایید خرید کنید و از کشاورزان محلی حمایت کنید!',hp1b:'آسان است!',
+    hp2t:'غذاهای جدید را امتحان کنید',hp2p:'شجاع باشید و در هر بازدید چیز جدیدی را امتحان کنید!',hp2b:'خیلی جالب است!',
+    hp3t:'با دوچرخه خود بیایید',hp3p:'در سومین شنبه (جولای تا سپتامبر) یا چهارمین شنبه از اکتبر به بعد تعمیر رایگان دریافت کنید!',hp3b:'رایگان!',
+    hp4t:'با فروشندگان مهربان باشید',hp4p:'از کشاورزانی که غذای شما را رشد می‌دهند تشکر کنید!',hp4b:'همه می‌توانند این کار را بکنند!',
+    fdt:'غذا شگفت‌انگیز است!',fdi:'روی هر غذا بزنید تا یک حقیقت جالب بدانید!',tap:'بزنید!',
+    fncarrot:'هویج',fnbanana:'موز',fnbroccoli:'بروکلی',fnorange:'پرتقال',fnbeans:'لوبیا',fnstrawberry:'توت فرنگی',
+    fcarrot:'هویج کمک می‌کند در تاریکی بهتر ببینید! پر از ویتامین A است. 🥕👁️',fbanana:'موز به شما انرژی می‌دهد! ورزشکاران قبل از بازی آن را می‌خورند. 🍌⚡',
+    fbroccoli:'بروکلی "ابرغذا" است — ویتامین C، K و فیبر! 🥦💪',forange:'پرتقال پر از ویتامین C است که شما را از بیماری دور نگه می‌دارد! 🍊🛡️',
+    fbeans:'لوبیا پر از پروتئین است که عضلات شما را می‌سازد! 🫘💪',fstrawberry:'توت فرنگی به حافظه و مغز کمک می‌کند! 🍓🧠',
+    lct:'از ما دیدن کنید!',lci:'هر شنبه ما را در ایستگاه سان‌رایز پیدا کنید!',lcname:'ایستگاه ریلی سان‌رایز',lcwhen:'📅 شنبه‌ها، تمام سال',lctime:'🕗 ساعت ۸:۰۰ صبح تا ظهر',lcclosed:'❄️ فقط در روز کریسمس و در شرایط آب‌وهوایی شدید بسته است',lcpet:'🐕 سگ‌ها اجازه ورود ندارند (حیوانات خدماتی همیشه خوش‌آمدند)',
+    lcph:'📞 سوال دارید؟ زنگ بزنید: <a href="tel:9162450316">(916) 245-0316</a>',
+    clt:'شما شگفت‌انگیز هستید!',clx:'ممنون که امروز درباره بازار کشاورزان معتبر رانچو کوردووا یاد گرفتید! به خاطر بسپارید — خوردن میوه و سبزیجات تازه به شما کمک می‌کند قوی رشد کنید، و خرید محلی به کل جامعه ما کمک می‌کند!',
+    ftm:'تازه. محلی. اجتماعی.',ftn:'این صفحه برای بچه‌ها ساخته شده تا هنگام خرید خانواده‌هایشان در بازار یاد بگیرند.',fta:'برای اطلاعات بزرگسالان، از <a href="https://alchemistcdc.org/rancho/" target="_blank">alchemistcdc.org/rancho</a> دیدن کنید'
+  }
+};
+
+let lang='en';
+
+function setLang(l){
+  lang=l;
+  const t=T[l];
+  document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.getAttribute('onclick').includes("'"+l+"'")));
+  if(l==='fa'){document.documentElement.setAttribute('dir','rtl');document.body.classList.add('rtl');}
+  else{document.documentElement.setAttribute('dir','ltr');document.body.classList.remove('rtl');}
+  const ids={
+    'll':'ll','hs':'h-sub','ht':'h-title','hx':'h-text','hb':'h-btn',
+    'wt':'w-title','w1t':'w1t','w1p':'w1p','w2t':'w2t','w2p':'w2p','w3t':'w3t','w3p':'w3p','wm':'w-motto',
+    'hwt':'hw-title','s1t':'s1t','s1p':'s1p','s2t':'s2t','s2p':'s2p','s3t':'s3t','s3p':'s3p','s4t':'s4t','s4p':'s4p','hwn':'hw-note',
+    'ft':'f-title','f1l':'f1l','f2l':'f2l','f3l':'f3l','f4l':'f4l',
+    'wht':'wh-title','whi':'wh-intro','wh1t':'wh1t','wh1p':'wh1p','wh2t':'wh2t','wh2p':'wh2p','wh3t':'wh3t','wh3p':'wh3p','wh4t':'wh4t','wh4p':'wh4p','whn':'wh-note',
+    'vt':'v-title','v1t':'v1t','v1p':'v1p','v2t':'v2t','v2p':'v2p','v3t':'v3t','v3p':'v3p','v4t':'v4t','v4p':'v4p',
+    'hpt':'hp-title','hpi':'hp-intro','hp1t':'hp1t','hp1p':'hp1p','hp1b':'hp1b','hp2t':'hp2t','hp2p':'hp2p','hp2b':'hp2b','hp3t':'hp3t','hp3p':'hp3p','hp3b':'hp3b','hp4t':'hp4t','hp4p':'hp4p','hp4b':'hp4b',
+    'fdt':'fd-title','fdi':'fd-intro','tap':'ft',
+    'fncarrot':'fn-carrot','fnbanana':'fn-banana','fnbroccoli':'fn-broccoli','fnorange':'fn-orange','fnbeans':'fn-beans','fnstrawberry':'fn-strawberry',
+    'lct':'lc-title','lci':'lc-intro','lcname':'lc-name','lcwhen':'lc-when','lctime':'lc-time','lcclosed':'lc-closed','lcpet':'lc-pet','lcph':'lc-ph',
+    'clt':'cl-title','clx':'cl-text','ftm':'ft-motto','ftn':'ft-note','fta':'ft-adult'
+  };
+  for(const[k,id] of Object.entries(ids)){
+    const el=document.getElementById(id);
+    if(el&&t[k]!==undefined)el.innerHTML=t[k];
+  }
+  document.querySelectorAll('.food-tap').forEach(el=>el.textContent=t['tap']);
+  document.getElementById('food-popup').classList.remove('show');
+}
+
+function showFood(key){
+  const p=document.getElementById('food-popup');
+  p.innerHTML=T[lang]['f'+key]||'';
+  p.classList.add('show');
+}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.food-btn')&&!e.target.closest('#food-popup'))
+    document.getElementById('food-popup').classList.remove('show');
+});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
